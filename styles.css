@@ -6,16 +6,19 @@
 }
 
 :root {
-    --primary-color: #2dabe1;
-    --primary-dark: #1e7bb3;
-    --primary-light: #5bb8e8;
-    --secondary-color: #000000;
-    --secondary-light: #333333;
-    --accent-color: #ec1c26;
-    --white: #ffffff;
+    /* Kilifi County Properties Official Brand Colors */
+    --primary-color: #000000; /* Black - Primary */
+    --primary-dark: #000000;
+    --primary-light: #333333;
+    --secondary-color: #006bd1; /* Royal Navy Blue - Secondary */
+    --secondary-light: #1e7bb3;
+    --accent-color: #fe9000; /* Princeton Orange - Accent */
+    --highlight-color: #66c013; /* Irish Jig - Highlights */
+    --footer-color: #519c88; /* Petrol Green - Footer */
+    --white: #fefefe; /* White as Heaven */
     --light-gray: #f8f9fa;
     --lighter-gray: #fafbfc;
-    --text-color: #333333;
+    --text-color: #000000; /* Primary black for text */
     --text-light: #666666;
     --text-lighter: #888888;
     --border-color: #e1e8ed;
@@ -159,14 +162,14 @@ p {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    background: var(--accent-color); /* Princeton Orange */
     color: var(--white);
-    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+    box-shadow: 0 4px 15px rgba(254, 144, 0, 0.3);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+    box-shadow: 0 6px 20px rgba(254, 144, 0, 0.4);
 }
 
 .btn-secondary {
@@ -213,7 +216,7 @@ p {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--secondary-color); /* Royal Navy Blue */
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     z-index: 1000;
@@ -292,7 +295,7 @@ p {
 }
 
 .nav-link {
-    color: var(--secondary-color);
+    color: var(--white); /* White text on blue header */
     text-decoration: none;
     font-weight: 600;
     font-size: 0.9rem;
@@ -1134,7 +1137,7 @@ body .page-header p {
 }
 
 .service-features span i {
-    color: var(--primary-color);
+    color: var(--highlight-color); /* Irish Jig Green */
     font-size: 0.9rem;
     width: 16px;
 }
@@ -2210,7 +2213,7 @@ body .page-header p {
 
 /* Footer Styles */
 .footer {
-    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--secondary-light) 100%);
+    background: var(--footer-color); /* Petrol Green */
     color: var(--white);
     padding: 80px 0 30px;
     position: relative;
