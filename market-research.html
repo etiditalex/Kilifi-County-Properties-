@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Research & Insights - Kilifi Properties</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top-border"></div>
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <div class="logo-icon">
+                        <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1760165424/Kilifi_county_properties_logo_eklmnb.jpg" alt="Kilifi Properties Logo" class="logo-image">
+                    </div>
+                </a>
+                
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="for-sale.html" class="nav-link">FOR SALE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="for-rent.html" class="nav-link">FOR RENT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="developments.html" class="nav-link">DEVELOPMENTS</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link active">INVESTOR UPDATES <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="blog.html">BLOG</a></li>
+                                <li><a href="news.html">NEWS</a></li>
+                                <li><a href="market-research.html">MARKET RESEARCH</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link">ABOUT US</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link">CONTACT US</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-buttons">
+                    <a href="#" class="booking-btn" onclick="openBookingModal()">
+                        <i class="fas fa-calendar"></i> Book Viewing
+                    </a>
+                </div>
+                
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Market Research & Insights</h1>
+            <p>Comprehensive analysis and data-driven insights to help you make informed real estate decisions</p>
+        </div>
+    </section>
+
+    <!-- Market Research Section -->
+    <section class="properties-section">
+        <div class="container">
+            <div class="properties-grid">
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Q1 Report">
+                        <div class="property-status">Q1 2024</div>
+                    </div>
+                    <div class="property-content">
+                        <h3>Q1 2024 Coastal Real Estate Market Report</h3>
+                        <p class="property-location">
+                            <i class="fas fa-chart-line"></i>
+                            Market Analysis
+                        </p>
+                        <p>Comprehensive analysis of Q1 2024 market performance, including price trends, inventory levels, and investment opportunities across all coastal locations.</p>
+                        <div class="property-actions">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-download"></i> Download Report
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Investment Guide">
+                        <div class="property-status">Guide</div>
+                    </div>
+                    <div class="property-content">
+                        <h3>Coastal Property Investment ROI Analysis</h3>
+                        <p class="property-location">
+                            <i class="fas fa-calculator"></i>
+                            Investment Guide
+                        </p>
+                        <p>Detailed ROI analysis for different property types and locations, helping investors maximize returns on coastal real estate investments.</p>
+                        <div class="property-actions">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-download"></i> Download Guide
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Forecast">
+                        <div class="property-status">Forecast</div>
+                    </div>
+                    <div class="property-content">
+                        <h3>2024-2025 Market Forecast & Predictions</h3>
+                        <p class="property-location">
+                            <i class="fas fa-crystal-ball"></i>
+                            Future Trends
+                        </p>
+                        <p>Expert predictions and market forecasts for the coastal real estate sector, helping you plan your investments strategically.</p>
+                        <div class="property-actions">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-download"></i> Download Forecast
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1760165424/Kilifi_county_properties_logo_eklmnb.jpg" alt="Kilifi Properties Logo" class="logo-image">
+                        </div>
+                        <h3>NYUMBANI KWEHU DEVELOPERS</h3>
+                    </div>
+                    <p>Your trusted partner in finding your dream property in the idyllic coastal region of Kilifi.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>COMPANY</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="developments.html">Services</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="contact.html">Get In Touch</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>EXPLORE</h4>
+                    <ul>
+                        <li><a href="view-developments.html">View Developments</a></li>
+                        <li><a href="investment-guide.html">Investment Guide</a></li>
+                        <li><a href="for-sale.html">For Sale</a></li>
+                        <li><a href="for-rent.html">For Rent</a></li>
+                        <li><a href="news.html">News</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>CONTACT US</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +254 713 861916</p>
+                        <p><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/XUUMfGBLk4LQP2dSA" target="_blank" style="color: inherit; text-decoration: none;">Coast Road, Kilifi, Kenya</a></p>
+                        <p><i class="fas fa-envelope"></i> info@kilifiproperties.co.ke</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fas fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-phone"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Kilifi Properties. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Book a Property Viewing</h2>
+            <form id="booking-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Your Phone" required>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="">Select Property</option>
+                        <option value="property1">Coastal Villa - Nyali</option>
+                        <option value="property2">Kilifi Heights - Kilifi</option>
+                        <option value="property3">Shanzu Gardens - Shanzu</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="date" required>
+                </div>
+                <div class="form-group">
+                    <input type="time" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Additional Notes" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Book Viewing</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Book a Property Viewing</h2>
+            <form id="booking-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Your Phone" required>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="">Select Property</option>
+                        <option value="property1">Coastal Villa - Nyali</option>
+                        <option value="property2">Kilifi Heights - Kilifi</option>
+                        <option value="property3">Shanzu Gardens - Shanzu</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="date" required>
+                </div>
+                <div class="form-group">
+                    <input type="time" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Additional Notes" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Book Viewing</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
