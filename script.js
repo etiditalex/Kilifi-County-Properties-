@@ -316,6 +316,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 sqft: "3,200"
             },
             description: "Beachfront villa with private pool and garden"
+        },
+        {
+            id: 17,
+            title: "Bofa Phase 21",
+            location: "Kilifi",
+            price: "KSh 2,500,000",
+            type: "Apartment",
+            status: "For Sale",
+            image: "https://res.cloudinary.com/dyfnobo9r/image/upload/v1760192119/Bofa_phase_21_12_alld8l.jpg",
+            features: {
+                bedrooms: 2,
+                bathrooms: 2,
+                sqft: "1,200"
+            },
+            description: "Modern apartment in Bofa Phase 21 development with contemporary design and premium amenities"
         }
     ];
 
