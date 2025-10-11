@@ -6,14 +6,14 @@
 }
 
 :root {
-    /* Kilifi Properties Logo Colors - Gold & Black Theme */
-    --primary-color: #FFD700; /* Gold - Primary brand color */
-    --primary-dark: #B8860B; /* Dark Gold */
-    --primary-light: #FFED4E; /* Light Gold */
+    /* Kilifi Properties Logo Colors - Specific Gold & Black Theme */
+    --primary-color: #976413; /* Specific Gold from logo */
+    --primary-dark: #7A4F0F; /* Darker version of specific gold */
+    --primary-light: #B87A1A; /* Lighter version of specific gold */
     --secondary-color: #000000; /* Black - Secondary */
     --secondary-light: #333333; /* Dark Gray */
-    --accent-color: #FFD700; /* Gold - Accent */
-    --highlight-color: #FFD700; /* Gold - Highlights */
+    --accent-color: #976413; /* Specific Gold - Accent */
+    --highlight-color: #976413; /* Specific Gold - Highlights */
     --footer-color: #000000; /* Black - Footer */
     --white: #ffffff; /* Pure White */
     --light-gray: #f8f9fa;
@@ -164,12 +164,12 @@ p {
 .btn-primary {
     background: var(--accent-color); /* Gold */
     color: var(--secondary-color); /* Black text */
-    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(151, 100, 19, 0.3);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+    box-shadow: 0 6px 20px rgba(151, 100, 19, 0.4);
 }
 
 .btn-secondary {
