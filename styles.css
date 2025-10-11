@@ -6,16 +6,16 @@
 }
 
 :root {
-    /* Kilifi County Properties Official Brand Colors */
-    --primary-color: #000000; /* Black - Primary */
-    --primary-dark: #000000;
-    --primary-light: #333333;
-    --secondary-color: #006bd1; /* Royal Navy Blue - Secondary */
-    --secondary-light: #1e7bb3;
-    --accent-color: #fe9000; /* Princeton Orange - Accent */
-    --highlight-color: #66c013; /* Irish Jig - Highlights */
-    --footer-color: #519c88; /* Petrol Green - Footer */
-    --white: #fefefe; /* White as Heaven */
+    /* Kilifi Properties Logo Colors - Gold & Black Theme */
+    --primary-color: #FFD700; /* Gold - Primary brand color */
+    --primary-dark: #B8860B; /* Dark Gold */
+    --primary-light: #FFED4E; /* Light Gold */
+    --secondary-color: #000000; /* Black - Secondary */
+    --secondary-light: #333333; /* Dark Gray */
+    --accent-color: #FFD700; /* Gold - Accent */
+    --highlight-color: #FFD700; /* Gold - Highlights */
+    --footer-color: #000000; /* Black - Footer */
+    --white: #ffffff; /* Pure White */
     --light-gray: #f8f9fa;
     --lighter-gray: #fafbfc;
     --text-color: #000000; /* Primary black for text */
@@ -162,26 +162,26 @@ p {
 }
 
 .btn-primary {
-    background: var(--accent-color); /* Princeton Orange */
-    color: var(--white);
-    box-shadow: 0 4px 15px rgba(254, 144, 0, 0.3);
+    background: var(--accent-color); /* Gold */
+    color: var(--secondary-color); /* Black text */
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(254, 144, 0, 0.4);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
 }
 
 .btn-secondary {
     background: var(--white);
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
+    color: var(--secondary-color); /* Black text */
+    border: 2px solid var(--primary-color); /* Gold border */
     box-shadow: var(--shadow);
 }
 
 .btn-secondary:hover {
-    background: var(--primary-color);
-    color: var(--white);
+    background: var(--primary-color); /* Gold background */
+    color: var(--secondary-color); /* Black text */
     transform: translateY(-3px);
 }
 
@@ -192,8 +192,8 @@ p {
 }
 
 .btn-outline:hover {
-    background: var(--primary-color);
-    color: var(--white);
+    background: var(--primary-color); /* Gold background */
+    color: var(--secondary-color); /* Black text */
     transform: translateY(-2px);
 }
 
@@ -216,7 +216,7 @@ p {
     top: 0;
     left: 0;
     width: 100%;
-    background: var(--secondary-color); /* Royal Navy Blue */
+    background: var(--secondary-color); /* Black */
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     z-index: 1000;
@@ -295,7 +295,7 @@ p {
 }
 
 .nav-link {
-    color: var(--white); /* White text on blue header */
+    color: var(--primary-color); /* Gold text on black header */
     text-decoration: none;
     font-weight: 600;
     font-size: 0.9rem;
@@ -1137,7 +1137,7 @@ body .page-header p {
 }
 
 .service-features span i {
-    color: var(--highlight-color); /* Irish Jig Green */
+    color: var(--highlight-color); /* Gold */
     font-size: 0.9rem;
     width: 16px;
 }
@@ -2213,7 +2213,7 @@ body .page-header p {
 
 /* Footer Styles */
 .footer {
-    background: var(--footer-color); /* Petrol Green */
+    background: var(--footer-color); /* Black */
     color: var(--white);
     padding: 80px 0 30px;
     position: relative;
