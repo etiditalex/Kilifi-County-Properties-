@@ -647,7 +647,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Test if properties grid exists
         const testGrid = document.getElementById('properties-grid');
-        alert('Properties grid element found: ' + (testGrid ? 'YES' : 'NO'));
+        console.log('Properties grid element found: ' + (testGrid ? 'YES' : 'NO'));
         
         const saleProperties = properties.filter(p => p.status === 'For Sale');
         const rentalProperties = properties.filter(p => p.status === 'For Rent');
@@ -671,22 +671,63 @@ document.addEventListener('DOMContentLoaded', function() {
         if (propertiesGridElement) {
             console.log('Properties grid found, loading sale properties...');
             
-            // Simple test - add basic HTML first
-            propertiesGridElement.innerHTML = '<div class="property-card"><h3>TEST PROPERTY</h3><p>This is a test property to see if the grid works</p></div>';
-            alert('Test property added to grid');
+            // Properties grid found, loading properties
             
-            // TEMPORARILY DISABLE PROPERTY CARD GENERATION TO TEST
+            // Create proper property cards with all information
             console.log('Creating property cards...');
             console.log('Sale properties count:', saleProperties.length);
             console.log('First sale property:', saleProperties[0]);
             
-            // Test with simple HTML instead of complex property cards
-            const simpleCards = saleProperties.map(property => 
-                `<div class="property-card"><h3>${property.title}</h3><p>${property.location} - ${property.price}</p></div>`
-            );
+            const propertyCards = saleProperties.map(property => {
+                const features = property.features;
+                const featureItems = [];
+                
+                if (features.bedrooms) {
+                    featureItems.push(`<span class="property-feature"><i class="fas fa-bed"></i> ${features.bedrooms} Beds</span>`);
+                }
+                if (features.bathrooms) {
+                    featureItems.push(`<span class="property-feature"><i class="fas fa-bath"></i> ${features.bathrooms} Baths</span>`);
+                }
+                if (features.sqft) {
+                    featureItems.push(`<span class="property-feature"><i class="fas fa-ruler-combined"></i> ${features.sqft} sqft</span>`);
+                }
+                
+                return `
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="${property.image}" alt="${property.title}" onerror="this.style.display='none'">
+                            <div class="property-status">For Sale</div>
+                        </div>
+                        <div class="property-content">
+                            <div class="property-header">
+                                <h3>${property.title}</h3>
+                                <div class="property-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    ${property.location}
+                                </div>
+                            </div>
+                            <div class="property-description">
+                                <p>${property.description}</p>
+                            </div>
+                            <div class="property-price">${property.price}</div>
+                            <div class="property-features">
+                                ${featureItems.join('')}
+                            </div>
+                            <div class="property-actions">
+                                <a href="#" class="btn btn-primary" onclick="viewProperty(${property.id})">
+                                    <i class="fas fa-phone"></i> Contact Us
+                                </a>
+                                <a href="property-${property.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}.html" class="btn btn-outline">
+                                    More Information
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
             
-            propertiesGridElement.innerHTML = simpleCards.join('');
-            console.log('Simple property cards loaded:', saleProperties.length);
+            propertiesGridElement.innerHTML = propertyCards.join('');
+            console.log('Property cards loaded:', saleProperties.length);
             console.log('Grid innerHTML length:', propertiesGridElement.innerHTML.length);
         } else {
             console.log('Properties grid not found on page:', window.location.pathname);
@@ -1017,7 +1058,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize everything
     console.log('Loading properties...');
-    alert('Script is running - checking for properties grid...');
     loadProperties();
     setActiveNavigation();
     
