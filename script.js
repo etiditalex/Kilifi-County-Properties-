@@ -645,6 +645,10 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Properties array length:', properties.length);
         console.log('Properties array:', properties);
         
+        // Test if properties grid exists
+        const testGrid = document.getElementById('properties-grid');
+        alert('Properties grid element found: ' + (testGrid ? 'YES' : 'NO'));
+        
         const saleProperties = properties.filter(p => p.status === 'For Sale');
         const rentalProperties = properties.filter(p => p.status === 'For Rent');
         
@@ -666,6 +670,11 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Properties grid element:', propertiesGridElement);
         if (propertiesGridElement) {
             console.log('Properties grid found, loading sale properties...');
+            
+            // Simple test - add basic HTML first
+            propertiesGridElement.innerHTML = '<div class="property-card"><h3>TEST PROPERTY</h3><p>This is a test property to see if the grid works</p></div>';
+            alert('Test property added to grid');
+            
             console.log('Creating property cards...');
             const propertyCards = saleProperties.map(createPropertyCard);
             console.log('Property cards created:', propertyCards.length);
@@ -1002,6 +1011,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize everything
     console.log('Loading properties...');
+    alert('Script is running - checking for properties grid...');
     loadProperties();
     setActiveNavigation();
     
