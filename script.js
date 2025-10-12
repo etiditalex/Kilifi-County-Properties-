@@ -675,12 +675,18 @@ document.addEventListener('DOMContentLoaded', function() {
             propertiesGridElement.innerHTML = '<div class="property-card"><h3>TEST PROPERTY</h3><p>This is a test property to see if the grid works</p></div>';
             alert('Test property added to grid');
             
+            // TEMPORARILY DISABLE PROPERTY CARD GENERATION TO TEST
             console.log('Creating property cards...');
-            const propertyCards = saleProperties.map(createPropertyCard);
-            console.log('Property cards created:', propertyCards.length);
-            console.log('First property card:', propertyCards[0]);
-            propertiesGridElement.innerHTML = propertyCards.join('');
-            console.log('Sale properties loaded:', saleProperties.length);
+            console.log('Sale properties count:', saleProperties.length);
+            console.log('First sale property:', saleProperties[0]);
+            
+            // Test with simple HTML instead of complex property cards
+            const simpleCards = saleProperties.map(property => 
+                `<div class="property-card"><h3>${property.title}</h3><p>${property.location} - ${property.price}</p></div>`
+            );
+            
+            propertiesGridElement.innerHTML = simpleCards.join('');
+            console.log('Simple property cards loaded:', saleProperties.length);
             console.log('Grid innerHTML length:', propertiesGridElement.innerHTML.length);
         } else {
             console.log('Properties grid not found on page:', window.location.pathname);
