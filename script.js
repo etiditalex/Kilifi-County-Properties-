@@ -729,6 +729,12 @@ document.addEventListener('DOMContentLoaded', function() {
             propertiesGridElement.innerHTML = propertyCards.join('');
             console.log('Property cards loaded:', saleProperties.length);
             console.log('Grid innerHTML length:', propertiesGridElement.innerHTML.length);
+            console.log('First property card HTML:', propertyCards[0]);
+            
+            // Force a reflow to ensure the content is visible
+            propertiesGridElement.style.display = 'none';
+            propertiesGridElement.offsetHeight; // Trigger reflow
+            propertiesGridElement.style.display = 'grid';
         } else {
             console.log('Properties grid not found on page:', window.location.pathname);
         }

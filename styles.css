@@ -1378,6 +1378,9 @@ body .page-header p {
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     margin-top: 60px;
+    min-height: 200px;
+    visibility: visible;
+    opacity: 1;
 }
 
 /* Property Cards */
@@ -1388,6 +1391,9 @@ body .page-header p {
     box-shadow: var(--shadow-card);
     transition: var(--transition);
     animation: fadeInUp 0.8s ease-out;
+    display: block;
+    visibility: visible;
+    opacity: 1;
 }
 
 .property-card:hover {
