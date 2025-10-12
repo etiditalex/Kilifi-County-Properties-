@@ -641,10 +641,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Load Properties
     function loadProperties() {
+        console.log('=== LOAD PROPERTIES DEBUG ===');
+        console.log('Properties array length:', properties.length);
+        console.log('Properties array:', properties);
+        
         const saleProperties = properties.filter(p => p.status === 'For Sale');
         const rentalProperties = properties.filter(p => p.status === 'For Rent');
         
         console.log('Loading properties...', { saleProperties: saleProperties.length, rentalProperties: rentalProperties.length });
+        console.log('Sale properties:', saleProperties);
         console.log('Current page:', window.location.pathname);
         
         // Load featured properties for homepage
@@ -658,10 +663,16 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Get the properties grid element
         const propertiesGridElement = document.getElementById('properties-grid');
+        console.log('Properties grid element:', propertiesGridElement);
         if (propertiesGridElement) {
             console.log('Properties grid found, loading sale properties...');
-            propertiesGridElement.innerHTML = saleProperties.map(createPropertyCard).join('');
+            console.log('Creating property cards...');
+            const propertyCards = saleProperties.map(createPropertyCard);
+            console.log('Property cards created:', propertyCards.length);
+            console.log('First property card:', propertyCards[0]);
+            propertiesGridElement.innerHTML = propertyCards.join('');
             console.log('Sale properties loaded:', saleProperties.length);
+            console.log('Grid innerHTML length:', propertiesGridElement.innerHTML.length);
         } else {
             console.log('Properties grid not found on page:', window.location.pathname);
         }
