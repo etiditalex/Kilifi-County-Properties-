@@ -656,9 +656,11 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Featured properties loaded:', featuredProperties.length);
         }
         
-        if (propertiesGrid) {
+        // Get the properties grid element
+        const propertiesGridElement = document.getElementById('properties-grid');
+        if (propertiesGridElement) {
             console.log('Properties grid found, loading sale properties...');
-            propertiesGrid.innerHTML = saleProperties.map(createPropertyCard).join('');
+            propertiesGridElement.innerHTML = saleProperties.map(createPropertyCard).join('');
             console.log('Sale properties loaded:', saleProperties.length);
         } else {
             console.log('Properties grid not found on page:', window.location.pathname);
@@ -715,9 +717,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Update the grid with filtered properties
-        const propertiesGrid = document.getElementById('properties-grid');
-        if (propertiesGrid) {
-            propertiesGrid.innerHTML = filteredProperties.map(createPropertyCard).join('');
+        const propertiesGridElement = document.getElementById('properties-grid');
+        if (propertiesGridElement) {
+            propertiesGridElement.innerHTML = filteredProperties.map(createPropertyCard).join('');
         }
         
         // Update rental properties grid if on rental page
@@ -896,8 +898,9 @@ document.addEventListener('DOMContentLoaded', function() {
             property.description.toLowerCase().includes(query.toLowerCase())
         );
         
-        if (propertiesGrid) {
-            propertiesGrid.innerHTML = filteredProperties.map(createPropertyCard).join('');
+        const propertiesGridElement = document.getElementById('properties-grid');
+        if (propertiesGridElement) {
+            propertiesGridElement.innerHTML = filteredProperties.map(createPropertyCard).join('');
         }
     }
 
@@ -1006,11 +1009,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Final fallback to ensure properties are displayed
     setTimeout(() => {
         console.log('Final fallback: Ensuring properties are visible...');
-        const propertiesGrid = document.getElementById('properties-grid');
+        const propertiesGridElement = document.getElementById('properties-grid');
         const rentalPropertiesGrid = document.getElementById('rental-properties-grid');
         const featuredPropertiesGrid = document.getElementById('featured-properties-grid');
         
-        if (propertiesGrid && propertiesGrid.children.length === 0) {
+        if (propertiesGridElement && propertiesGridElement.children.length === 0) {
             console.log('Properties grid is empty, forcing reload...');
             loadProperties();
         }
