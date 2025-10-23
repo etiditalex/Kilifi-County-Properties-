@@ -891,10 +891,12 @@ section {
     background: var(--white);
     max-width: 500px;
     width: 90%;
+    max-height: 90vh;
     padding: 40px;
     border-radius: 20px;
     position: relative;
     animation: slideDown 0.4s ease;
+    overflow-y: auto;
 }
 
 @keyframes slideDown {
