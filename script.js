@@ -741,8 +741,66 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (rentalPropertiesGrid) {
             console.log('Rental properties grid found, loading rental properties...');
-            rentalPropertiesGrid.innerHTML = rentalProperties.map(createPropertyCard).join('');
-            console.log('Rental properties loaded:', rentalProperties.length);
+            console.log('Rental properties count:', rentalProperties.length);
+            console.log('First rental property:', rentalProperties[0]);
+            
+            const rentalPropertyCards = rentalProperties.map(property => {
+                const features = property.features;
+                const featureItems = [];
+                
+                if (features.bedrooms) {
+                    featureItems.push(`<span class="property-feature"><i class="fas fa-bed"></i> ${features.bedrooms} Beds</span>`);
+                }
+                if (features.bathrooms) {
+                    featureItems.push(`<span class="property-feature"><i class="fas fa-bath"></i> ${features.bathrooms} Baths</span>`);
+                }
+                if (features.sqft) {
+                    featureItems.push(`<span class="property-feature"><i class="fas fa-ruler-combined"></i> ${features.sqft} sqft</span>`);
+                }
+                
+                return `
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="${property.image}" alt="${property.title}" onerror="this.style.display='none'">
+                            <div class="property-status">For Rent</div>
+                        </div>
+                        <div class="property-content">
+                            <div class="property-header">
+                                <h3>${property.title}</h3>
+                                <div class="property-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    ${property.location}
+                                </div>
+                            </div>
+                            <div class="property-description">
+                                <p>${property.description}</p>
+                            </div>
+                            <div class="property-price">${property.price}</div>
+                            <div class="property-features">
+                                ${featureItems.join('')}
+                            </div>
+                            <div class="property-actions">
+                                <a href="#" class="btn btn-primary" onclick="viewProperty(${property.id})">
+                                    <i class="fas fa-phone"></i> Contact Us
+                                </a>
+                                <a href="property-${property.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}.html" class="btn btn-outline">
+                                    More Information
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            rentalPropertiesGrid.innerHTML = rentalPropertyCards.join('');
+            console.log('Rental property cards loaded:', rentalProperties.length);
+            console.log('Rental grid innerHTML length:', rentalPropertiesGrid.innerHTML.length);
+            console.log('First rental property card HTML:', rentalPropertyCards[0]);
+            
+            // Force a reflow to ensure the content is visible
+            rentalPropertiesGrid.style.display = 'none';
+            rentalPropertiesGrid.offsetHeight; // Trigger reflow
+            rentalPropertiesGrid.style.display = 'grid';
         } else {
             console.log('Rental properties grid not found on page:', window.location.pathname);
         }
