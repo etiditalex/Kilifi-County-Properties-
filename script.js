@@ -99,13 +99,44 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// BOOKING FORM SUBMISSION
+// BOOKING FORM SUBMISSION - Send to WhatsApp
 if (bookingForm) {
     bookingForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
+        // Get form data
+        const formData = new FormData(bookingForm);
+        const fullName = bookingForm.querySelector('input[type="text"]').value;
+        const email = bookingForm.querySelector('input[type="email"]').value;
+        const phone = bookingForm.querySelector('input[type="tel"]').value;
+        const property = bookingForm.querySelector('select').value;
+        const propertyText = bookingForm.querySelector('select option:checked').text;
+        const date = bookingForm.querySelector('input[type="date"]').value;
+        const notes = bookingForm.querySelector('textarea').value;
+        
+        // Format message for WhatsApp
+        let message = `*NEW SITE VISIT BOOKING*\n\n`;
+        message += `*Name:* ${fullName}\n`;
+        message += `*Email:* ${email}\n`;
+        message += `*Phone:* ${phone}\n`;
+        message += `*Property:* ${propertyText}\n`;
+        message += `*Preferred Date:* ${date}\n`;
+        if (notes) {
+            message += `*Additional Notes:* ${notes}\n`;
+        }
+        message += `\n_Sent from Kilifi Properties Website_`;
+        
+        // WhatsApp number (Kenya format: remove + and spaces)
+        const whatsappNumber = '254724367338';
+        
+        // Create WhatsApp link with encoded message
+        const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        
+        // Open WhatsApp in new tab
+        window.open(whatsappLink, '_blank');
+        
         // Show success message
-        showNotification('Site visit request submitted successfully! We will contact you shortly.', 'success');
+        showNotification('Opening WhatsApp to send your booking request...', 'success');
         
         // Reset form
         bookingForm.reset();
@@ -113,17 +144,42 @@ if (bookingForm) {
         // Close modal
         setTimeout(() => {
             closeBookingModal();
-        }, 1500);
+        }, 2000);
     });
 }
 
-// CONTACT FORM SUBMISSION
+// CONTACT FORM SUBMISSION - Send to WhatsApp
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
+        // Get form data
+        const fullName = contactForm.querySelector('input[placeholder*="Name"]').value;
+        const email = contactForm.querySelector('input[type="email"]').value;
+        const phone = contactForm.querySelector('input[type="tel"]').value;
+        const subject = contactForm.querySelector('input[placeholder*="Subject"]')?.value || 'General Inquiry';
+        const messageText = contactForm.querySelector('textarea').value;
+        
+        // Format message for WhatsApp
+        let message = `*NEW CONTACT MESSAGE*\n\n`;
+        message += `*Name:* ${fullName}\n`;
+        message += `*Email:* ${email}\n`;
+        message += `*Phone:* ${phone}\n`;
+        message += `*Subject:* ${subject}\n`;
+        message += `*Message:* ${messageText}\n`;
+        message += `\n_Sent from Kilifi Properties Website_`;
+        
+        // WhatsApp number
+        const whatsappNumber = '254724367338';
+        
+        // Create WhatsApp link
+        const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        
+        // Open WhatsApp
+        window.open(whatsappLink, '_blank');
+        
         // Show success message
-        showNotification('Message sent successfully! We will get back to you soon.', 'success');
+        showNotification('Opening WhatsApp to send your message...', 'success');
         
         // Reset form
         contactForm.reset();
