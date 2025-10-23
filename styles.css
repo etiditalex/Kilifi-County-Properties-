@@ -1940,6 +1940,159 @@ section {
     background: var(--white);
 }
 
+/* Google Review CTA */
+.google-review-cta {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #4285f4, #34a853);
+    position: relative;
+    overflow: hidden;
+}
+
+.google-review-cta::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: pulse 15s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.google-review-box {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.google-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    font-size: 2.5rem;
+    color: #4285f4;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.google-review-box h2 {
+    color: var(--white);
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-family: var(--font-heading);
+}
+
+.google-review-box > p {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.btn-google {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 40px;
+    background: var(--white);
+    color: #4285f4;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: var(--transition);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border: 3px solid var(--white);
+}
+
+.btn-google:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+    background: #4285f4;
+    color: var(--white);
+}
+
+.btn-google i {
+    font-size: 1.3rem;
+}
+
+.small-text {
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+}
+
+/* Google Reviews Embed Section */
+.google-reviews-section {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.google-reviews-embed {
+    margin-top: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.google-reviews-embed iframe {
+    display: block;
+    width: 100%;
+    min-height: 450px;
+}
+
+.google-review-footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    background: var(--bg-light);
+    border-radius: 15px;
+}
+
+.google-review-footer p {
+    color: var(--gray);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.google-review-footer i {
+    color: #4285f4;
+    font-size: 1.2rem;
+}
+
+.google-review-footer a {
+    color: #4285f4;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.google-review-footer a:hover {
+    color: #34a853;
+    text-decoration: underline;
+}
+
 .stats-grid-reviews {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -2947,5 +3100,34 @@ section {
     
     .star-rating-input {
         font-size: 2rem;
+    }
+    
+    /* Google Review CTA Mobile */
+    .google-review-box h2 {
+        font-size: 1.5rem;
+    }
+    
+    .google-review-box > p {
+        font-size: 1rem;
+    }
+    
+    .btn-google {
+        padding: 15px 30px;
+        font-size: 1rem;
+    }
+    
+    .google-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+    }
+    
+    .google-reviews-embed iframe {
+        min-height: 350px;
+    }
+    
+    .google-review-footer p {
+        font-size: 0.9rem;
+        text-align: center;
     }
 }
