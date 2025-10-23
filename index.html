@@ -3,396 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kilifi Properties - Premier Real Estate in Coastal Kenya</title>
+    <meta name="description" content="Kilifi Properties - Your trusted partner for genuine land investments in Kilifi County, Kenya">
+    <title>Kilifi Properties - Premium Land for Sale in Kilifi County</title>
+    
+    <link rel="icon" href="https://res.cloudinary.com/dyfnobo9r/image/upload/v1760165424/Kilifi_county_properties_logo_eklmnb.jpg">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="header-top-border"></div>
-        <nav class="navbar">
-            <div class="nav-container">
-                <a href="index.html" class="nav-logo">
-                    <div class="logo-icon">
-                        <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1760165424/Kilifi_county_properties_logo_eklmnb.jpg" alt="Kilifi Properties Logo" class="logo-image">
-                    </div>
-                </a>
-                
-                <div class="nav-menu" id="nav-menu">
-                    <ul class="nav-list">
-                        <li class="nav-item">
-                            <a href="index.html" class="nav-link active">HOME</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="about.html" class="nav-link">ABOUT</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="land-for-sale.html" class="nav-link">LAND FOR SALE</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="developments.html" class="nav-link">DEVELOPMENTS</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a href="#" class="nav-link">INVESTOR UPDATES <i class="fas fa-chevron-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="blog.html">BLOG</a></li>
-                                <li><a href="news.html">NEWS</a></li>
-                                <li><a href="market-research.html">MARKET RESEARCH</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="about.html" class="nav-link">ABOUT US</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="contact.html" class="nav-link">CONTACT US</a>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="nav-buttons">
-                    <a href="#" class="booking-btn" onclick="openBookingModal()">
-                        <i class="fas fa-calendar"></i> Book Viewing
-                    </a>
-                </div>
-                
-                <div class="hamburger" id="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-
-
-    <!-- Hero Section with Carousel -->
-    <section id="home" class="hero">
-        <div class="hero-carousel">
-            <div class="carousel-container">
-                <div class="carousel-slide active">
-                                            <img src="https://drive.google.com/thumbnail?id=1wwrKolFzczcthFfe3WOgpu1OGW-5nSdT&sz=w1200" alt="Bahari Gardens">
-                    <div class="carousel-overlay">
-                        <div class="carousel-content">
-                            <h1>Your Dream Property in the Coastal Paradise</h1>
-                            <p>Discover exceptional residential and commercial properties across Kilifi, Nyali, Shanzu, Mtwapa, and Vipingo.</p>
-                            <div class="hero-buttons">
-                                <button class="btn btn-primary btn-large">
-                                    <i class="fas fa-search"></i> Find Your Property
-                                </button>
-                                <button class="btn btn-outline btn-large">
-                                    <i class="fas fa-vr-cardboard"></i> Virtual Tour
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="carousel-slide">
-                    <img src="https://drive.google.com/thumbnail?id=1Agrjh7dK-SnYQrQGRT6fw8Ik7z2lzKVb&sz=w1200" alt="Shanzu Modern Apartment">
-                    <div class="carousel-overlay">
-                        <div class="carousel-content">
-                            <h1>Premium Developments in Prime Locations</h1>
-                            <p>Experience luxury living with our state-of-the-art developments featuring modern amenities and stunning ocean views.</p>
-                            <div class="hero-buttons">
-                                <button class="btn btn-primary btn-large">
-                                    <i class="fas fa-building"></i> View Developments
-                                </button>
-                                <button class="btn btn-outline btn-large">
-                                    <i class="fas fa-calendar"></i> Book Viewing
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="carousel-slide">
-                    <img src="https://drive.google.com/thumbnail?id=1k8m3MhLIAZMboLcqAPEDF6ECUnzGB2Qz&sz=w1200" alt="Kilifi Creek House">
-                    <div class="carousel-overlay">
-                        <div class="carousel-content">
-                            <h1>Smart Investment Opportunities</h1>
-                            <p>Build your wealth with strategic coastal real estate investments offering exceptional returns and long-term value.</p>
-                            <div class="hero-buttons">
-                                <button class="btn btn-primary btn-large">
-                                    <i class="fas fa-chart-line"></i> Investment Guide
-                                </button>
-                                <button class="btn btn-outline btn-large">
-                                    <i class="fas fa-phone"></i> Consult Expert
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1760165424/Kilifi_county_properties_logo_eklmnb.jpg" alt="Kilifi Properties">
+                <span>KILIFI PROPERTIES</span>
+            </a>
             
-            <!-- Carousel Navigation -->
-            <button class="carousel-btn carousel-prev">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="carousel-btn carousel-next">
-                <i class="fas fa-chevron-right"></i>
-            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="lands.html">Land for Sale</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="blogs.html">Blog</a></li>
+                <li><a href="updates.html">Project Updates</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button class="btn-book" onclick="openBookingModal()">
+                    <i class="fas fa-calendar-check"></i> Book Site Visit
+                </button></li>
+            </ul>
             
-            <!-- Carousel Indicators -->
-            <div class="carousel-indicators">
-                <span class="indicator active" data-slide="0"></span>
-                <span class="indicator" data-slide="1"></span>
-                <span class="indicator" data-slide="2"></span>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
-        
-        <div class="hero-stats">
-            <div class="stat">
-                <h3>500+</h3>
-                <p>Properties Sold</p>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Invest in Your Future with <span>Premium Land</span></h1>
+            <p class="hero-subtitle">Genuine titled plots in Kenya's most sought-after coastal locations</p>
+            <div class="hero-buttons">
+                <a href="lands.html" class="btn btn-primary">
+                    <i class="fas fa-map-marked-alt"></i> View Properties
+                </a>
+                <button class="btn btn-secondary" onclick="openBookingModal()">
+                    <i class="fas fa-calendar"></i> Book Site Visit
+                </button>
             </div>
-            <div class="stat">
-                <h3>15+</h3>
-                <p>Years Experience</p>
-            </div>
-            <div class="stat">
-                <h3>100%</h3>
-                <p>Client Satisfaction</p>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <h3>3+</h3>
+                    <p>Prime Locations</p>
+                </div>
+                <div class="stat">
+                    <h3>100%</h3>
+                    <p>Genuine Titles</p>
+                </div>
+                <div class="stat">
+                    <h3>50+</h3>
+                    <p>Plots Available</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Properties Section -->
+    <!-- Featured Properties -->
     <section class="featured-properties">
         <div class="container">
             <div class="section-header">
-                <h2>Featured Properties</h2>
-                <p>Discover our most sought-after properties in prime coastal locations</p>
+                <span class="badge">Our Properties</span>
+                <h2>Featured Land for Sale</h2>
+                <p>Discover prime investment opportunities in Kilifi County</p>
             </div>
-            
-            <div class="properties-grid" id="featured-properties-grid">
-                <!-- Properties will be loaded dynamically -->
-            </div>
-            
-            <div class="text-center" style="margin-top: 25px;">
-                <a href="developments.html" class="btn btn-primary btn-full">
-                    <i class="fas fa-home"></i> View All Developments
-                </a>
-            </div>
-        </div>
-                    </section>
-            
-                <!-- Virtual Tour Section -->
-                <section class="virtual-tour-section">
-                    <div class="container">
-                        <div class="virtual-tour-content">
-                            <div class="virtual-tour-text">
-                                <div class="section-badge">
-                                    <span>Virtual Tours</span>
-                                </div>
-                                <h2>Experience Properties Virtually</h2>
-                                <p>Take immersive virtual tours of our premium properties from the comfort of your home. Explore every detail and get a true feel for the space before visiting in person.</p>
-                                <div class="virtual-tour-features">
-                                    <span><i class="fas fa-vr-cardboard"></i> 360° Views</span>
-                                    <span><i class="fas fa-mobile-alt"></i> Mobile Compatible</span>
-                                    <span><i class="fas fa-clock"></i> Available 24/7</span>
-                                </div>
-                                <a href="https://youtu.be/mDpCY9k6iMY?si=OOiQc8Ow06Qwnrhv" target="_blank" class="btn btn-primary btn-large">
-                                    <i class="fas fa-play"></i> Watch Virtual Tour
-                                </a>
-                            </div>
-                            
-                            <div class="virtual-tour-visual">
-                                <div class="tour-video">
-                                    <iframe width="100%" height="400" src="https://www.youtube.com/embed/mDpCY9k6iMY?si=OOiQc8Ow06Qwnrhv" title="Nyumbani Developers Virtual Tour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                </div>
-                            </div>
-                        </div>
+
+            <div class="properties-grid">
+                <!-- Property 1 -->
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207123/Msabaha_Phase_6_hifwdu.jpg" alt="Msabaha Phase 6">
+                        <div class="property-badge">Featured</div>
                     </div>
-                </section>
-            
-                <!-- Services Showcase Section -->
-    <section class="services-showcase">
-        <div class="container">
-            <div class="section-header">
-                <h2>Explore Our Premium Services</h2>
-                <p>Discover the complete range of real estate solutions we offer across Kenya's stunning coastal region</p>
-            </div>
-            
-            <div class="services-carousel-container">
-                <div class="services-carousel">
-                    <div class="service-card featured">
-                        <div class="service-image">
-                            <img src="https://drive.google.com/thumbnail?id=1TZIzuEPs2GbvvBxY62DMLO3OaNDLZV_Y&sz=w600" alt="Luxury Properties for Sale">
-                            <div class="service-overlay">
-                                <div class="service-icon">
-                                    <i class="fas fa-home"></i>
-                                </div>
-                            </div>
+                    <div class="property-info">
+                        <h3>Msabaha Phase 6</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Msabaha, Kilifi County</p>
+                        <p class="description">Premium residential plots in a rapidly developing area with excellent infrastructure and accessibility.</p>
+                        <div class="features">
+                            <span><i class="fas fa-ruler-combined"></i> 50x100</span>
+                            <span><i class="fas fa-certificate"></i> Title Ready</span>
                         </div>
-                        <div class="service-content">
-                            <h3>Properties For Sale</h3>
-                            <p>Discover exclusive luxury properties available for purchase across Nyali, Shanzu, Kilifi, Mtwapa, and Vipingo.</p>
-                            <div class="service-features">
-                                <span><i class="fas fa-check"></i> Premium Locations</span>
-                                <span><i class="fas fa-check"></i> Verified Properties</span>
-                                <span><i class="fas fa-check"></i> Expert Guidance</span>
-                            </div>
-                            <a href="developments.html" class="btn btn-primary btn-full">
-                                <i class="fas fa-arrow-right"></i> Explore Developments
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="service-card">
-                        <div class="service-image">
-                            <img src="https://drive.google.com/thumbnail?id=1Agrjh7dK-SnYQrQGRT6fw8Ik7z2lzKVb&sz=w600" alt="Rental Properties">
-                            <div class="service-overlay">
-                                <div class="service-icon">
-                                    <i class="fas fa-key"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="service-content">
-                            <h3>Properties For Rent</h3>
-                            <p>Find your perfect rental property with premium amenities and prime coastal locations.</p>
-                            <div class="service-features">
-                                <span><i class="fas fa-check"></i> Flexible Terms</span>
-                                <span><i class="fas fa-check"></i> Prime Locations</span>
-                                <span><i class="fas fa-check"></i> Quick Process</span>
-                            </div>
-                            <a href="contact.html" class="btn btn-outline btn-full">
-                                <i class="fas fa-arrow-right"></i> Contact Us
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="service-card">
-                        <div class="service-image">
-                            <img src="https://drive.google.com/thumbnail?id=1k8m3MhLIAZMboLcqAPEDF6ECUnzGB2Qz&sz=w600" alt="Latest Developments">
-                            <div class="service-overlay">
-                                <div class="service-icon">
-                                    <i class="fas fa-building"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="service-content">
-                            <h3>Latest Developments</h3>
-                            <p>Explore our upcoming and ongoing development projects with modern designs and luxury features.</p>
-                            <div class="service-features">
-                                <span><i class="fas fa-check"></i> Modern Design</span>
-                                <span><i class="fas fa-check"></i> Luxury Features</span>
-                                <span><i class="fas fa-check"></i> Investment Ready</span>
-                            </div>
-                            <a href="view-developments.html" class="btn btn-outline btn-full">
-                                <i class="fas fa-arrow-right"></i> View Projects
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="service-card">
-                        <div class="service-image">
-                            <img src="https://drive.google.com/thumbnail?id=1wwrKolFzczcthFfe3WOgpu1OGW-5nSdT&sz=w600" alt="Market Insights">
-                            <div class="service-overlay">
-                                <div class="service-icon">
-                                    <i class="fas fa-chart-line"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="service-content">
-                            <h3>Market Insights</h3>
-                            <p>Stay informed with our comprehensive market research, trends, and investment analysis.</p>
-                            <div class="service-features">
-                                <span><i class="fas fa-check"></i> Expert Analysis</span>
-                                <span><i class="fas fa-check"></i> Market Trends</span>
-                                <span><i class="fas fa-check"></i> Investment Tips</span>
-                            </div>
-                            <a href="market-research.html" class="btn btn-outline btn-full">
-                                <i class="fas fa-arrow-right"></i> View Reports
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="service-card">
-                        <div class="service-image">
-                            <img src="https://drive.google.com/thumbnail?id=16_1NFzGRAqfgtm0-mcg0vHmPqd7f9sEH&sz=w600" alt="Latest News">
-                            <div class="service-overlay">
-                                <div class="service-icon">
-                                    <i class="fas fa-newspaper"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="service-content">
-                            <h3>Latest News</h3>
-                            <p>Get updates on industry developments, company announcements, and market trends.</p>
-                            <div class="service-features">
-                                <span><i class="fas fa-check"></i> Industry Updates</span>
-                                <span><i class="fas fa-check"></i> Company News</span>
-                                <span><i class="fas fa-check"></i> Market Trends</span>
-                            </div>
-                            <a href="news.html" class="btn btn-outline btn-full">
-                                <i class="fas fa-arrow-right"></i> Read News
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="service-card">
-                        <div class="service-image">
-                            <img src="https://drive.google.com/thumbnail?id=1Agrjh7dK-SnYQrQGRT6fw8Ik7z2lzKVb&sz=w600" alt="Expert Consultation">
-                            <div class="service-overlay">
-                                <div class="service-icon">
-                                    <i class="fas fa-user-tie"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="service-content">
-                            <h3>Expert Consultation</h3>
-                            <p>Get personalized advice from our experienced real estate professionals for your investment decisions.</p>
-                            <div class="service-features">
-                                <span><i class="fas fa-check"></i> Market Analysis</span>
-                                <span><i class="fas fa-check"></i> Investment Strategy</span>
-                                <span><i class="fas fa-check"></i> Legal Guidance</span>
-                            </div>
-                            <a href="consult-expert.html" class="btn btn-outline btn-full">
-                                <i class="fas fa-arrow-right"></i> Consult Expert
-                            </a>
+                        <div class="property-footer">
+                            <div class="price">Contact for Price</div>
+                            <a href="lands.html" class="btn-view">View Details <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Carousel Navigation -->
-                <button class="carousel-nav-btn prev-btn" onclick="moveServicesCarousel(-1)">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="carousel-nav-btn next-btn" onclick="moveServicesCarousel(1)">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-                
-                <!-- Carousel Indicators -->
-                <div class="services-carousel-indicators">
-                    <span class="indicator active" onclick="goToServicesSlide(0)"></span>
-                    <span class="indicator" onclick="goToServicesSlide(1)"></span>
-                    <span class="indicator" onclick="goToServicesSlide(2)"></span>
-                    <span class="indicator" onclick="goToServicesSlide(3)"></span>
-                    <span class="indicator" onclick="goToServicesSlide(4)"></span>
-                    <span class="indicator" onclick="goToServicesSlide(5)"></span>
+
+                <!-- Property 2 -->
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207041/Malindi_Airport_View_Gardens_dsbvqb.jpg" alt="Malindi Airport View Gardens">
+                        <div class="property-badge">Hot Deal</div>
+                    </div>
+                    <div class="property-info">
+                        <h3>Malindi Airport View Gardens</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Malindi, Kilifi County</p>
+                        <p class="description">Strategic location near Malindi Airport, perfect for residential or commercial development.</p>
+                        <div class="features">
+                            <span><i class="fas fa-plane"></i> Near Airport</span>
+                            <span><i class="fas fa-chart-line"></i> High ROI</span>
+                        </div>
+                        <div class="property-footer">
+                            <div class="price">Contact for Price</div>
+                            <a href="lands.html" class="btn-view">View Details <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property 3 -->
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761206926/Mtondia_Higway_Gardens_kxrkqr.jpg" alt="Mtondia Highway Gardens">
+                        <div class="property-badge">Best Value</div>
+                    </div>
+                    <div class="property-info">
+                        <h3>Mtondia Highway Gardens</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Mtondia, Kilifi County</p>
+                        <p class="description">Excellent highway access with flexible payment plans, ideal for long-term investment.</p>
+                        <div class="features">
+                            <span><i class="fas fa-road"></i> Highway</span>
+                            <span><i class="fas fa-hand-holding-usd"></i> Flexible Pay</span>
+                        </div>
+                        <div class="property-footer">
+                            <div class="price">Contact for Price</div>
+                            <a href="lands.html" class="btn-view">View Details <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-50">
+                <a href="lands.html" class="btn btn-primary">View All Properties <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">Why Choose Us</span>
+                <h2>Your Trusted Land Investment Partner</h2>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="icon"><i class="fas fa-certificate"></i></div>
+                    <h3>Genuine Titles</h3>
+                    <p>100% verified and genuine title deeds for all our properties</p>
+                </div>
+                <div class="feature-box">
+                    <div class="icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <h3>Prime Locations</h3>
+                    <p>Strategically located plots near major highways and amenities</p>
+                </div>
+                <div class="feature-box">
+                    <div class="icon"><i class="fas fa-hand-holding-usd"></i></div>
+                    <h3>Flexible Payment</h3>
+                    <p>Easy payment plans tailored to your financial needs</p>
+                </div>
+                <div class="feature-box">
+                    <div class="icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Secure Investment</h3>
+                    <p>Transparent processes and legal documentation</p>
+                </div>
+                <div class="feature-box">
+                    <div class="icon"><i class="fas fa-users"></i></div>
+                    <h3>Expert Support</h3>
+                    <p>Professional guidance throughout your purchase journey</p>
+                </div>
+                <div class="feature-box">
+                    <div class="icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>High ROI</h3>
+                    <p>Land values showing consistent appreciation over time</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Enquire Now Section -->
-    <section class="enquire-now-section">
+    <!-- CTA Section -->
+    <section class="cta-section">
         <div class="container">
-            <div class="enquire-now-content">
-                <div class="enquire-now-text">
-                    <h2>Ready to Find Your Dream Property?</h2>
-                    <p>Get in touch with us today and let our expert team help you discover the perfect coastal property that matches your lifestyle and investment goals.</p>
-                    <div class="enquire-now-actions">
-                        <a href="https://wa.me/254713861916?text=Hello! I'm interested in your coastal properties. Can you help me?" class="btn btn-primary btn-large" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Enquire Now!
-                        </a>
-                        <a href="contact.html" class="btn btn-outline btn-large">Contact Us</a>
-                    </div>
-                </div>
-            </div>
+            <h2>Ready to Own Your Dream Plot?</h2>
+            <p>Schedule a site visit today and take the first step towards securing your future</p>
+            <button class="btn btn-white" onclick="openBookingModal()">
+                <i class="fas fa-calendar-check"></i> Book Site Visit Now
+            </button>
         </div>
     </section>
 
@@ -400,106 +216,92 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <div class="logo-icon">
-                            <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1760165424/Kilifi_county_properties_logo_eklmnb.jpg" alt="Kilifi Properties Logo" class="logo-image">
-                        </div>
-                        <h3>KILIFI PROPERTIES</h3>
-                    </div>
+                <div class="footer-col">
+                    <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1760165424/Kilifi_county_properties_logo_eklmnb.jpg" alt="Kilifi Properties" class="footer-logo">
+                    <h3>KILIFI PROPERTIES</h3>
+                    <p>Building Dreams, Securing Futures</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fas fa-phone"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-                
-                <div class="footer-section">
-                    <h4>COMPANY</h4>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
+                        <li><a href="lands.html">Land for Sale</a></li>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="developments.html">Services</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="contact.html">Get In Touch</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="updates.html">Project Updates</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-section">
-                    <h4>EXPLORE</h4>
+                <div class="footer-col">
+                    <h4>Resources</h4>
                     <ul>
-                        <li><a href="view-developments.html">View Developments</a></li>
-                        <li><a href="investment-guide.html">Investment Guide</a></li>
-                        <li><a href="news.html">News</a></li>
+                        <li><a href="blogs.html">Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#" onclick="openBookingModal(); return false;">Book Site Visit</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-section">
-                    <h4>CONTACT US</h4>
-                    <div class="contact-info">
-                        <p><i class="fas fa-phone"></i> +254 713 861916</p>
-                        <p><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/XUUMfGBLk4LQP2dSA" target="_blank" style="color: inherit; text-decoration: none;">Coast Road, Kilifi, Kenya</a></p>
-                        <p><i class="fas fa-envelope"></i> info@kilifiproperties.co.ke</p>
-                    </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-phone"></i> +254 700 000 000</li>
+                        <li><i class="fas fa-envelope"></i> info@kilifiproperties.co.ke</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Kilifi County, Kenya</li>
+                    </ul>
                 </div>
             </div>
-            
             <div class="footer-bottom">
                 <p>&copy; 2025 Kilifi Properties. All rights reserved.</p>
             </div>
         </div>
-        
-        <!-- Scroll to Top Button -->
-        <button class="scroll-to-top" onclick="scrollToTop()">
-            <i class="fas fa-arrow-up"></i>
-        </button>
     </footer>
 
-    <!-- Booking Modal -->
-    <div id="booking-modal" class="modal">
+    <!-- Book Site Visit Modal -->
+    <div class="modal" id="bookingModal">
         <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Book a Property Viewing</h2>
-            <form id="booking-form">
+            <span class="modal-close" onclick="closeBookingModal()">&times;</span>
+            <h2><i class="fas fa-calendar-check"></i> Book a Site Visit</h2>
+            <p>Fill out the form below and we'll get back to you shortly</p>
+            
+            <form class="booking-form" id="bookingForm">
                 <div class="form-group">
-                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" placeholder="Full Name *" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" placeholder="Your Email" required>
+                    <input type="email" placeholder="Email Address *" required>
                 </div>
                 <div class="form-group">
-                    <input type="tel" placeholder="Your Phone" required>
+                    <input type="tel" placeholder="Phone Number *" required>
                 </div>
                 <div class="form-group">
                     <select required>
-                        <option value="">Select Property</option>
-                        <option value="property1">Coastal Villa - Nyali</option>
-                        <option value="property2">Kilifi Heights - Kilifi</option>
-                        <option value="property3">Shanzu Gardens - Shanzu</option>
+                        <option value="">Select Property *</option>
+                        <option value="msabaha">Msabaha Phase 6</option>
+                        <option value="malindi">Malindi Airport View Gardens</option>
+                        <option value="mtondia">Mtondia Highway Gardens</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <input type="date" required>
+                    <input type="date" placeholder="Preferred Date *" required>
                 </div>
                 <div class="form-group">
-                    <input type="time" required>
+                    <textarea rows="4" placeholder="Additional Notes"></textarea>
                 </div>
-                <div class="form-group">
-                    <textarea placeholder="Additional Notes" rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary btn-full">Book Viewing</button>
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fas fa-paper-plane"></i> Submit Request
+                </button>
             </form>
         </div>
     </div>
 
-    <script src="script.js"></script>
-    
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
+    <script src="script.js"></script>
 </body>
 </html>
-

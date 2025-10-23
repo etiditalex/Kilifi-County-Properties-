@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Read the latest insights on land investment, real estate trends, and property tips from Kilifi Properties">
+    <title>Blog - Kilifi Properties</title>
+    
+    <link rel="icon" href="https://res.cloudinary.com/dyfnobo9r/image/upload/v1760165424/Kilifi_county_properties_logo_eklmnb.jpg">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1760165424/Kilifi_county_properties_logo_eklmnb.jpg" alt="Kilifi Properties">
+                <span>KILIFI PROPERTIES</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="lands.html">Land for Sale</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="blogs.html" class="active">Blog</a></li>
+                <li><a href="updates.html">Project Updates</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button class="btn-book" onclick="openBookingModal()">
+                    <i class="fas fa-calendar-check"></i> Book Site Visit
+                </button></li>
+            </ul>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Blog & Insights</h1>
+            <p>Stay informed with the latest real estate trends and investment tips</p>
+        </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="blog-grid">
+                <!-- Blog Post 1 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207123/Msabaha_Phase_6_hifwdu.jpg" alt="Land Investment Guide">
+                        <div class="blog-category">Investment Tips</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> January 15, 2025</span>
+                            <span><i class="fas fa-clock"></i> 5 min read</span>
+                        </div>
+                        <h3>Why Investing in Coastal Land is a Smart Choice in 2025</h3>
+                        <p>
+                            Discover why coastal properties in Kenya, especially in Kilifi County, continue to be one of the 
+                            most lucrative investment opportunities. Learn about appreciation rates, development potential, 
+                            and strategic location advantages.
+                        </p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207041/Malindi_Airport_View_Gardens_dsbvqb.jpg" alt="Title Verification">
+                        <div class="blog-category">Legal Guide</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> January 10, 2025</span>
+                            <span><i class="fas fa-clock"></i> 7 min read</span>
+                        </div>
+                        <h3>How to Verify Genuine Land Titles in Kenya</h3>
+                        <p>
+                            A comprehensive guide on verifying land titles before making a purchase. Learn the step-by-step 
+                            process of conducting due diligence and protecting yourself from fraud in land transactions.
+                        </p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761206926/Mtondia_Higway_Gardens_kxrkqr.jpg" alt="Payment Plans">
+                        <div class="blog-category">Financial Planning</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> January 5, 2025</span>
+                            <span><i class="fas fa-clock"></i> 6 min read</span>
+                        </div>
+                        <h3>Understanding Flexible Payment Plans for Land Purchase</h3>
+                        <p>
+                            Explore various payment plan options available for land purchase in Kenya. Learn how to structure 
+                            your payments, calculate interest, and choose the best plan for your financial situation.
+                        </p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 4 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207123/Msabaha_Phase_6_hifwdu.jpg" alt="Location Selection">
+                        <div class="blog-category">Property Guide</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> December 28, 2024</span>
+                            <span><i class="fas fa-clock"></i> 8 min read</span>
+                        </div>
+                        <h3>Choosing the Right Location for Your Land Investment</h3>
+                        <p>
+                            Location is everything in real estate. This guide helps you identify key factors to consider when 
+                            selecting land, including accessibility, amenities, growth potential, and infrastructure development.
+                        </p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 5 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207041/Malindi_Airport_View_Gardens_dsbvqb.jpg" alt="ROI Calculation">
+                        <div class="blog-category">Investment Tips</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> December 20, 2024</span>
+                            <span><i class="fas fa-clock"></i> 5 min read</span>
+                        </div>
+                        <h3>Calculating ROI on Land Investments in Kilifi County</h3>
+                        <p>
+                            Learn how to calculate your potential return on investment for land purchases. Understand market 
+                            trends, appreciation rates, and factors that influence land value over time.
+                        </p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 6 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761206926/Mtondia_Higway_Gardens_kxrkqr.jpg" alt="Development Tips">
+                        <div class="blog-category">Development</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> December 15, 2024</span>
+                            <span><i class="fas fa-clock"></i> 10 min read</span>
+                        </div>
+                        <h3>From Purchase to Development: Your Complete Guide</h3>
+                        <p>
+                            A step-by-step guide covering everything from purchasing land to starting construction. Learn about 
+                            permits, approvals, utility connections, and working with contractors in coastal Kenya.
+                        </p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated with Our Newsletter</h2>
+                <p>Get the latest property listings, investment tips, and market insights delivered to your inbox</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i> Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1760165424/Kilifi_county_properties_logo_eklmnb.jpg" alt="Kilifi Properties" class="footer-logo">
+                    <h3>KILIFI PROPERTIES</h3>
+                    <p>Building Dreams, Securing Futures</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="lands.html">Land for Sale</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="updates.html">Project Updates</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="blogs.html">Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#" onclick="openBookingModal(); return false;">Book Site Visit</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-phone"></i> +254 700 000 000</li>
+                        <li><i class="fas fa-envelope"></i> info@kilifiproperties.co.ke</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Kilifi County, Kenya</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kilifi Properties. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Book Site Visit Modal -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeBookingModal()">&times;</span>
+            <h2><i class="fas fa-calendar-check"></i> Book a Site Visit</h2>
+            <p>Fill out the form below and we'll get back to you shortly</p>
+            
+            <form class="booking-form" id="bookingForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Full Name *" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address *" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone Number *" required>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="">Select Property *</option>
+                        <option value="msabaha">Msabaha Phase 6</option>
+                        <option value="malindi">Malindi Airport View Gardens</option>
+                        <option value="mtondia">Mtondia Highway Gardens</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="date" placeholder="Preferred Date *" required>
+                </div>
+                <div class="form-group">
+                    <textarea rows="4" placeholder="Additional Notes"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fas fa-paper-plane"></i> Submit Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
