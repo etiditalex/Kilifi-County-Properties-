@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Browse premium land for sale in Kilifi County - Genuine titles, flexible payment plans">
-    <title>Land for Sale - Kilifi Properties</title>
+    <meta name="description" content="Photo Gallery - View our stunning properties and developments in Kilifi County">
+    <title>Photo Gallery - Kilifi Properties</title>
     
     <link rel="icon" href="https://res.cloudinary.com/dyfnobo9r/image/upload/v1760165424/Kilifi_county_properties_logo_eklmnb.jpg">
     
@@ -27,9 +27,9 @@
             
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="lands.html" class="active">Land for Sale</a></li>
+                <li><a href="lands.html">Land for Sale</a></li>
                 <li><a href="about.html">About Us</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
                 <li><a href="blogs.html">Blog</a></li>
                 <li><a href="updates.html">Project Updates</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -49,144 +49,171 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>Premium Land for Sale</h1>
-            <p>Invest in genuine titled plots across Kilifi County's prime locations</p>
+            <h1>Photo Gallery</h1>
+            <p>Explore our stunning properties and developments across Kilifi County</p>
         </div>
     </section>
 
-    <!-- Filter Section -->
-    <section class="filter-section">
+    <!-- Gallery Filter -->
+    <section class="gallery-filter-section">
         <div class="container">
-            <div class="filter-bar">
-                <div class="filter-search">
-                    <i class="fas fa-search"></i>
-                    <input type="text" id="searchInput" placeholder="Search by property name...">
-                </div>
-                <div class="filter-group">
-                    <select id="locationFilter" class="filter-select">
-                        <option value="">All Locations</option>
-                        <option value="Msabaha">Msabaha</option>
-                        <option value="Malindi">Malindi</option>
-                        <option value="Mtondia">Mtondia</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <select id="priceFilter" class="filter-select">
-                        <option value="">All Prices</option>
-                        <option value="0-500000">Below KSh 500,000</option>
-                        <option value="500000-1000000">KSh 500,000 - 1,000,000</option>
-                        <option value="1000000-2000000">KSh 1,000,000 - 2,000,000</option>
-                        <option value="2000000+">Above KSh 2,000,000</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <select id="typeFilter" class="filter-select">
-                        <option value="">All Types</option>
-                        <option value="Residential">Residential</option>
-                        <option value="Commercial">Commercial</option>
-                        <option value="Mixed">Mixed Use</option>
-                    </select>
-                </div>
-                <button class="btn-reset" id="resetFilters">
-                    <i class="fas fa-redo"></i> Reset
+            <div class="gallery-filter-bar">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th"></i> All Photos
+                </button>
+                <button class="filter-btn" data-filter="properties">
+                    <i class="fas fa-home"></i> Properties
+                </button>
+                <button class="filter-btn" data-filter="infrastructure">
+                    <i class="fas fa-road"></i> Infrastructure
+                </button>
+                <button class="filter-btn" data-filter="aerial">
+                    <i class="fas fa-plane"></i> Aerial Views
+                </button>
+                <button class="filter-btn" data-filter="developments">
+                    <i class="fas fa-building"></i> Developments
                 </button>
             </div>
-            <div class="filter-results">
-                <p id="resultsCount">Showing <span>3</span> properties</p>
-            </div>
         </div>
     </section>
 
-    <!-- Properties Listing -->
-    <section class="properties-listing">
+    <!-- Gallery Section -->
+    <section class="gallery-section">
         <div class="container">
-            <div class="properties-grid" id="propertiesGrid">
-                <!-- Property 1 - Msabaha Phase 6 -->
-                <div class="property-card" data-name="Msabaha Phase 6" data-location="Msabaha" data-price="850000" data-type="Residential">
-                    <div class="property-image">
-                        <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207123/Msabaha_Phase_6_hifwdu.jpg" alt="Msabaha Phase 6">
-                        <div class="property-badge">Featured</div>
-                    </div>
-                    <div class="property-info">
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Property Images -->
+                <div class="gallery-item" data-category="properties">
+                    <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207123/Msabaha_Phase_6_hifwdu.jpg" alt="Msabaha Phase 6">
+                    <div class="gallery-overlay">
                         <h3>Msabaha Phase 6</h3>
-                        <p class="location"><i class="fas fa-map-marker-alt"></i> Msabaha, Kilifi County</p>
-                        <p class="description">Premium residential plots with excellent infrastructure and accessibility. Perfect for development.</p>
-                        <div class="features">
-                            <span><i class="fas fa-ruler-combined"></i> 50x100</span>
-                            <span><i class="fas fa-certificate"></i> Title Ready</span>
-                            <span><i class="fas fa-road"></i> Good Roads</span>
-                        </div>
-                        <div class="property-footer">
-                            <div class="price">KSh 850,000</div>
-                            <button class="btn-view" onclick="viewPropertyDetails('msabaha')">View Details <i class="fas fa-arrow-right"></i></button>
-                        </div>
+                        <p>Premium Residential Plots</p>
+                        <button class="btn-view-image" onclick="openLightbox(0)">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
                     </div>
                 </div>
 
-                <!-- Property 2 - Malindi Airport View Gardens -->
-                <div class="property-card" data-name="Malindi Airport View Gardens" data-location="Malindi" data-price="1200000" data-type="Commercial">
-                    <div class="property-image">
-                        <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207041/Malindi_Airport_View_Gardens_dsbvqb.jpg" alt="Malindi Airport View Gardens">
-                        <div class="property-badge hot">Hot Deal</div>
-                    </div>
-                    <div class="property-info">
+                <div class="gallery-item" data-category="properties">
+                    <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207041/Malindi_Airport_View_Gardens_dsbvqb.jpg" alt="Malindi Airport View Gardens">
+                    <div class="gallery-overlay">
                         <h3>Malindi Airport View Gardens</h3>
-                        <p class="location"><i class="fas fa-map-marker-alt"></i> Malindi, Kilifi County</p>
-                        <p class="description">Strategic location near Malindi Airport, perfect for residential or commercial development.</p>
-                        <div class="features">
-                            <span><i class="fas fa-plane"></i> Near Airport</span>
-                            <span><i class="fas fa-chart-line"></i> High ROI</span>
-                            <span><i class="fas fa-building"></i> Multi-Use</span>
-                        </div>
-                        <div class="property-footer">
-                            <div class="price">KSh 1,200,000</div>
-                            <button class="btn-view" onclick="viewPropertyDetails('malindi')">View Details <i class="fas fa-arrow-right"></i></button>
-                        </div>
+                        <p>Strategic Location</p>
+                        <button class="btn-view-image" onclick="openLightbox(1)">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
                     </div>
                 </div>
 
-                <!-- Property 3 - Mtondia Highway Gardens -->
-                <div class="property-card" data-name="Mtondia Highway Gardens" data-location="Mtondia" data-price="650000" data-type="Mixed">
-                    <div class="property-image">
-                        <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761206926/Mtondia_Higway_Gardens_kxrkqr.jpg" alt="Mtondia Highway Gardens">
-                        <div class="property-badge value">Best Value</div>
-                    </div>
-                    <div class="property-info">
+                <div class="gallery-item" data-category="properties">
+                    <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761206926/Mtondia_Higway_Gardens_kxrkqr.jpg" alt="Mtondia Highway Gardens">
+                    <div class="gallery-overlay">
                         <h3>Mtondia Highway Gardens</h3>
-                        <p class="location"><i class="fas fa-map-marker-alt"></i> Mtondia, Kilifi County</p>
-                        <p class="description">Excellent highway access with flexible payment plans, ideal for long-term investment.</p>
-                        <div class="features">
-                            <span><i class="fas fa-road"></i> Highway</span>
-                            <span><i class="fas fa-hand-holding-usd"></i> Flexible Pay</span>
-                            <span><i class="fas fa-water"></i> Water Ready</span>
-                        </div>
-                        <div class="property-footer">
-                            <div class="price">KSh 650,000</div>
-                            <button class="btn-view" onclick="viewPropertyDetails('mtondia')">View Details <i class="fas fa-arrow-right"></i></button>
-                        </div>
+                        <p>Highway Access</p>
+                        <button class="btn-view-image" onclick="openLightbox(2)">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
                     </div>
                 </div>
-            </div>
 
-            <!-- No Results Message -->
-            <div class="no-results" id="noResults" style="display: none;">
-                <i class="fas fa-search"></i>
-                <h3>No Properties Found</h3>
-                <p>Try adjusting your filters or search criteria</p>
-                <button class="btn btn-primary" onclick="resetAllFilters()">
-                    <i class="fas fa-redo"></i> Reset Filters
-                </button>
+                <!-- Infrastructure Images -->
+                <div class="gallery-item" data-category="infrastructure">
+                    <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207123/Msabaha_Phase_6_hifwdu.jpg" alt="Road Infrastructure">
+                    <div class="gallery-overlay">
+                        <h3>Road Infrastructure</h3>
+                        <p>Well-Planned Roads</p>
+                        <button class="btn-view-image" onclick="openLightbox(3)">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="infrastructure">
+                    <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761206926/Mtondia_Higway_Gardens_kxrkqr.jpg" alt="Utilities">
+                    <div class="gallery-overlay">
+                        <h3>Utilities & Amenities</h3>
+                        <p>Modern Infrastructure</p>
+                        <button class="btn-view-image" onclick="openLightbox(4)">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Aerial Views -->
+                <div class="gallery-item" data-category="aerial">
+                    <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207041/Malindi_Airport_View_Gardens_dsbvqb.jpg" alt="Aerial View">
+                    <div class="gallery-overlay">
+                        <h3>Aerial View</h3>
+                        <p>Bird's Eye Perspective</p>
+                        <button class="btn-view-image" onclick="openLightbox(5)">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Developments -->
+                <div class="gallery-item" data-category="developments">
+                    <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207123/Msabaha_Phase_6_hifwdu.jpg" alt="Development Progress">
+                    <div class="gallery-overlay">
+                        <h3>Development Progress</h3>
+                        <p>Ongoing Projects</p>
+                        <button class="btn-view-image" onclick="openLightbox(6)">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="developments">
+                    <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761206926/Mtondia_Higway_Gardens_kxrkqr.jpg" alt="Completed Projects">
+                    <div class="gallery-overlay">
+                        <h3>Completed Projects</h3>
+                        <p>Success Stories</p>
+                        <button class="btn-view-image" onclick="openLightbox(7)">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="properties">
+                    <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207041/Malindi_Airport_View_Gardens_dsbvqb.jpg" alt="Prime Land">
+                    <div class="gallery-overlay">
+                        <h3>Prime Land Plots</h3>
+                        <p>Investment Opportunities</p>
+                        <button class="btn-view-image" onclick="openLightbox(8)">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">
+            <i class="fas fa-times"></i>
+        </button>
+        <button class="lightbox-prev" onclick="changeLightboxImage(-1)">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-next" onclick="changeLightboxImage(1)">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="lightbox-content">
+            <img id="lightboxImage" src="" alt="">
+            <div class="lightbox-caption">
+                <h3 id="lightboxTitle"></h3>
+                <p id="lightboxDescription"></p>
+            </div>
+        </div>
+    </div>
 
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2>Interested in Any of These Properties?</h2>
-            <p>Book a site visit today and see the potential for yourself</p>
+            <h2>Interested in What You See?</h2>
+            <p>Schedule a site visit and experience these properties in person</p>
             <button class="btn btn-white" onclick="openBookingModal()">
-                <i class="fas fa-calendar-check"></i> Schedule Site Visit
+                <i class="fas fa-calendar-check"></i> Book Site Visit Now
             </button>
         </div>
     </section>
@@ -212,6 +239,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="lands.html">Land for Sale</a></li>
                         <li><a href="about.html">About Us</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
                         <li><a href="updates.html">Project Updates</a></li>
                     </ul>
                 </div>

@@ -684,5 +684,141 @@ function viewPropertyDetails(propertyId) {
     }
 }
 
+// GALLERY FILTER FUNCTIONALITY
+const filterButtons = document.querySelectorAll('.filter-btn');
+const galleryItems = document.querySelectorAll('.gallery-item');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        // Add active class to clicked button
+        button.classList.add('active');
+        
+        const filter = button.getAttribute('data-filter');
+        
+        galleryItems.forEach(item => {
+            if (filter === 'all') {
+                item.classList.remove('hidden');
+                item.style.animation = 'fadeIn 0.5s ease';
+            } else {
+                if (item.getAttribute('data-category') === filter) {
+                    item.classList.remove('hidden');
+                    item.style.animation = 'fadeIn 0.5s ease';
+                } else {
+                    item.classList.add('hidden');
+                }
+            }
+        });
+    });
+});
+
+// LIGHTBOX FUNCTIONALITY
+let currentLightboxIndex = 0;
+const lightboxImages = [
+    {
+        src: 'https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207123/Msabaha_Phase_6_hifwdu.jpg',
+        title: 'Msabaha Phase 6',
+        description: 'Premium Residential Plots'
+    },
+    {
+        src: 'https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207041/Malindi_Airport_View_Gardens_dsbvqb.jpg',
+        title: 'Malindi Airport View Gardens',
+        description: 'Strategic Location'
+    },
+    {
+        src: 'https://res.cloudinary.com/dyfnobo9r/image/upload/v1761206926/Mtondia_Higway_Gardens_kxrkqr.jpg',
+        title: 'Mtondia Highway Gardens',
+        description: 'Highway Access'
+    },
+    {
+        src: 'https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207123/Msabaha_Phase_6_hifwdu.jpg',
+        title: 'Road Infrastructure',
+        description: 'Well-Planned Roads'
+    },
+    {
+        src: 'https://res.cloudinary.com/dyfnobo9r/image/upload/v1761206926/Mtondia_Higway_Gardens_kxrkqr.jpg',
+        title: 'Utilities & Amenities',
+        description: 'Modern Infrastructure'
+    },
+    {
+        src: 'https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207041/Malindi_Airport_View_Gardens_dsbvqb.jpg',
+        title: 'Aerial View',
+        description: "Bird's Eye Perspective"
+    },
+    {
+        src: 'https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207123/Msabaha_Phase_6_hifwdu.jpg',
+        title: 'Development Progress',
+        description: 'Ongoing Projects'
+    },
+    {
+        src: 'https://res.cloudinary.com/dyfnobo9r/image/upload/v1761206926/Mtondia_Higway_Gardens_kxrkqr.jpg',
+        title: 'Completed Projects',
+        description: 'Success Stories'
+    },
+    {
+        src: 'https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207041/Malindi_Airport_View_Gardens_dsbvqb.jpg',
+        title: 'Prime Land Plots',
+        description: 'Investment Opportunities'
+    }
+];
+
+function openLightbox(index) {
+    currentLightboxIndex = index;
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxDescription = document.getElementById('lightboxDescription');
+    
+    if (lightbox && lightboxImage) {
+        lightboxImage.src = lightboxImages[index].src;
+        lightboxTitle.textContent = lightboxImages[index].title;
+        lightboxDescription.textContent = lightboxImages[index].description;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+}
+
+function changeLightboxImage(direction) {
+    currentLightboxIndex += direction;
+    
+    if (currentLightboxIndex >= lightboxImages.length) {
+        currentLightboxIndex = 0;
+    } else if (currentLightboxIndex < 0) {
+        currentLightboxIndex = lightboxImages.length - 1;
+    }
+    
+    openLightbox(currentLightboxIndex);
+}
+
+// Close lightbox with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeLightbox();
+    } else if (e.key === 'ArrowLeft') {
+        changeLightboxImage(-1);
+    } else if (e.key === 'ArrowRight') {
+        changeLightboxImage(1);
+    }
+});
+
+// Close lightbox when clicking outside image
+const lightbox = document.getElementById('lightbox');
+if (lightbox) {
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+}
+
 // INITIALIZE
 console.log('Kilifi Properties - All systems initialized!');
