@@ -614,6 +614,14 @@ section {
     text-transform: uppercase;
 }
 
+.property-badge.hot {
+    background: #e74c3c;
+}
+
+.property-badge.value {
+    background: #27ae60;
+}
+
 .property-info {
     padding: 30px;
 }
@@ -1109,6 +1117,152 @@ section {
 
 .social-icon-item.phone {
     background: #28a745;
+}
+
+/* FILTER SECTION */
+.filter-section {
+    background: var(--white);
+    padding: 30px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 80px;
+    z-index: 100;
+}
+
+.filter-bar {
+    display: grid;
+    grid-template-columns: 2fr repeat(3, 1fr) auto;
+    gap: 15px;
+    align-items: center;
+}
+
+.filter-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.filter-search i {
+    position: absolute;
+    left: 20px;
+    color: var(--gray-light);
+    font-size: 1rem;
+}
+
+.filter-search input {
+    width: 100%;
+    padding: 14px 20px 14px 50px;
+    border: 2px solid #eee;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.filter-search input:focus {
+    outline: none;
+    border-color: var(--gold);
+}
+
+.filter-group {
+    position: relative;
+}
+
+.filter-select {
+    width: 100%;
+    padding: 14px 20px;
+    border: 2px solid #eee;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    background: var(--white);
+    cursor: pointer;
+    transition: var(--transition);
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23666' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    padding-right: 45px;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: var(--gold);
+}
+
+.btn-reset {
+    padding: 14px 25px;
+    background: var(--gray-light);
+    color: var(--white);
+    border: none;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.btn-reset:hover {
+    background: var(--gray);
+    transform: translateY(-2px);
+}
+
+.filter-results {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.filter-results p {
+    color: var(--gray-light);
+    font-size: 0.95rem;
+}
+
+.filter-results span {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+/* NO RESULTS MESSAGE */
+.no-results {
+    text-align: center;
+    padding: 80px 20px;
+    animation: fadeIn 0.5s ease;
+}
+
+.no-results i {
+    font-size: 4rem;
+    color: var(--gray-lighter);
+    margin-bottom: 25px;
+}
+
+.no-results h3 {
+    font-size: 1.8rem;
+    color: var(--gray);
+    margin-bottom: 15px;
+}
+
+.no-results p {
+    color: var(--gray-light);
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* PROPERTIES LISTING */
+.properties-listing {
+    padding: 60px 0;
 }
 
 /* LANDS PAGE - FULL PROPERTY CARDS */
@@ -1989,6 +2143,21 @@ section {
     
     .hamburger {
         display: flex;
+    }
+    
+    /* Filter Section Mobile */
+    .filter-section {
+        position: relative;
+        top: 0;
+    }
+    
+    .filter-bar {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .btn-reset {
+        justify-content: center;
     }
     
     /* Carousel Mobile */

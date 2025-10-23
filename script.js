@@ -516,5 +516,117 @@ if (socialToggleBtn && socialIconsList) {
     });
 }
 
+// PROPERTY FILTERING SYSTEM (For Lands Page)
+const searchInput = document.getElementById('searchInput');
+const locationFilter = document.getElementById('locationFilter');
+const priceFilter = document.getElementById('priceFilter');
+const typeFilter = document.getElementById('typeFilter');
+const resetFiltersBtn = document.getElementById('resetFilters');
+const propertiesGrid = document.getElementById('propertiesGrid');
+const noResults = document.getElementById('noResults');
+const resultsCount = document.getElementById('resultsCount');
+
+if (searchInput && locationFilter && priceFilter && typeFilter) {
+    // Add event listeners to all filters
+    searchInput.addEventListener('input', filterProperties);
+    locationFilter.addEventListener('change', filterProperties);
+    priceFilter.addEventListener('change', filterProperties);
+    typeFilter.addEventListener('change', filterProperties);
+    
+    if (resetFiltersBtn) {
+        resetFiltersBtn.addEventListener('click', resetAllFilters);
+    }
+}
+
+function filterProperties() {
+    if (!propertiesGrid) return;
+    
+    const searchTerm = searchInput.value.toLowerCase();
+    const selectedLocation = locationFilter.value;
+    const selectedPrice = priceFilter.value;
+    const selectedType = typeFilter.value;
+    
+    const properties = propertiesGrid.querySelectorAll('.property-card');
+    let visibleCount = 0;
+    
+    properties.forEach(property => {
+        const name = property.getAttribute('data-name').toLowerCase();
+        const location = property.getAttribute('data-location');
+        const price = parseInt(property.getAttribute('data-price'));
+        const type = property.getAttribute('data-type');
+        
+        // Check search term
+        const matchesSearch = name.includes(searchTerm);
+        
+        // Check location filter
+        const matchesLocation = !selectedLocation || location === selectedLocation;
+        
+        // Check price filter
+        let matchesPrice = true;
+        if (selectedPrice) {
+            if (selectedPrice.includes('-')) {
+                const [min, max] = selectedPrice.split('-').map(Number);
+                matchesPrice = price >= min && price <= max;
+            } else if (selectedPrice.includes('+')) {
+                const min = parseInt(selectedPrice);
+                matchesPrice = price >= min;
+            }
+        }
+        
+        // Check type filter
+        const matchesType = !selectedType || type === selectedType;
+        
+        // Show or hide property
+        if (matchesSearch && matchesLocation && matchesPrice && matchesType) {
+            property.style.display = 'block';
+            visibleCount++;
+            // Add animation
+            property.style.animation = 'fadeIn 0.5s ease';
+        } else {
+            property.style.display = 'none';
+        }
+    });
+    
+    // Update results count
+    if (resultsCount) {
+        resultsCount.querySelector('span').textContent = visibleCount;
+    }
+    
+    // Show/hide no results message
+    if (noResults) {
+        if (visibleCount === 0) {
+            noResults.style.display = 'block';
+            propertiesGrid.style.display = 'none';
+        } else {
+            noResults.style.display = 'none';
+            propertiesGrid.style.display = 'grid';
+        }
+    }
+}
+
+function resetAllFilters() {
+    if (searchInput) searchInput.value = '';
+    if (locationFilter) locationFilter.value = '';
+    if (priceFilter) priceFilter.value = '';
+    if (typeFilter) typeFilter.value = '';
+    filterProperties();
+}
+
+// VIEW PROPERTY DETAILS FUNCTION
+function viewPropertyDetails(propertyId) {
+    // Create a modal or redirect to a detail page
+    // For now, we'll open the booking modal with the property pre-selected
+    openBookingModal();
+    
+    // Pre-select the property in the booking form
+    const bookingForm = document.getElementById('bookingForm');
+    if (bookingForm) {
+        const selectElement = bookingForm.querySelector('select');
+        if (selectElement) {
+            selectElement.value = propertyId;
+        }
+    }
+}
+
 // INITIALIZE
 console.log('Kilifi Properties - All systems initialized!');
