@@ -74,7 +74,7 @@
     </section>
 
     <!-- Land Listings Section -->
-    <section class="land-listings-section" style="padding: 80px 0; background: #f8f9fa;">
+    <section class="land-listings-section">
         <div class="container">
             <div class="section-header" style="text-align: center; margin-bottom: 60px;">
                 <h2 style="font-size: 2.5rem; color: var(--secondary-color); margin-bottom: 15px;">Available Plots</h2>
@@ -84,69 +84,63 @@
             </div>
 
             <!-- Land Property Cards -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto;">
+            <div class="land-grid">
                 
                 <!-- Chumani Phase 3 -->
-                <div class="land-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
-                    <div style="position: relative; height: 350px; overflow: hidden;">
-                        <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207266/chumani_phase_3_ktfev4.jpg" 
-                             alt="Chumani Phase 3" 
-                             style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
-                        <div style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); color: white; padding: 8px 16px; border-radius: 25px; font-weight: 600; font-size: 0.9rem;">
-                            PRIME LOCATION
-                        </div>
+                <div class="land-card">
+                    <div class="land-card-image">
+                        <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207266/chumani_phase_3_ktfev4.jpg" alt="Chumani Phase 3">
+                        <div class="land-badge">PRIME LOCATION</div>
                     </div>
                     
-                    <div style="padding: 35px;">
-                        <h3 style="font-size: 1.8rem; color: var(--secondary-color); margin-bottom: 10px; font-weight: 700;">
-                            Chumani Phase 3
-                        </h3>
+                    <div class="land-card-content">
+                        <h3 class="land-card-title">Chumani Phase 3</h3>
                         
-                        <div style="display: flex; align-items: center; gap: 8px; color: var(--gray); margin-bottom: 20px;">
-                            <i class="fas fa-map-marker-alt" style="color: var(--primary-color);"></i>
-                            <span style="font-size: 1rem;">300m from Kilifi-Malindi Highway</span>
+                        <div class="land-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>300m from Kilifi-Malindi Highway</span>
                         </div>
                         
-                        <p style="color: var(--text-color); line-height: 1.8; margin-bottom: 25px; font-size: 1rem;">
+                        <p class="land-description">
                             Chumani Phase 3 offers premium residential development plots in an ideal location just 300 meters from the Kilifi-Malindi Highway. This development combines excellent accessibility with immediate development potential, making it perfect for both residential and investment purposes.
                         </p>
                         
-                        <p style="color: var(--text-color); line-height: 1.8; margin-bottom: 25px; font-size: 1rem;">
+                        <p class="land-description">
                             The project is designed for immediate settlement and development, with essential utilities already in place. With flexible payment terms that allow for easy ownership, this location offers exceptional value for money in one of Kilifi County's most accessible areas.
                         </p>
                         
-                        <div style="display: flex; flex-wrap: wrap; gap: 15px; padding: 20px 0; border-top: 2px solid #f0f0f0; border-bottom: 2px solid #f0f0f0; margin-bottom: 25px;">
-                            <div style="display: flex; align-items: center; gap: 8px;">
-                                <i class="fas fa-ruler-combined" style="color: var(--primary-color); font-size: 1.1rem;"></i>
-                                <span style="font-weight: 600; color: var(--secondary-color);">50 x 100 Plots</span>
+                        <div class="land-features">
+                            <div class="land-feature-item">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>50 x 100 Plots</span>
                             </div>
-                            <div style="display: flex; align-items: center; gap: 8px;">
-                                <i class="fas fa-road" style="color: var(--primary-color); font-size: 1.1rem;"></i>
-                                <span style="font-weight: 600; color: var(--secondary-color);">300m to Highway</span>
+                            <div class="land-feature-item">
+                                <i class="fas fa-road"></i>
+                                <span>300m to Highway</span>
                             </div>
-                            <div style="display: flex; align-items: center; gap: 8px;">
-                                <i class="fas fa-check-circle" style="color: var(--primary-color); font-size: 1.1rem;"></i>
-                                <span style="font-weight: 600; color: var(--secondary-color);">Ready to Build</span>
+                            <div class="land-feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Ready to Build</span>
                             </div>
-                            <div style="display: flex; align-items: center; gap: 8px;">
-                                <i class="fas fa-water" style="color: var(--primary-color); font-size: 1.1rem;"></i>
-                                <span style="font-weight: 600; color: var(--secondary-color);">Utilities On-Site</span>
+                            <div class="land-feature-item">
+                                <i class="fas fa-water"></i>
+                                <span>Utilities On-Site</span>
                             </div>
                         </div>
                         
-                        <div style="background: linear-gradient(135deg, rgba(151, 100, 19, 0.1), rgba(151, 100, 19, 0.05)); padding: 20px; border-radius: 10px; margin-bottom: 25px;">
-                            <p style="font-size: 0.9rem; color: var(--text-color); margin-bottom: 8px;">Starting From</p>
-                            <p style="font-size: 2rem; font-weight: 700; color: var(--primary-color); margin: 0;">Contact For Pricing</p>
+                        <div class="land-pricing">
+                            <p class="land-pricing-label">Starting From</p>
+                            <p class="land-pricing-amount">Contact For Pricing</p>
                             <p style="font-size: 0.95rem; color: var(--gray); margin-top: 8px;">
-                                <i class="fas fa-calendar-check" style="color: var(--primary-color);"></i> Flexible Payment Plans Available
+                                <i class="fas fa-calendar-check"></i> Flexible Payment Plans Available
                             </p>
                         </div>
                         
-                        <div style="display: flex; gap: 12px;">
-                            <a href="contact.html" class="btn btn-primary" style="flex: 1; text-align: center; padding: 14px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                        <div class="land-actions">
+                            <a href="contact.html" class="btn btn-primary">
                                 <i class="fas fa-phone"></i> Inquire Now
                             </a>
-                            <a href="book-viewing.html" class="btn btn-outline" style="flex: 1; text-align: center; padding: 14px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                            <a href="book-viewing.html" class="btn btn-outline">
                                 <i class="fas fa-calendar"></i> Book Viewing
                             </a>
                         </div>
@@ -154,73 +148,67 @@
                 </div>
 
                 <!-- Ocean View Gardens -->
-                <div class="land-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
-                    <div style="position: relative; height: 350px; overflow: hidden;">
-                        <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207187/ocean_view_gardens_jxph9y.jpg" 
-                             alt="Ocean View Gardens" 
-                             style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
-                        <div style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); color: white; padding: 8px 16px; border-radius: 25px; font-weight: 600; font-size: 0.9rem;">
-                            1KM TO BEACH
-                        </div>
+                <div class="land-card">
+                    <div class="land-card-image">
+                        <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207187/ocean_view_gardens_jxph9y.jpg" alt="Ocean View Gardens">
+                        <div class="land-badge">1KM TO BEACH</div>
                     </div>
                     
-                    <div style="padding: 35px;">
-                        <h3 style="font-size: 1.8rem; color: var(--secondary-color); margin-bottom: 10px; font-weight: 700;">
-                            Ocean View Gardens
-                        </h3>
+                    <div class="land-card-content">
+                        <h3 class="land-card-title">Ocean View Gardens</h3>
                         
-                        <div style="display: flex; align-items: center; gap: 8px; color: var(--gray); margin-bottom: 20px;">
-                            <i class="fas fa-map-marker-alt" style="color: var(--primary-color);"></i>
-                            <span style="font-size: 1rem;">Tezo, Kilifi County</span>
+                        <div class="land-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Tezo, Kilifi County</span>
                         </div>
                         
-                        <p style="color: var(--text-color); line-height: 1.8; margin-bottom: 25px; font-size: 1rem;">
+                        <p class="land-description">
                             Ocean View Gardens offers premium residential and mixed development serviced plots in the picturesque Tezo area of Kilifi County. This development combines the tranquility of coastal living with excellent accessibility, making it an ideal location for both permanent residents and vacation homeowners.
                         </p>
                         
-                        <p style="color: var(--text-color); line-height: 1.8; margin-bottom: 25px; font-size: 1rem;">
+                        <p class="land-description">
                             The project is strategically positioned just 1km from the pristine beach, offering residents easy access to coastal activities while maintaining proximity to major transportation routes. With essential utilities already on site and all-inclusive pricing that covers all legal processes, this development provides exceptional value for money.
                         </p>
                         
-                        <div style="display: flex; flex-wrap: wrap; gap: 15px; padding: 20px 0; border-top: 2px solid #f0f0f0; border-bottom: 2px solid #f0f0f0; margin-bottom: 25px;">
-                            <div style="display: flex; align-items: center; gap: 8px;">
-                                <i class="fas fa-ruler-combined" style="color: var(--primary-color); font-size: 1.1rem;"></i>
-                                <span style="font-weight: 600; color: var(--secondary-color);">50 x 100 Plots</span>
+                        <div class="land-features">
+                            <div class="land-feature-item">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>50 x 100 Plots</span>
                             </div>
-                            <div style="display: flex; align-items: center; gap: 8px;">
-                                <i class="fas fa-umbrella-beach" style="color: var(--primary-color); font-size: 1.1rem;"></i>
-                                <span style="font-weight: 600; color: var(--secondary-color);">1km to Beach</span>
+                            <div class="land-feature-item">
+                                <i class="fas fa-umbrella-beach"></i>
+                                <span>1km to Beach</span>
                             </div>
-                            <div style="display: flex; align-items: center; gap: 8px;">
-                                <i class="fas fa-check-circle" style="color: var(--primary-color); font-size: 1.1rem;"></i>
-                                <span style="font-weight: 600; color: var(--secondary-color);">Serviced Plots</span>
+                            <div class="land-feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Serviced Plots</span>
                             </div>
-                            <div style="display: flex; align-items: center; gap: 8px;">
-                                <i class="fas fa-file-contract" style="color: var(--primary-color); font-size: 1.1rem;"></i>
-                                <span style="font-weight: 600; color: var(--secondary-color);">All Legal Fees Included</span>
+                            <div class="land-feature-item">
+                                <i class="fas fa-file-contract"></i>
+                                <span>All Legal Fees Included</span>
                             </div>
                         </div>
                         
-                        <div style="background: linear-gradient(135deg, rgba(151, 100, 19, 0.1), rgba(151, 100, 19, 0.05)); padding: 20px; border-radius: 10px; margin-bottom: 25px;">
-                            <p style="font-size: 0.9rem; color: var(--text-color); margin-bottom: 8px;">Total Price</p>
-                            <p style="font-size: 2rem; font-weight: 700; color: var(--primary-color); margin: 0;">KSh 495,000</p>
-                            <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(151, 100, 19, 0.2);">
-                                <p style="font-size: 0.95rem; color: var(--text-color); margin-bottom: 8px;">
-                                    <i class="fas fa-hand-holding-usd" style="color: var(--primary-color);"></i> 
+                        <div class="land-pricing">
+                            <p class="land-pricing-label">Total Price</p>
+                            <p class="land-pricing-amount">KSh 495,000</p>
+                            <div class="land-payment-terms">
+                                <p>
+                                    <i class="fas fa-hand-holding-usd"></i> 
                                     <strong>Deposit:</strong> KSh 200,000
                                 </p>
-                                <p style="font-size: 0.95rem; color: var(--text-color); margin: 0;">
-                                    <i class="fas fa-calendar-alt" style="color: var(--primary-color);"></i> 
+                                <p>
+                                    <i class="fas fa-calendar-alt"></i> 
                                     <strong>Balance:</strong> 12 Monthly Installments
                                 </p>
                             </div>
                         </div>
                         
-                        <div style="display: flex; gap: 12px;">
-                            <a href="contact.html" class="btn btn-primary" style="flex: 1; text-align: center; padding: 14px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                        <div class="land-actions">
+                            <a href="contact.html" class="btn btn-primary">
                                 <i class="fas fa-phone"></i> Inquire Now
                             </a>
-                            <a href="book-viewing.html" class="btn btn-outline" style="flex: 1; text-align: center; padding: 14px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                            <a href="book-viewing.html" class="btn btn-outline">
                                 <i class="fas fa-calendar"></i> Book Viewing
                             </a>
                         </div>
@@ -232,44 +220,44 @@
     </section>
 
     <!-- Benefits Section -->
-    <section style="padding: 80px 0; background: white;">
+    <section class="benefits-section">
         <div class="container">
             <div class="section-header" style="text-align: center; margin-bottom: 60px;">
                 <h2 style="font-size: 2.5rem; color: var(--secondary-color); margin-bottom: 15px;">Why Invest in Land?</h2>
                 <p style="font-size: 1.1rem; color: var(--gray);">Secure your financial future with strategic land investments</p>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
-                <div style="text-align: center; padding: 30px;">
-                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                        <i class="fas fa-chart-line" style="font-size: 2rem; color: white;"></i>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3 style="font-size: 1.3rem; color: var(--secondary-color); margin-bottom: 12px;">Appreciation Value</h3>
-                    <p style="color: var(--gray); line-height: 1.6;">Land values consistently appreciate over time, offering excellent long-term returns on investment.</p>
+                    <h3 class="benefit-title">Appreciation Value</h3>
+                    <p class="benefit-description">Land values consistently appreciate over time, offering excellent long-term returns on investment.</p>
                 </div>
 
-                <div style="text-align: center; padding: 30px;">
-                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                        <i class="fas fa-shield-alt" style="font-size: 2rem; color: white;"></i>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3 style="font-size: 1.3rem; color: var(--secondary-color); margin-bottom: 12px;">Secure Investment</h3>
-                    <p style="color: var(--gray); line-height: 1.6;">Tangible asset with legal ownership, providing security and peace of mind for your investment.</p>
+                    <h3 class="benefit-title">Secure Investment</h3>
+                    <p class="benefit-description">Tangible asset with legal ownership, providing security and peace of mind for your investment.</p>
                 </div>
 
-                <div style="text-align: center; padding: 30px;">
-                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                        <i class="fas fa-hand-holding-usd" style="font-size: 2rem; color: white;"></i>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
                     </div>
-                    <h3 style="font-size: 1.3rem; color: var(--secondary-color); margin-bottom: 12px;">Flexible Payments</h3>
-                    <p style="color: var(--gray); line-height: 1.6;">Easy payment plans make land ownership accessible without straining your finances.</p>
+                    <h3 class="benefit-title">Flexible Payments</h3>
+                    <p class="benefit-description">Easy payment plans make land ownership accessible without straining your finances.</p>
                 </div>
 
-                <div style="text-align: center; padding: 30px;">
-                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                        <i class="fas fa-home" style="font-size: 2rem; color: white;"></i>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-home"></i>
                     </div>
-                    <h3 style="font-size: 1.3rem; color: var(--secondary-color); margin-bottom: 12px;">Build Your Dream</h3>
-                    <p style="color: var(--gray); line-height: 1.6;">Create your ideal home or investment property on your own terms and timeline.</p>
+                    <h3 class="benefit-title">Build Your Dream</h3>
+                    <p class="benefit-description">Create your ideal home or investment property on your own terms and timeline.</p>
                 </div>
             </div>
         </div>
@@ -378,24 +366,6 @@
 
     <!-- Script -->
     <script src="script.js"></script>
-    
-    <!-- Hover Effects -->
-    <style>
-        .land-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15) !important;
-        }
-        
-        .land-card:hover img {
-            transform: scale(1.05);
-        }
-        
-        @media (max-width: 768px) {
-            .land-listings-section > div > div {
-                grid-template-columns: 1fr !important;
-            }
-        }
-    </style>
 </body>
 </html>
 

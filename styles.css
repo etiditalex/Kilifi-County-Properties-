@@ -5638,4 +5638,285 @@ body .page-header p {
     }
 }
 
+/* ===================================
+   LAND FOR SALE PAGE STYLES
+   =================================== */
+
+.land-listings-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.land-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.land-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.land-card-image {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+}
+
+.land-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.land-card:hover .land-card-image img {
+    transform: scale(1.05);
+}
+
+.land-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.land-card-content {
+    padding: 35px;
+}
+
+.land-card-title {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.land-location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gray);
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.land-location i {
+    color: var(--primary-color);
+}
+
+.land-description {
+    color: var(--text-color);
+    line-height: 1.8;
+    margin-bottom: 25px;
+    font-size: 1rem;
+}
+
+.land-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px 0;
+    border-top: 2px solid #f0f0f0;
+    border-bottom: 2px solid #f0f0f0;
+    margin-bottom: 25px;
+}
+
+.land-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.land-feature-item i {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.land-feature-item span {
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.land-pricing {
+    background: linear-gradient(135deg, rgba(151, 100, 19, 0.1), rgba(151, 100, 19, 0.05));
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.land-pricing-label {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.land-pricing-amount {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.land-payment-terms {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(151, 100, 19, 0.2);
+}
+
+.land-payment-terms p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.land-payment-terms p:last-child {
+    margin-bottom: 0;
+}
+
+.land-payment-terms i {
+    color: var(--primary-color);
+    margin-right: 5px;
+}
+
+.land-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.land-actions .btn {
+    flex: 1;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.land-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Benefits Section */
+.benefits-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.benefit-card {
+    text-align: center;
+    padding: 30px;
+}
+
+.benefit-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.benefit-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.benefit-title {
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.benefit-description {
+    color: var(--gray);
+    line-height: 1.6;
+}
+
+/* Responsive Design for Land Page */
+@media (max-width: 768px) {
+    .land-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .land-card-image {
+        height: 300px;
+    }
+    
+    .land-card-content {
+        padding: 25px;
+    }
+    
+    .land-card-title {
+        font-size: 1.5rem;
+    }
+    
+    .land-pricing-amount {
+        font-size: 1.6rem;
+    }
+    
+    .land-actions {
+        flex-direction: column;
+    }
+    
+    .land-actions .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .land-listings-section {
+        padding: 50px 0;
+    }
+    
+    .land-card-image {
+        height: 250px;
+    }
+    
+    .land-card-content {
+        padding: 20px;
+    }
+    
+    .land-card-title {
+        font-size: 1.3rem;
+    }
+    
+    .land-description {
+        font-size: 0.95rem;
+    }
+    
+    .land-features {
+        gap: 10px;
+    }
+    
+    .land-feature-item {
+        font-size: 0.9rem;
+    }
+}
+
 
