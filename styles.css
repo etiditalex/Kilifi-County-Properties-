@@ -9,6 +9,8 @@
     box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
 :root {
     --gold: #976413;
     --gold-dark: #7a5010;
@@ -23,6 +25,8 @@
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.15);
     --transition: all 0.3s ease;
+    --font-primary: 'Montserrat', sans-serif;
+    --font-heading: 'Montserrat', sans-serif;
 }
 
 html {
@@ -30,7 +34,7 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-primary);
     line-height: 1.6;
     color: var(--gray);
     background: var(--white);
@@ -251,7 +255,7 @@ a {
 }
 
 .slide-title {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-size: 4rem;
     font-weight: 800;
     line-height: 1.2;
@@ -389,8 +393,9 @@ a {
 }
 
 .stat-item h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-size: 3rem;
+    font-weight: 700;
     color: var(--gold);
     margin-bottom: 10px;
 }
@@ -521,8 +526,9 @@ section {
 }
 
 .section-header h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-size: 2.5rem;
+    font-weight: 700;
     color: var(--black);
     margin-bottom: 15px;
 }
@@ -547,8 +553,9 @@ section {
 }
 
 .page-header h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-size: 3rem;
+    font-weight: 700;
     margin-bottom: 15px;
 }
 
@@ -744,7 +751,7 @@ section {
 }
 
 .cta-section h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-size: 2.5rem;
     margin-bottom: 20px;
 }
@@ -909,7 +916,7 @@ section {
 }
 
 .modal-content h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-size: 2rem;
     color: var(--black);
     margin-bottom: 10px;
@@ -939,7 +946,7 @@ section {
     padding: 14px 18px;
     border: 2px solid #eee;
     border-radius: 10px;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-primary);
     font-size: 0.95rem;
     transition: var(--transition);
 }
@@ -1041,7 +1048,7 @@ section {
 }
 
 .property-header h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-size: 2.2rem;
     color: var(--black);
     margin-bottom: 10px;
@@ -1115,8 +1122,9 @@ section {
 }
 
 .price-value {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-size: 2rem;
+    font-weight: 700;
     color: var(--gold);
 }
 
@@ -1144,7 +1152,7 @@ section {
 }
 
 .about-text-box h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-size: 2.3rem;
     color: var(--black);
     margin-bottom: 25px;
@@ -1383,7 +1391,7 @@ section {
 }
 
 .newsletter-content h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-size: 2.3rem;
     color: var(--black);
     margin-bottom: 15px;
@@ -1427,7 +1435,7 @@ section {
 }
 
 .contact-info-side h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-size: 2.2rem;
     color: var(--black);
     margin-bottom: 20px;
@@ -1529,7 +1537,7 @@ section {
 }
 
 .quick-actions-section h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-size: 2.3rem;
     text-align: center;
     color: var(--black);
@@ -1815,7 +1823,7 @@ section {
 }
 
 .subscribe-updates h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-size: 2.5rem;
     margin-bottom: 20px;
 }
