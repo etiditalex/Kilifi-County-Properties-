@@ -302,6 +302,43 @@
 
     <!-- Script -->
     <script src="script.js"></script>
+    
+    <!-- Force Properties Load Script -->
+    <script>
+        // Emergency fallback to ensure properties display
+        window.addEventListener('load', function() {
+            console.log('EMERGENCY FALLBACK: Window loaded, forcing property display...');
+            
+            setTimeout(function() {
+                const grid = document.getElementById('properties-grid');
+                console.log('Grid element:', grid);
+                console.log('Grid innerHTML length:', grid ? grid.innerHTML.length : 'NO GRID');
+                console.log('Grid children count:', grid ? grid.children.length : 'NO GRID');
+                
+                if (grid && grid.children.length === 0) {
+                    console.log('GRID IS EMPTY! Forcing property load...');
+                    
+                    // Call loadProperties if it exists
+                    if (typeof loadProperties === 'function') {
+                        console.log('Calling loadProperties()...');
+                        loadProperties();
+                    }
+                    
+                    // If still empty after 1 second, show error
+                    setTimeout(function() {
+                        if (grid.children.length === 0) {
+                            console.error('CRITICAL: Properties still not loading!');
+                            grid.innerHTML = '<div style="text-align: center; padding: 40px; color: red; font-size: 1.2rem;"><strong>Error:</strong> Properties failed to load. Please refresh the page or contact support.</div>';
+                        } else {
+                            console.log('SUCCESS: Properties loaded, count:', grid.children.length);
+                        }
+                    }, 1000);
+                } else {
+                    console.log('Grid has content:', grid ? grid.children.length : 0, 'properties');
+                }
+            }, 100);
+        });
+    </script>
 </body>
 </html>
 
