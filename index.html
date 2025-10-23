@@ -46,33 +46,150 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">Invest in Your Future with <span>Premium Land</span></h1>
-            <p class="hero-subtitle">Genuine titled plots in Kenya's most sought-after coastal locations</p>
-            <div class="hero-buttons">
-                <a href="lands.html" class="btn btn-primary">
-                    <i class="fas fa-map-marked-alt"></i> View Properties
-                </a>
-                <button class="btn btn-secondary" onclick="openBookingModal()">
-                    <i class="fas fa-calendar"></i> Book Site Visit
-                </button>
+    <!-- Hero Carousel Section -->
+    <section class="hero-carousel">
+        <div class="carousel-container">
+            <!-- Slide 1 - Msabaha Phase 6 -->
+            <div class="carousel-slide active">
+                <div class="slide-background" style="background-image: url('https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207123/Msabaha_Phase_6_hifwdu.jpg');"></div>
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <div class="container">
+                        <span class="slide-badge">Featured Property</span>
+                        <h1 class="slide-title">Msabaha Phase 6</h1>
+                        <p class="slide-subtitle">Premium residential plots with excellent infrastructure and accessibility</p>
+                        <div class="slide-features">
+                            <div class="slide-feature">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>50 x 100 Plots</span>
+                            </div>
+                            <div class="slide-feature">
+                                <i class="fas fa-certificate"></i>
+                                <span>Genuine Titles</span>
+                            </div>
+                            <div class="slide-feature">
+                                <i class="fas fa-road"></i>
+                                <span>Well-Planned Roads</span>
+                            </div>
+                        </div>
+                        <div class="slide-buttons">
+                            <a href="lands.html" class="btn btn-primary">
+                                <i class="fas fa-info-circle"></i> Learn More
+                            </a>
+                            <button class="btn btn-secondary" onclick="openBookingModal()">
+                                <i class="fas fa-calendar"></i> Book Site Visit
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <div class="hero-stats">
-                <div class="stat">
-                    <h3>3+</h3>
-                    <p>Prime Locations</p>
+
+            <!-- Slide 2 - Malindi Airport View Gardens -->
+            <div class="carousel-slide">
+                <div class="slide-background" style="background-image: url('https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207041/Malindi_Airport_View_Gardens_dsbvqb.jpg');"></div>
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <div class="container">
+                        <span class="slide-badge hot">Hot Deal</span>
+                        <h1 class="slide-title">Malindi Airport View Gardens</h1>
+                        <p class="slide-subtitle">Strategic location near Malindi Airport with high appreciation potential</p>
+                        <div class="slide-features">
+                            <div class="slide-feature">
+                                <i class="fas fa-plane"></i>
+                                <span>Near Airport</span>
+                            </div>
+                            <div class="slide-feature">
+                                <i class="fas fa-chart-line"></i>
+                                <span>High ROI</span>
+                            </div>
+                            <div class="slide-feature">
+                                <i class="fas fa-building"></i>
+                                <span>Multi-Purpose Use</span>
+                            </div>
+                        </div>
+                        <div class="slide-buttons">
+                            <a href="lands.html" class="btn btn-primary">
+                                <i class="fas fa-info-circle"></i> Learn More
+                            </a>
+                            <button class="btn btn-secondary" onclick="openBookingModal()">
+                                <i class="fas fa-calendar"></i> Book Site Visit
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div class="stat">
-                    <h3>100%</h3>
-                    <p>Genuine Titles</p>
+            </div>
+
+            <!-- Slide 3 - Mtondia Highway Gardens -->
+            <div class="carousel-slide">
+                <div class="slide-background" style="background-image: url('https://res.cloudinary.com/dyfnobo9r/image/upload/v1761206926/Mtondia_Higway_Gardens_kxrkqr.jpg');"></div>
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <div class="container">
+                        <span class="slide-badge value">Best Value</span>
+                        <h1 class="slide-title">Mtondia Highway Gardens</h1>
+                        <p class="slide-subtitle">Exceptional value along major highway with flexible payment plans</p>
+                        <div class="slide-features">
+                            <div class="slide-feature">
+                                <i class="fas fa-road"></i>
+                                <span>Highway Access</span>
+                            </div>
+                            <div class="slide-feature">
+                                <i class="fas fa-hand-holding-usd"></i>
+                                <span>Flexible Payment</span>
+                            </div>
+                            <div class="slide-feature">
+                                <i class="fas fa-water"></i>
+                                <span>Utilities Ready</span>
+                            </div>
+                        </div>
+                        <div class="slide-buttons">
+                            <a href="lands.html" class="btn btn-primary">
+                                <i class="fas fa-info-circle"></i> Learn More
+                            </a>
+                            <button class="btn btn-secondary" onclick="openBookingModal()">
+                                <i class="fas fa-calendar"></i> Book Site Visit
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div class="stat">
-                    <h3>50+</h3>
-                    <p>Plots Available</p>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <button class="carousel-control prev" onclick="changeSlide(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel-control next" onclick="changeSlide(1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <!-- Dots Navigation -->
+            <div class="carousel-dots">
+                <span class="dot active" onclick="goToSlide(0)"></span>
+                <span class="dot" onclick="goToSlide(1)"></span>
+                <span class="dot" onclick="goToSlide(2)"></span>
+            </div>
+        </div>
+
+        <!-- Hero Stats Section -->
+        <div class="hero-stats-section">
+            <div class="container">
+                <div class="stats-wrapper">
+                    <div class="stat-item">
+                        <h3>3+</h3>
+                        <p>Prime Locations</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>Genuine Titles</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>50+</h3>
+                        <p>Plots Available</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100+</h3>
+                        <p>Happy Clients</p>
+                    </div>
                 </div>
             </div>
         </div>

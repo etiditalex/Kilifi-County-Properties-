@@ -3,18 +3,24 @@
    ========================================== */
 
 // DOM ELEMENTS
-const hamburger = document.getElementById('hamburger');
+    const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('navMenu');
 const scrollTop = document.getElementById('scrollTop');
 const bookingModal = document.getElementById('bookingModal');
 const bookingForm = document.getElementById('bookingForm');
 const contactForm = document.getElementById('contactForm');
 
+// CAROUSEL VARIABLES
+    let currentSlide = 0;
+let slides = [];
+let dots = [];
+let autoSlideInterval;
+
 // MOBILE NAVIGATION TOGGLE
 if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
+        hamburger.addEventListener('click', () => {
         navMenu.classList.toggle('active');
-        hamburger.classList.toggle('active');
+            hamburger.classList.toggle('active');
     });
 
     // Close menu when clicking on a link
@@ -141,14 +147,14 @@ newsletterForms.forEach(form => {
 // NOTIFICATION SYSTEM
 function showNotification(message, type = 'success') {
     // Create notification element
-    const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    notification.style.cssText = `
-        position: fixed;
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.style.cssText = `
+            position: fixed;
         top: 100px;
         right: 30px;
         background: ${type === 'success' ? '#27ae60' : '#3498db'};
-        color: white;
+            color: white;
         padding: 20px 30px;
         border-radius: 10px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -165,8 +171,8 @@ function showNotification(message, type = 'success') {
     `;
     
     // Add to page
-    document.body.appendChild(notification);
-    
+        document.body.appendChild(notification);
+        
     // Remove after 4 seconds
     setTimeout(() => {
         notification.style.animation = 'slideOutRight 0.4s ease';
@@ -179,8 +185,8 @@ function showNotification(message, type = 'success') {
 }
 
 // Add animation styles
-const style = document.createElement('style');
-style.textContent = `
+    const style = document.createElement('style');
+    style.textContent = `
     @keyframes slideInRight {
         from {
             transform: translateX(400px);
@@ -221,24 +227,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                     behavior: 'smooth'
                 });
             }
-        }
-    });
-});
+                }
+            });
+        });
 
 // INTERSECTION OBSERVER FOR ANIMATIONS
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
 
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
 
 // Observe elements on page load
 window.addEventListener('load', () => {
@@ -252,7 +258,7 @@ window.addEventListener('load', () => {
     
     // Animate timeline items
     document.querySelectorAll('.timeline-item').forEach((el, index) => {
-        setTimeout(() => {
+    setTimeout(() => {
             el.style.opacity = '1';
             el.style.transform = 'translateX(0)';
         }, index * 200);
@@ -369,6 +375,121 @@ document.addEventListener('visibilitychange', () => {
     } else {
         console.log('Page is now visible');
     }
+});
+
+// CAROUSEL FUNCTIONALITY
+function initCarousel() {
+    slides = document.querySelectorAll('.carousel-slide');
+    dots = document.querySelectorAll('.dot');
+    
+    if (slides.length === 0) return;
+    
+    // Start auto slide
+    startAutoSlide();
+    
+    // Pause on hover
+    const carouselContainer = document.querySelector('.carousel-container');
+    if (carouselContainer) {
+        carouselContainer.addEventListener('mouseenter', stopAutoSlide);
+        carouselContainer.addEventListener('mouseleave', startAutoSlide);
+    }
+}
+
+function changeSlide(direction) {
+    // Remove active class from current slide and dot
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    
+    // Calculate new slide index
+    currentSlide += direction;
+    
+    // Loop around if needed
+    if (currentSlide >= slides.length) {
+        currentSlide = 0;
+    } else if (currentSlide < 0) {
+        currentSlide = slides.length - 1;
+    }
+    
+    // Add active class to new slide and dot
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+    
+    // Reset auto slide timer
+    stopAutoSlide();
+    startAutoSlide();
+}
+
+function goToSlide(index) {
+    // Remove active class from current slide and dot
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    
+    // Set new slide index
+    currentSlide = index;
+    
+    // Add active class to new slide and dot
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+    
+    // Reset auto slide timer
+    stopAutoSlide();
+    startAutoSlide();
+}
+
+function startAutoSlide() {
+    autoSlideInterval = setInterval(() => {
+        changeSlide(1);
+    }, 5000); // Change slide every 5 seconds
+}
+
+function stopAutoSlide() {
+    clearInterval(autoSlideInterval);
+}
+
+// Keyboard navigation for carousel
+document.addEventListener('keydown', (e) => {
+    if (slides.length === 0) return;
+    
+    if (e.key === 'ArrowLeft') {
+        changeSlide(-1);
+    } else if (e.key === 'ArrowRight') {
+        changeSlide(1);
+    }
+});
+
+// Touch/Swipe support for mobile
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+}, false);
+
+document.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+}, false);
+
+function handleSwipe() {
+    if (slides.length === 0) return;
+    
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+    
+    if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+            // Swipe left - next slide
+            changeSlide(1);
+        } else {
+            // Swipe right - previous slide
+            changeSlide(-1);
+        }
+    }
+}
+
+// Initialize carousel on page load
+window.addEventListener('load', () => {
+    initCarousel();
 });
 
 // INITIALIZE
