@@ -3,112 +3,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Properties For Sale - Kilifi Properties</title>
+    <meta name="description" content="Browse premium properties for sale in Kilifi County - Houses, Apartments, Villas, and Land. Find your dream coastal property with Kilifi Properties.">
+    <meta name="keywords" content="properties for sale Kilifi, houses Nyali, apartments Mtwapa, land Kilifi, coastal real estate Kenya">
+    <title>Properties For Sale - Kilifi Properties | Coastal Real Estate Kenya</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/dyfnobo9r/image/upload/v1760165424/Kilifi_county_properties_logo_eklmnb.jpg">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="header-top-border"></div>
-        <nav class="navbar">
-            <div class="nav-container">
-                <a href="index.html" class="nav-logo">
-                    <div class="logo-icon">
-                        <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1760165424/Kilifi_county_properties_logo_eklmnb.jpg" alt="Kilifi Properties Logo" class="logo-image">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1760165424/Kilifi_county_properties_logo_eklmnb.jpg" alt="Kilifi Properties Logo" class="logo-image">
+                    <span class="logo-text">KILIFI PROPERTIES</span>
                     </div>
-                </a>
-                
-                <div class="nav-menu" id="nav-menu">
+                <nav class="nav">
                     <ul class="nav-list">
-                        <li class="nav-item">
-                            <a href="index.html" class="nav-link">HOME</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="for-sale.html" class="nav-link active">FOR SALE</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="for-rent.html" class="nav-link">FOR RENT</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="developments.html" class="nav-link">DEVELOPMENTS</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a href="#" class="nav-link">INVESTOR UPDATES <i class="fas fa-chevron-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="blog.html">BLOG</a></li>
-                                <li><a href="news.html">NEWS</a></li>
-                                <li><a href="market-research.html">MARKET RESEARCH</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="for-sale.html" class="active">For Sale</a></li>
+                        <li><a href="for-rent.html">For Rent</a></li>
+                        <li><a href="developments.html">Developments</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                             </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="about.html" class="nav-link">ABOUT US</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="contact.html" class="nav-link">CONTACT US</a>
-                        </li>
+                </nav>
+                <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul class="mobile-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="for-sale.html" class="active">For Sale</a></li>
+            <li><a href="for-rent.html">For Rent</a></li>
+            <li><a href="developments.html">Developments</a></li>
+            <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 
-                <div class="nav-buttons">
-                    <a href="#" class="booking-btn" onclick="openBookingModal()">
-                        <i class="fas fa-calendar"></i> Book Viewing
-                    </a>
-                </div>
-                
-                <div class="hamburger" id="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Properties For Sale</h1>
+                <p class="hero-subtitle">Discover Your Dream Home in Coastal Kenya</p>
+                <div class="hero-breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <span>For Sale</span>
                 </div>
             </div>
-        </nav>
-    </header>
-
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>Properties For Sale</h1>
-            <p>Discover your perfect home in the coastal region</p>
         </div>
     </section>
 
-    <!-- For Sale Section -->
-    <section class="properties-content-section">
+    <!-- Search and Filter Section -->
+    <section class="search-filter-section">
         <div class="container">
-            <div class="section-header">
-                <h2>Properties For Sale</h2>
-                <p>Discover your perfect home in the coastal region with our premium property selection</p>
+            <div class="search-filter-container">
+                <!-- Search Bar -->
+                <div class="search-bar-wrapper">
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="property-search" placeholder="Search by property name, location, or features...">
+                    </div>
             </div>
             
-            <div class="filters">
-                <select class="filter-select" id="location-filter">
+                <!-- Filters -->
+                <div class="filters-wrapper">
+                    <div class="filter-group">
+                        <label for="location-filter">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Location
+                        </label>
+                        <select id="location-filter" class="filter-select">
                     <option value="">All Locations</option>
-                    <option value="Nyali">Nyali</option>
-                    <option value="Shanzu">Shanzu</option>
-                    <option value="Kilifi">Kilifi</option>
-                    <option value="Mtwapa">Mtwapa</option>
-                    <option value="Vipingo">Vipingo</option>
+                            <option value="Nyali">Nyali</option>
+                            <option value="Shanzu">Shanzu</option>
+                            <option value="Kilifi">Kilifi</option>
+                            <option value="Mtwapa">Mtwapa</option>
+                            <option value="Vipingo">Vipingo</option>
+                            <option value="Mombasa">Mombasa</option>
+                            <option value="Watamu">Watamu</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="type-filter">
+                            <i class="fas fa-home"></i>
+                            Property Type
+                        </label>
+                        <select id="type-filter" class="filter-select">
+                            <option value="">All Types</option>
+                            <option value="House">House</option>
+                            <option value="Apartment">Apartment</option>
+                            <option value="Villa">Villa</option>
+                            <option value="Land">Land</option>
+                            <option value="Commercial">Commercial</option>
                 </select>
-                <select class="filter-select" id="price-filter">
-                    <option value="">Price Range</option>
-                    <option value="0-2M">KSh 0 - 2,000,000</option>
-                    <option value="2M-5M">KSh 2,000,000 - 5,000,000</option>
-                    <option value="5M-10M">KSh 5,000,000 - 10,000,000</option>
-                    <option value="10M+">KSh 10,000,000+</option>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="price-filter">
+                            <i class="fas fa-tags"></i>
+                            Price Range
+                        </label>
+                        <select id="price-filter" class="filter-select">
+                            <option value="">All Prices</option>
+                            <option value="0-2M">Up to KSh 2M</option>
+                            <option value="2M-5M">KSh 2M - 5M</option>
+                            <option value="5M-10M">KSh 5M - 10M</option>
+                            <option value="10M+">KSh 10M+</option>
                 </select>
-                <select class="filter-select" id="type-filter">
-                    <option value="">Property Type</option>
-                    <option value="House">House</option>
-                    <option value="Apartment">Apartment</option>
-                    <option value="Villa">Villa</option>
-                    <option value="Commercial">Commercial</option>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="bedrooms-filter">
+                            <i class="fas fa-bed"></i>
+                            Bedrooms
+                        </label>
+                        <select id="bedrooms-filter" class="filter-select">
+                            <option value="">Any</option>
+                            <option value="1">1+ Bed</option>
+                            <option value="2">2+ Beds</option>
+                            <option value="3">3+ Beds</option>
+                            <option value="4">4+ Beds</option>
+                            <option value="5">5+ Beds</option>
                 </select>
             </div>
 
+                    <button class="btn-reset-filters" id="reset-filters">
+                        <i class="fas fa-redo"></i>
+                        Reset Filters
+                    </button>
+                </div>
+
+                <!-- Results Count -->
+                <div class="results-info">
+                    <p id="results-count">Showing <strong>0</strong> properties</p>
+                    <div class="view-toggle">
+                        <button class="view-btn active" data-view="grid" title="Grid View">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="view-btn" data-view="list" title="List View">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Properties Grid Section -->
+    <section class="properties-section">
+        <div class="container">
+            <!-- Loading Spinner -->
+            <div id="loading-spinner" class="loading-spinner" style="display: none;">
+                <div class="spinner"></div>
+                <p>Loading properties...</p>
+            </div>
+
+            <!-- Properties Grid -->
             <div class="properties-grid" id="properties-grid">
-                <!-- Properties will be loaded dynamically with new design -->
+                <!-- Properties will be loaded dynamically -->
+            </div>
+
+            <!-- No Results Message -->
+            <div id="no-results" class="no-results" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h3>No Properties Found</h3>
+                <p>Try adjusting your filters or search criteria</p>
+                <button class="btn btn-primary" onclick="document.getElementById('reset-filters').click()">
+                    Reset Filters
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2>Can't Find What You're Looking For?</h2>
+                    <p>Our team is here to help you find your perfect property. Get in touch with us today!</p>
+                </div>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i>
+                        Contact Us
+                    </a>
+                    <a href="tel:+254700000000" class="btn btn-outline">
+                        <i class="fas fa-phone"></i>
+                        Call Now
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -119,109 +226,82 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <div class="logo-icon">
-                            <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1760165424/Kilifi_county_properties_logo_eklmnb.jpg" alt="Kilifi Properties Logo" class="logo-image">
-                        </div>
+                        <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1760165424/Kilifi_county_properties_logo_eklmnb.jpg" alt="Kilifi Properties Logo" class="logo-image">
                         <h3>KILIFI PROPERTIES</h3>
-                    </div>
+                        </div>
+                    <p class="footer-description">Your trusted partner in finding premium coastal properties in Kenya. We specialize in residential and commercial real estate across Kilifi County and beyond.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fas fa-phone"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>COMPANY</h4>
-                    <ul>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="developments.html">Services</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="contact.html">Get In Touch</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="for-sale.html">Properties For Sale</a></li>
+                        <li><a href="for-rent.html">Properties For Rent</a></li>
+                        <li><a href="developments.html">Developments</a></li>
+                        <li><a href="blog.html">Blog</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>EXPLORE</h4>
-                    <ul>
-                        <li><a href="view-developments.html">View Developments</a></li>
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="book-viewing.html">Book Property Viewing</a></li>
+                        <li><a href="consult-expert.html">Consult an Expert</a></li>
                         <li><a href="investment-guide.html">Investment Guide</a></li>
-                        <li><a href="for-sale.html">For Sale</a></li>
-                        <li><a href="for-rent.html">For Rent</a></li>
-                        <li><a href="news.html">News</a></li>
+                        <li><a href="market-research.html">Market Research</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>CONTACT US</h4>
-                    <div class="contact-info">
-                        <p><i class="fas fa-phone"></i> +254 713 861916</p>
-                        <p><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/XUUMfGBLk4LQP2dSA" target="_blank" style="color: inherit; text-decoration: none;">Coast Road, Kilifi, Kenya</a></p>
-                        <p><i class="fas fa-envelope"></i> info@kilifiproperties.co.ke</p>
-                    </div>
+                    <h4>Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Coast Road, Kilifi, Kenya</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+254 700 000 000<br>+254 733 000 000</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@kilifiproperties.co.ke</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Fri: 8AM - 6PM<br>Sat: 9AM - 4PM</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
                 <p>&copy; 2025 Kilifi Properties. All rights reserved.</p>
-                <a href="https://wa.me/254713861916?text=Hello! I'm interested in your coastal properties. Can you help me?" class="whatsapp-enquire-btn" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Enquire Now!
-                </a>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
             </div>
         </div>
+    </footer>
         
-        <!-- Scroll to Top Button -->
-        <button class="scroll-to-top" onclick="scrollToTop()">
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to Top">
             <i class="fas fa-arrow-up"></i>
         </button>
-    </footer>
 
-    <!-- Booking Modal -->
-    <div id="booking-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Book a Property Viewing</h2>
-            <form id="booking-form">
-                <div class="form-group">
-                    <input type="text" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" placeholder="Your Email" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" placeholder="Your Phone" required>
-                </div>
-                <div class="form-group">
-                    <select required>
-                        <option value="">Select Property</option>
-                        <option value="property1">Coastal Villa - Nyali</option>
-                        <option value="property2">Kilifi Heights - Kilifi</option>
-                        <option value="property3">Shanzu Gardens - Shanzu</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <input type="date" required>
-                </div>
-                <div class="form-group">
-                    <input type="time" required>
-                </div>
-                <div class="form-group">
-                    <textarea placeholder="Additional Notes" rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary btn-full">Book Viewing</button>
-            </form>
-        </div>
-    </div>
-
+    <!-- Script -->
     <script src="script.js"></script>
-    
-
 </body>
 </html>
 
