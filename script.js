@@ -1236,3 +1236,215 @@ function setActiveNavigation() {
     });
 }
 
+// New For-Sale Page Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Initializing new for-sale page features...');
+    
+    // Update Results Counter
+    function updateResultsCount() {
+        const resultsCount = document.getElementById('results-count');
+        const propertiesGrid = document.getElementById('properties-grid');
+        
+        if (resultsCount && propertiesGrid) {
+            const count = propertiesGrid.children.length;
+            resultsCount.innerHTML = `Showing <strong>${count}</strong> properties`;
+            console.log('Updated results count:', count);
+        }
+    }
+    
+    // Search Functionality
+    const propertySearch = document.getElementById('property-search');
+    if (propertySearch) {
+        console.log('Search bar found, adding event listener...');
+        propertySearch.addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase();
+            console.log('Search query:', query);
+            
+            const propertiesGrid = document.getElementById('properties-grid');
+            if (!propertiesGrid) return;
+            
+            const propertyCards = propertiesGrid.querySelectorAll('.property-card');
+            let visibleCount = 0;
+            
+            propertyCards.forEach(card => {
+                const title = card.querySelector('h3')?.textContent.toLowerCase() || '';
+                const location = card.querySelector('.property-location')?.textContent.toLowerCase() || '';
+                const description = card.querySelector('.property-description')?.textContent.toLowerCase() || '';
+                
+                if (title.includes(query) || location.includes(query) || description.includes(query)) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Update results count
+            const resultsCount = document.getElementById('results-count');
+            if (resultsCount) {
+                resultsCount.innerHTML = `Showing <strong>${visibleCount}</strong> properties`;
+            }
+            
+            // Show/hide no results message
+            const noResults = document.getElementById('no-results');
+            if (noResults) {
+                noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+            }
+            
+            console.log('Visible properties:', visibleCount);
+        });
+    }
+    
+    // Filter Functionality
+    const locationFilter = document.getElementById('location-filter');
+    const typeFilter = document.getElementById('type-filter');
+    const priceFilter = document.getElementById('price-filter');
+    const bedroomsFilter = document.getElementById('bedrooms-filter');
+    
+    function applyFilters() {
+        console.log('Applying filters...');
+        const propertiesGrid = document.getElementById('properties-grid');
+        if (!propertiesGrid) return;
+        
+        const location = locationFilter?.value || '';
+        const type = typeFilter?.value || '';
+        const price = priceFilter?.value || '';
+        const bedrooms = bedroomsFilter?.value || '';
+        
+        console.log('Filters:', { location, type, price, bedrooms });
+        
+        const propertyCards = propertiesGrid.querySelectorAll('.property-card');
+        let visibleCount = 0;
+        
+        propertyCards.forEach(card => {
+            let show = true;
+            
+            // Location filter
+            if (location) {
+                const cardLocation = card.querySelector('.property-location')?.textContent || '';
+                if (!cardLocation.includes(location)) show = false;
+            }
+            
+            // Type filter
+            if (type) {
+                const cardTitle = card.querySelector('h3')?.textContent || '';
+                if (!cardTitle.toLowerCase().includes(type.toLowerCase())) show = false;
+            }
+            
+            // Bedrooms filter
+            if (bedrooms) {
+                const bedsText = card.querySelector('.property-feature')?.textContent || '';
+                const bedsMatch = bedsText.match(/(\d+)\s*Beds?/);
+                const cardBeds = bedsMatch ? parseInt(bedsMatch[1]) : 0;
+                if (cardBeds < parseInt(bedrooms)) show = false;
+            }
+            
+            card.style.display = show ? 'block' : 'none';
+            if (show) visibleCount++;
+        });
+        
+        // Update results count
+        const resultsCount = document.getElementById('results-count');
+        if (resultsCount) {
+            resultsCount.innerHTML = `Showing <strong>${visibleCount}</strong> properties`;
+        }
+        
+        // Show/hide no results message
+        const noResults = document.getElementById('no-results');
+        if (noResults) {
+            noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+        
+        console.log('Visible properties after filter:', visibleCount);
+    }
+    
+    // Add event listeners to filters
+    if (locationFilter) locationFilter.addEventListener('change', applyFilters);
+    if (typeFilter) typeFilter.addEventListener('change', applyFilters);
+    if (priceFilter) priceFilter.addEventListener('change', applyFilters);
+    if (bedroomsFilter) bedroomsFilter.addEventListener('change', applyFilters);
+    
+    // Reset Filters
+    const resetFiltersBtn = document.getElementById('reset-filters');
+    if (resetFiltersBtn) {
+        console.log('Reset filters button found');
+        resetFiltersBtn.addEventListener('click', function() {
+            console.log('Resetting filters...');
+            
+            // Reset all filter values
+            if (locationFilter) locationFilter.value = '';
+            if (typeFilter) typeFilter.value = '';
+            if (priceFilter) priceFilter.value = '';
+            if (bedroomsFilter) bedroomsFilter.value = '';
+            if (propertySearch) propertySearch.value = '';
+            
+            // Show all properties
+            const propertiesGrid = document.getElementById('properties-grid');
+            if (propertiesGrid) {
+                const propertyCards = propertiesGrid.querySelectorAll('.property-card');
+                propertyCards.forEach(card => {
+                    card.style.display = 'block';
+                });
+                
+                // Update results count
+                updateResultsCount();
+            }
+            
+            // Hide no results message
+            const noResults = document.getElementById('no-results');
+            if (noResults) {
+                noResults.style.display = 'none';
+            }
+        });
+    }
+    
+    // View Toggle (Grid/List)
+    const viewBtns = document.querySelectorAll('.view-btn');
+    const propertiesGrid = document.getElementById('properties-grid');
+    
+    viewBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const view = this.getAttribute('data-view');
+            console.log('Switching to view:', view);
+            
+            // Update active state
+            viewBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Update grid class
+            if (propertiesGrid) {
+                if (view === 'list') {
+                    propertiesGrid.style.gridTemplateColumns = '1fr';
+                } else {
+                    propertiesGrid.style.gridTemplateColumns = '';
+                }
+            }
+        });
+    });
+    
+    // Back to Top Button
+    const backToTopBtn = document.getElementById('back-to-top');
+    if (backToTopBtn) {
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+    
+    // Initial results count update after properties load
+    setTimeout(() => {
+        updateResultsCount();
+        console.log('Initial results count updated');
+    }, 500);
+});
+
