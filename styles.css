@@ -992,6 +992,125 @@ section {
     transform: translateY(-5px);
 }
 
+/* FLOATING SOCIAL MEDIA WIDGET */
+.floating-social-widget {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    z-index: 1000;
+}
+
+.social-toggle-btn {
+    width: 60px;
+    height: 60px;
+    background: var(--gold);
+    border: none;
+    border-radius: 50%;
+    color: var(--white);
+    font-size: 1.8rem;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(151, 100, 19, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1001;
+}
+
+.social-toggle-btn:hover {
+    background: var(--gold-dark);
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(151, 100, 19, 0.5);
+}
+
+.social-toggle-btn i {
+    transition: transform 0.3s ease;
+}
+
+.social-toggle-btn.active i {
+    transform: rotate(45deg);
+}
+
+.social-icons-list {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.social-icons-list.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.social-icon-item {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.4rem;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.4s ease backwards;
+}
+
+.social-icon-item:nth-child(1) { animation-delay: 0.1s; }
+.social-icon-item:nth-child(2) { animation-delay: 0.15s; }
+.social-icon-item:nth-child(3) { animation-delay: 0.2s; }
+.social-icon-item:nth-child(4) { animation-delay: 0.25s; }
+.social-icon-item:nth-child(5) { animation-delay: 0.3s; }
+.social-icon-item:nth-child(6) { animation-delay: 0.35s; }
+.social-icon-item:nth-child(7) { animation-delay: 0.4s; }
+
+.social-icon-item:hover {
+    transform: translateX(-5px) scale(1.1);
+}
+
+.social-icon-item.whatsapp {
+    background: #25D366;
+}
+
+.social-icon-item.facebook {
+    background: #1877F2;
+}
+
+.social-icon-item.twitter {
+    background: #1DA1F2;
+}
+
+.social-icon-item.instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.social-icon-item.linkedin {
+    background: #0A66C2;
+}
+
+.social-icon-item.youtube {
+    background: #FF0000;
+}
+
+.social-icon-item.tiktok {
+    background: #000000;
+}
+
+.social-icon-item.phone {
+    background: #28a745;
+}
+
 /* LANDS PAGE - FULL PROPERTY CARDS */
 .properties-grid-full {
     display: flex;
@@ -2018,5 +2137,30 @@ section {
     
     .newsletter-form {
         flex-direction: column;
+    }
+    
+    /* Floating Social Widget Mobile */
+    .floating-social-widget {
+        bottom: 80px;
+        right: 15px;
+    }
+    
+    .social-toggle-btn {
+        width: 55px;
+        height: 55px;
+        font-size: 1.6rem;
+    }
+    
+    .social-icon-item {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .scroll-top {
+        bottom: 15px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
     }
 }

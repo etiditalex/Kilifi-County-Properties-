@@ -492,5 +492,29 @@ window.addEventListener('load', () => {
     initCarousel();
 });
 
+// FLOATING SOCIAL MEDIA WIDGET
+const socialToggleBtn = document.getElementById('socialToggleBtn');
+const socialIconsList = document.getElementById('socialIconsList');
+
+if (socialToggleBtn && socialIconsList) {
+    socialToggleBtn.addEventListener('click', function() {
+        socialToggleBtn.classList.toggle('active');
+        socialIconsList.classList.toggle('active');
+    });
+
+    // Close social icons when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.floating-social-widget')) {
+            socialToggleBtn.classList.remove('active');
+            socialIconsList.classList.remove('active');
+        }
+    });
+
+    // Prevent clicks inside widget from closing it
+    document.querySelector('.floating-social-widget')?.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+}
+
 // INITIALIZE
 console.log('Kilifi Properties - All systems initialized!');
