@@ -5404,4 +5404,238 @@ body .page-header p {
     }
 }
 
+/* ===================================
+   PROPERTY CARDS - ENHANCED STYLING
+   =================================== */
+
+/* Ensure property cards display properly on for-sale page */
+.properties-section .property-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.properties-section .property-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Property Image */
+.properties-section .property-image {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background: #f0f0f0;
+}
+
+.properties-section .property-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.properties-section .property-card:hover .property-image img {
+    transform: scale(1.1);
+}
+
+.properties-section .property-status {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: var(--white);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Property Content */
+.properties-section .property-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.properties-section .property-header {
+    margin-bottom: 15px;
+}
+
+.properties-section .property-header h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.properties-section .property-location {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.95rem;
+    color: var(--gray);
+}
+
+.properties-section .property-location i {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+/* Property Description */
+.properties-section .property-description {
+    margin-bottom: 15px;
+}
+
+.properties-section .property-description p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    opacity: 0.85;
+    margin: 0;
+}
+
+/* Property Price */
+.properties-section .property-price {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* Property Features */
+.properties-section .property-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.properties-section .property-feature {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.properties-section .property-feature i {
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+/* Property Actions */
+.properties-section .property-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.properties-section .property-actions .btn {
+    flex: 1;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    text-align: center;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.properties-section .property-actions .btn-primary {
+    background: var(--primary-color);
+    color: var(--white);
+    border: 2px solid var(--primary-color);
+}
+
+.properties-section .property-actions .btn-primary:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(151, 100, 19, 0.3);
+}
+
+.properties-section .property-actions .btn-outline {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.properties-section .property-actions .btn-outline:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(151, 100, 19, 0.2);
+}
+
+/* Responsive Property Cards */
+@media (max-width: 768px) {
+    .properties-section .property-image {
+        height: 220px;
+    }
+    
+    .properties-section .property-content {
+        padding: 20px;
+    }
+    
+    .properties-section .property-header h3 {
+        font-size: 1.3rem;
+    }
+    
+    .properties-section .property-price {
+        font-size: 1.4rem;
+    }
+    
+    .properties-section .property-actions {
+        flex-direction: column;
+    }
+    
+    .properties-section .property-actions .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .properties-section .property-image {
+        height: 200px;
+    }
+    
+    .properties-section .property-content {
+        padding: 18px;
+    }
+    
+    .properties-section .property-header h3 {
+        font-size: 1.2rem;
+    }
+    
+    .properties-section .property-price {
+        font-size: 1.3rem;
+    }
+    
+    .properties-section .property-feature {
+        font-size: 0.85rem;
+    }
+    
+    .properties-section .property-actions .btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+}
+
 
