@@ -820,5 +820,112 @@ if (lightbox) {
     });
 }
 
+// STAR RATING INPUT (Reviews Page)
+const starRating = document.getElementById('starRating');
+const ratingValue = document.getElementById('ratingValue');
+
+if (starRating) {
+    const stars = starRating.querySelectorAll('i');
+    
+    stars.forEach((star, index) => {
+        // Click event
+        star.addEventListener('click', () => {
+            const rating = star.getAttribute('data-rating');
+            ratingValue.value = rating;
+            
+            // Update star display
+            stars.forEach((s, i) => {
+                if (i < rating) {
+                    s.classList.remove('far');
+                    s.classList.add('fas', 'active');
+                } else {
+                    s.classList.remove('fas', 'active');
+                    s.classList.add('far');
+                }
+            });
+        });
+        
+        // Hover effect
+        star.addEventListener('mouseenter', () => {
+            const rating = star.getAttribute('data-rating');
+            stars.forEach((s, i) => {
+                if (i < rating) {
+                    s.classList.add('active');
+                } else {
+                    s.classList.remove('active');
+                }
+            });
+        });
+    });
+    
+    // Reset on mouse leave
+    starRating.addEventListener('mouseleave', () => {
+        const currentRating = ratingValue.value;
+        stars.forEach((s, i) => {
+            if (i < currentRating) {
+                s.classList.add('active');
+            } else {
+                s.classList.remove('active');
+            }
+        });
+    });
+}
+
+// REVIEW FORM SUBMISSION - Send to WhatsApp
+const reviewForm = document.getElementById('reviewForm');
+
+if (reviewForm) {
+    reviewForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get form data
+        const name = reviewForm.querySelector('input[type="text"]').value;
+        const email = reviewForm.querySelector('input[type="email"]').value;
+        const phone = reviewForm.querySelector('input[type="tel"]').value;
+        const property = reviewForm.querySelector('select').value;
+        const propertyText = reviewForm.querySelector('select option:checked').text;
+        const rating = ratingValue ? ratingValue.value : '5';
+        const reviewText = reviewForm.querySelector('textarea').value;
+        
+        // Format message for WhatsApp
+        let message = `*NEW CUSTOMER REVIEW*\n\n`;
+        message += `*Name:* ${name}\n`;
+        message += `*Email:* ${email}\n`;
+        if (phone) {
+            message += `*Phone:* ${phone}\n`;
+        }
+        if (property) {
+            message += `*Property:* ${propertyText}\n`;
+        }
+        message += `*Rating:* ${'⭐'.repeat(rating)} (${rating}/5)\n\n`;
+        message += `*Review:*\n${reviewText}\n`;
+        message += `\n_Submitted from Kilifi Properties Website_`;
+        
+        // WhatsApp number
+        const whatsappNumber = '254724367338';
+        
+        // Create WhatsApp link
+        const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        
+        // Open WhatsApp
+        window.open(whatsappLink, '_blank');
+        
+        // Show success message
+        showNotification('Thank you for your review! Opening WhatsApp to submit...', 'success');
+        
+        // Reset form
+        reviewForm.reset();
+        
+        // Reset stars
+        if (starRating) {
+            const stars = starRating.querySelectorAll('i');
+            stars.forEach(s => {
+                s.classList.remove('fas', 'active');
+                s.classList.add('far');
+            });
+        }
+    });
+}
+
 // INITIALIZE
 console.log('Kilifi Properties - All systems initialized!');
