@@ -1409,14 +1409,107 @@ const chatbot = {
     }
 };
 
-// Initialize Nelius Bot
+/* ==========================================
+   COOKIE CONSENT BANNER
+   ========================================== */
+
+const cookieConsent = {
+    // Check if user has already made a choice
+    hasConsent() {
+        return localStorage.getItem('cookieConsent') !== null;
+    },
+    
+    // Get user's consent choice
+    getConsent() {
+        return localStorage.getItem('cookieConsent');
+    },
+    
+    // Set user's consent choice
+    setConsent(value) {
+        localStorage.setItem('cookieConsent', value);
+        localStorage.setItem('cookieConsentDate', new Date().toISOString());
+    },
+    
+    // Show cookie banner
+    show() {
+        const banner = document.getElementById('cookieBanner');
+        if (banner) {
+            setTimeout(() => {
+                banner.classList.add('show');
+            }, 1000); // Show after 1 second
+        }
+    },
+    
+    // Hide cookie banner
+    hide() {
+        const banner = document.getElementById('cookieBanner');
+        if (banner) {
+            banner.classList.remove('show');
+        }
+    },
+    
+    // Accept cookies
+    accept() {
+        this.setConsent('accepted');
+        this.hide();
+        showNotification('✅ Cookie preferences saved! Thank you.', 'success');
+        // Enable analytics or other cookie-dependent features here
+        console.log('Cookies accepted');
+    },
+    
+    // Decline cookies
+    decline() {
+        this.setConsent('declined');
+        this.hide();
+        showNotification('Cookies declined. Some features may be limited.', 'info');
+        // Disable analytics or other cookie-dependent features here
+        console.log('Cookies declined');
+    },
+    
+    // Open settings (redirect to cookie policy page)
+    settings() {
+        window.location.href = 'cookies.html';
+    },
+    
+    // Initialize cookie consent
+    init() {
+        // Check if user has already made a choice
+        if (!this.hasConsent()) {
+            // Show banner if no choice has been made
+            this.show();
+        } else {
+            console.log('Cookie consent already given:', this.getConsent());
+        }
+        
+        // Setup event listeners
+        const acceptBtn = document.getElementById('acceptCookies');
+        const declineBtn = document.getElementById('declineCookies');
+        const settingsBtn = document.getElementById('cookieSettings');
+        
+        if (acceptBtn) {
+            acceptBtn.addEventListener('click', () => this.accept());
+        }
+        
+        if (declineBtn) {
+            declineBtn.addEventListener('click', () => this.decline());
+        }
+        
+        if (settingsBtn) {
+            settingsBtn.addEventListener('click', () => this.settings());
+        }
+    }
+};
+
+// Initialize Nelius Bot and Cookie Consent
 document.addEventListener('DOMContentLoaded', () => {
     chatbot.init();
+    cookieConsent.init();
     
-    // Show notification when website loads
+    // Show Nelius Bot notification after cookie banner (if cookies not accepted yet)
+    const delay = cookieConsent.hasConsent() ? 2000 : 5000;
     setTimeout(() => {
         chatbot.showNotificationBubble();
-    }, 2000); // Show after 2 seconds
+    }, delay);
 });
 
 // INITIALIZE
