@@ -295,11 +295,11 @@ a {
     left: 80px;
     top: 50%;
     transform: translateY(-50%);
-    width: 420px;
+    width: 380px;
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(20px);
-    border-radius: 20px;
-    padding: 40px;
+    border-radius: 18px;
+    padding: 32px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     z-index: 2;
     animation: slideInLeft 0.8s ease;
@@ -307,13 +307,13 @@ a {
 
 .property-badge {
     display: inline-block;
-    padding: 8px 20px;
-    border-radius: 25px;
-    font-size: 0.8rem;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
 }
 
 .property-badge.featured {
@@ -332,36 +332,37 @@ a {
 }
 
 .property-card-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--dark);
     font-weight: 800;
-    margin: 0 0 15px 0;
+    margin: 0 0 12px 0;
     line-height: 1.2;
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
 }
 
 .property-card-location {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     color: var(--gray);
-    font-size: 1rem;
-    margin-bottom: 25px;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
 }
 
 .property-card-location i {
     color: var(--gold);
+    font-size: 0.85rem;
 }
 
 .property-card-price {
-    margin-bottom: 25px;
-    padding-bottom: 25px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
     border-bottom: 2px solid #f0f0f0;
 }
 
 .price-amount {
     display: block;
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--gold);
     font-weight: 800;
     line-height: 1;
@@ -369,7 +370,7 @@ a {
 
 .price-original {
     display: block;
-    font-size: 1rem;
+    font-size: 0.85rem;
     color: #999;
     text-decoration: line-through;
     margin-top: 5px;
@@ -378,18 +379,18 @@ a {
 .property-card-details {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-bottom: 30px;
+    gap: 10px;
+    margin-bottom: 25px;
 }
 
 .detail-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
-    padding: 15px 8px;
+    gap: 6px;
+    padding: 12px 6px;
     background: var(--bg-light);
-    border-radius: 12px;
+    border-radius: 10px;
     transition: var(--transition);
 }
 
@@ -404,13 +405,13 @@ a {
 }
 
 .detail-item i {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: var(--gold);
     transition: var(--transition);
 }
 
 .detail-item span {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-weight: 600;
     color: var(--dark);
     text-align: center;
@@ -419,20 +420,20 @@ a {
 
 .property-card-actions {
     display: flex;
-    gap: 12px;
+    gap: 10px;
 }
 
 .btn-card-primary,
 .btn-card-secondary {
     flex: 1;
-    padding: 15px 20px;
-    border-radius: 10px;
-    font-size: 0.9rem;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 0.8rem;
     font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 6px;
     transition: var(--transition);
     border: none;
     cursor: pointer;
@@ -3657,12 +3658,16 @@ section {
 @media (max-width: 1024px) {
     .hero-property-card {
         left: 40px;
-        width: 380px;
-        padding: 35px;
+        width: 340px;
+        padding: 28px;
     }
     
     .property-card-title {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
+    }
+    
+    .price-amount {
+        font-size: 1.8rem;
     }
 }
 
@@ -3673,34 +3678,34 @@ section {
         top: auto;
         transform: none;
         width: calc(100% - 40px);
-        max-width: 450px;
+        max-width: 400px;
         margin: auto;
         margin-top: 120px;
-        padding: 30px;
+        padding: 25px;
     }
     
     .property-card-title {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
     
     .price-amount {
-        font-size: 2rem;
+        font-size: 1.7rem;
     }
     
     .property-card-details {
-        gap: 10px;
+        gap: 8px;
     }
     
     .detail-item {
-        padding: 12px 8px;
+        padding: 10px 6px;
     }
     
     .detail-item i {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     
     .detail-item span {
-        font-size: 0.75rem;
+        font-size: 0.65rem;
     }
     
     .property-card-actions {
@@ -3710,6 +3715,7 @@ section {
     .btn-card-primary,
     .btn-card-secondary {
         width: 100%;
+        font-size: 0.75rem;
     }
     
     .carousel-control {
@@ -3735,23 +3741,29 @@ section {
     .hero-property-card {
         width: calc(100% - 30px);
         margin-top: 100px;
-        padding: 25px;
+        padding: 22px;
     }
     
     .property-card-title {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
     
     .property-card-location {
-        font-size: 0.9rem;
+        font-size: 0.75rem;
     }
     
     .price-amount {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
     
     .price-original {
-        font-size: 0.85rem;
+        font-size: 0.75rem;
+    }
+    
+    .btn-card-primary,
+    .btn-card-secondary {
+        font-size: 0.7rem;
+        padding: 10px 14px;
     }
 }
 
