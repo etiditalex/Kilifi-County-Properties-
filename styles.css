@@ -128,6 +128,72 @@ a {
     width: 100%;
 }
 
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dropdown-toggle i {
+    font-size: 0.7rem;
+    transition: var(--transition);
+}
+
+.dropdown:hover .dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--white);
+    min-width: 200px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    list-style: none;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    padding: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 20px;
+    color: var(--gray);
+    font-size: 0.9rem;
+    transition: var(--transition);
+    position: relative;
+}
+
+.dropdown-menu a::after {
+    display: none;
+}
+
+.dropdown-menu a:hover {
+    background: var(--bg-light);
+    color: var(--gold);
+    padding-left: 25px;
+}
+
 .btn-book {
     background: var(--gold);
     color: var(--white);
@@ -3179,6 +3245,358 @@ section {
 }
 
 /* ==========================================
+   MARKET RESEARCH PAGE
+   ========================================== */
+
+.market-overview {
+    padding: 80px 0;
+    background: var(--bg-light);
+}
+
+.market-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.market-stat-card {
+    background: var(--white);
+    padding: 35px 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.market-stat-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
+    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.2);
+}
+
+.stat-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.stat-icon i {
+    font-size: 2rem;
+    color: var(--white);
+}
+
+.market-stat-card h3 {
+    font-size: 2.5rem;
+    color: var(--dark);
+    margin: 15px 0 10px;
+    font-weight: 700;
+}
+
+.market-stat-card p {
+    color: var(--gray);
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.stat-trend {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.stat-trend.positive {
+    background: rgba(76, 175, 80, 0.1);
+    color: #4caf50;
+}
+
+.stat-trend.neutral {
+    background: rgba(255, 152, 0, 0.1);
+    color: #ff9800;
+}
+
+/* Price Trends */
+.price-trends {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.price-comparison-table {
+    margin-top: 40px;
+    overflow-x: auto;
+}
+
+.market-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.market-table thead {
+    background: linear-gradient(135deg, var(--dark), #1a1a1a);
+}
+
+.market-table th {
+    padding: 20px;
+    text-align: left;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.market-table td {
+    padding: 20px;
+    border-bottom: 1px solid #f0f0f0;
+    color: var(--gray);
+}
+
+.market-table tbody tr:hover {
+    background: var(--bg-light);
+}
+
+.growth-positive {
+    color: #4caf50;
+    font-weight: 600;
+}
+
+.rating-excellent {
+    color: var(--gold);
+    font-size: 1.1rem;
+}
+
+.rating-good {
+    color: #ffa726;
+    font-size: 1.1rem;
+}
+
+/* Market Insights */
+.market-insights {
+    padding: 80px 0;
+    background: var(--bg-light);
+}
+
+.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.insight-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+    border-left: 4px solid var(--gold);
+}
+
+.insight-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.2);
+}
+
+.insight-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.insight-icon i {
+    font-size: 1.8rem;
+    color: var(--white);
+}
+
+.insight-card h3 {
+    font-size: 1.4rem;
+    color: var(--dark);
+    margin-bottom: 15px;
+}
+
+.insight-card p {
+    color: var(--gray);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.insight-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.insight-stats span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    background: var(--bg-light);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--gray);
+}
+
+.insight-stats i {
+    color: var(--gold);
+}
+
+/* Investment Recommendations */
+.investment-recommendations {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.recommendations-list {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.recommendation-item {
+    display: flex;
+    gap: 25px;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+    border: 2px solid #f0f0f0;
+}
+
+.recommendation-item:hover {
+    border-color: var(--gold);
+    transform: translateX(5px);
+    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.2);
+}
+
+.recommendation-rank {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--white);
+    flex-shrink: 0;
+}
+
+.recommendation-content h3 {
+    font-size: 1.5rem;
+    color: var(--dark);
+    margin-bottom: 12px;
+}
+
+.recommendation-content p {
+    color: var(--gray);
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.recommendation-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.recommendation-tags span {
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.tag-special {
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--gold);
+}
+
+.tag-roi {
+    background: rgba(76, 175, 80, 0.1);
+    color: #4caf50;
+}
+
+.tag-location {
+    background: rgba(33, 150, 243, 0.1);
+    color: #2196f3;
+}
+
+.tag-infra {
+    background: rgba(156, 39, 176, 0.1);
+    color: #9c27b0;
+}
+
+.tag-size {
+    background: rgba(255, 152, 0, 0.1);
+    color: #ff9800;
+}
+
+.tag-affordable {
+    background: rgba(76, 175, 80, 0.1);
+    color: #4caf50;
+}
+
+.tag-beginner {
+    background: rgba(33, 150, 243, 0.1);
+    color: #2196f3;
+}
+
+.tag-growth {
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--gold);
+}
+
+/* Responsive for Market Research */
+@media (max-width: 768px) {
+    .market-stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .insights-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .market-table {
+        font-size: 0.85rem;
+    }
+    
+    .market-table th,
+    .market-table td {
+        padding: 12px;
+    }
+    
+    .recommendation-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .recommendation-rank {
+        margin: 0 auto;
+    }
+}
+
+/* ==========================================
    COOKIE CONSENT BANNER
    ========================================== */
 
@@ -4069,6 +4487,35 @@ section {
         text-align: left;
         width: auto;
         margin-left: 0;
+    }
+    
+    /* Dropdown Mobile */
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        background: var(--bg-light);
+        margin: 10px 0;
+        border-radius: 0;
+        display: none;
+    }
+    
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+    
+    .dropdown-toggle i {
+        margin-left: auto;
+    }
+    
+    .dropdown-menu a {
+        padding-left: 50px;
+    }
+    
+    .dropdown-menu a:hover {
+        padding-left: 55px;
     }
     
     .nav-menu.active {

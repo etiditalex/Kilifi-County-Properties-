@@ -54,6 +54,14 @@
         <priority>0.7</priority>
     </url>
     
+    <!-- Market Research -->
+    <url>
+        <loc>https://kilificountyproperties.co.ke/market-research.html</loc>
+        <lastmod>2025-10-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
     <!-- Project Updates -->
     <url>
         <loc>https://kilificountyproperties.co.ke/updates.html</loc>

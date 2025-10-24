@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="In-depth market research and analysis of Kilifi County real estate trends, land prices, and investment opportunities">
+    <title>Market Research - Kilifi Properties</title>
+    
+    <link rel="icon" href="https://res.cloudinary.com/dyfnobo9r/image/upload/v1760165424/Kilifi_county_properties_logo_eklmnb.jpg">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1760165424/Kilifi_county_properties_logo_eklmnb.jpg" alt="Kilifi Properties">
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="lands.html">Land for Sale</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li class="dropdown">
+                    <a href="blogs.html" class="dropdown-toggle">
+                        Blog <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="blogs.html">All Articles</a></li>
+                        <li><a href="market-research.html" class="active">Market Research</a></li>
+                    </ul>
+                </li>
+                <li><a href="updates.html">Project Updates</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button class="btn-book" onclick="openBookingModal()">
+                    <i class="fas fa-calendar-check"></i> Book Site Visit
+                </button></li>
+            </ul>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-chart-line"></i> Market Research</h1>
+            <p>In-depth analysis of Kilifi County real estate trends and investment opportunities</p>
+        </div>
+    </section>
+
+    <!-- Market Overview -->
+    <section class="market-overview">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">Market Analysis</span>
+                <h2>Kilifi County Real Estate Overview 2025</h2>
+                <p>Comprehensive market insights for informed investment decisions</p>
+            </div>
+
+            <div class="market-stats-grid">
+                <div class="market-stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>25%</h3>
+                    <p>Average Annual Appreciation</p>
+                    <span class="stat-trend positive"><i class="fas fa-arrow-up"></i> Growing</span>
+                </div>
+
+                <div class="market-stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>15+</h3>
+                    <p>Prime Locations Available</p>
+                    <span class="stat-trend neutral"><i class="fas fa-minus"></i> Stable</span>
+                </div>
+
+                <div class="market-stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>500+</h3>
+                    <p>Satisfied Investors</p>
+                    <span class="stat-trend positive"><i class="fas fa-arrow-up"></i> Increasing</span>
+                </div>
+
+                <div class="market-stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>KSh 450K</h3>
+                    <p>Starting Price Range</p>
+                    <span class="stat-trend positive"><i class="fas fa-arrow-up"></i> Affordable</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Trends -->
+    <section class="price-trends">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">Price Analysis</span>
+                <h2>Land Price Trends by Location</h2>
+            </div>
+
+            <div class="price-comparison-table">
+                <table class="market-table">
+                    <thead>
+                        <tr>
+                            <th>Location</th>
+                            <th>Average Price (50x100)</th>
+                            <th>Average Price (1/8th Acre)</th>
+                            <th>3-Year Growth</th>
+                            <th>Investment Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Msabaha, Kilifi</strong></td>
+                            <td>KSh 450,000</td>
+                            <td>-</td>
+                            <td><span class="growth-positive">+35%</span></td>
+                            <td><span class="rating-excellent">★★★★★</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mtondia Highway</strong></td>
+                            <td>KSh 995,000</td>
+                            <td>-</td>
+                            <td><span class="growth-positive">+42%</span></td>
+                            <td><span class="rating-excellent">★★★★★</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Malindi Airport</strong></td>
+                            <td>KSh 950,000</td>
+                            <td>-</td>
+                            <td><span class="growth-positive">+38%</span></td>
+                            <td><span class="rating-excellent">★★★★★</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bofa Phase 20</strong></td>
+                            <td>-</td>
+                            <td>KSh 1,950,000</td>
+                            <td><span class="growth-positive">+28%</span></td>
+                            <td><span class="rating-good">★★★★☆</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bofa Phase 21</strong></td>
+                            <td>-</td>
+                            <td>KSh 1,850,000</td>
+                            <td><span class="growth-positive">+30%</span></td>
+                            <td><span class="rating-good">★★★★☆</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Insights -->
+    <section class="market-insights">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">Key Insights</span>
+                <h2>Market Analysis & Investment Opportunities</h2>
+            </div>
+
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>High Demand Areas</h3>
+                    <p>Msabaha and Mtondia areas continue to show the strongest demand due to excellent road infrastructure and proximity to major highways. Properties in these locations sell 40% faster than other areas.</p>
+                    <div class="insight-stats">
+                        <span><i class="fas fa-clock"></i> Avg. Sale Time: 30 days</span>
+                        <span><i class="fas fa-chart-line"></i> Demand: Very High</span>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <h3>Infrastructure Development</h3>
+                    <p>The completion of Bofa Road (B69) tarmacking has significantly increased property values in the area. Properties near tarmacked roads show 50% higher appreciation rates compared to murram roads.</p>
+                    <div class="insight-stats">
+                        <span><i class="fas fa-percentage"></i> Value Increase: +50%</span>
+                        <span><i class="fas fa-hammer"></i> Infrastructure: Excellent</span>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3>Airport Proximity Premium</h3>
+                    <p>Properties near Malindi International Airport command premium prices due to high tourism potential and commercial development opportunities. Rental yields in this area average 12-15% annually.</p>
+                    <div class="insight-stats">
+                        <span><i class="fas fa-chart-pie"></i> ROI: 12-15%</span>
+                        <span><i class="fas fa-briefcase"></i> Commercial Potential: High</span>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Genuine Title Deeds</h3>
+                    <p>All properties come with verified, genuine title deeds, ensuring secure ownership and easy transfer. Properties with clean titles appreciate 20% faster and are easier to resell or develop.</p>
+                    <div class="insight-stats">
+                        <span><i class="fas fa-check-circle"></i> Verification: 100%</span>
+                        <span><i class="fas fa-lock"></i> Security: Guaranteed</span>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Flexible Payment Plans</h3>
+                    <p>Our 12-month payment plans make property ownership accessible to more investors. Properties with flexible payment options have 60% higher buyer interest compared to cash-only sales.</p>
+                    <div class="insight-stats">
+                        <span><i class="fas fa-calendar"></i> Terms: 12 Months</span>
+                        <span><i class="fas fa-user-friends"></i> Accessibility: High</span>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <i class="fas fa-city"></i>
+                    </div>
+                    <h3>Future Growth Projections</h3>
+                    <p>With ongoing infrastructure projects including the Standard Gauge Railway extension and port expansion, Kilifi County is projected to see 30-40% property value increases over the next 3-5 years.</p>
+                    <div class="insight-stats">
+                        <span><i class="fas fa-arrow-up"></i> Projection: +30-40%</span>
+                        <span><i class="fas fa-calendar-alt"></i> Timeline: 3-5 Years</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Recommendations -->
+    <section class="investment-recommendations">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">Expert Recommendations</span>
+                <h2>Best Investment Opportunities 2025</h2>
+            </div>
+
+            <div class="recommendations-list">
+                <div class="recommendation-item">
+                    <div class="recommendation-rank">1</div>
+                    <div class="recommendation-content">
+                        <h3>Mtondia Highway - Best Overall Value</h3>
+                        <p>Currently offered at KSh 995,000 (down from KSh 1,250,000), this strategic location along the highway offers the best combination of accessibility, infrastructure, and growth potential. Expected ROI of 45% over 3 years.</p>
+                        <div class="recommendation-tags">
+                            <span class="tag-special">Special Offer</span>
+                            <span class="tag-roi">High ROI</span>
+                            <span class="tag-location">Prime Location</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recommendation-item">
+                    <div class="recommendation-rank">2</div>
+                    <div class="recommendation-content">
+                        <h3>Bofa Phase 20 - Infrastructure Winner</h3>
+                        <p>Newly tarmacked Bofa Road (B69) makes this 1/8th acre plot ideal for larger developments. Special offer at KSh 1,950,000 (from KSh 2,150,000). Perfect for residential or commercial projects.</p>
+                        <div class="recommendation-tags">
+                            <span class="tag-special">Special Offer</span>
+                            <span class="tag-infra">Excellent Infrastructure</span>
+                            <span class="tag-size">Larger Plot</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recommendation-item">
+                    <div class="recommendation-rank">3</div>
+                    <div class="recommendation-content">
+                        <h3>Msabaha Phase 6 - Best Entry Point</h3>
+                        <p>At just KSh 450,000, this is the most affordable entry point for first-time investors. Despite the lower price, appreciation rates match higher-priced properties, making it excellent value for money.</p>
+                        <div class="recommendation-tags">
+                            <span class="tag-affordable">Most Affordable</span>
+                            <span class="tag-beginner">First-Time Buyer Friendly</span>
+                            <span class="tag-growth">High Growth</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Invest Based on Our Research?</h2>
+            <p>Let our team help you make an informed investment decision</p>
+            <div class="cta-buttons">
+                <button class="btn btn-white" onclick="openBookingModal()">
+                    <i class="fas fa-calendar-check"></i> Book Site Visit
+                </button>
+                <a href="lands.html" class="btn btn-outline-white">
+                    <i class="fas fa-eye"></i> View All Properties
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1760165424/Kilifi_county_properties_logo_eklmnb.jpg" alt="Kilifi Properties Logo" class="footer-logo">
+                    <p>Your trusted partner for genuine land investments in Kilifi County and the coastal region of Kenya.</p>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="lands.html">Land for Sale</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="blogs.html">Blog</a></li>
+                        <li><a href="market-research.html">Market Research</a></li>
+                        <li><a href="updates.html">Project Updates</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="cookies.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Coast Road, Kilifi County</li>
+                        <li><i class="fas fa-phone"></i> +254 724 367338</li>
+                        <li><i class="fas fa-envelope"></i> info@kilifiproperties.co.ke</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 8AM - 5PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kilifi Properties. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="cookies.html">Cookie Policy</a>
+                    <a href="contact.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Social Widget -->
+    <div class="floating-social-widget">
+        <button class="social-toggle-btn" id="socialToggle">
+            <i class="fas fa-share-alt"></i>
+        </button>
+        <ul class="social-icons-list" id="socialIconsList">
+            <li class="social-icon-item">
+                <a href="https://wa.me/254724367338" target="_blank" class="social-icon whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+            </li>
+            <li class="social-icon-item">
+                <a href="tel:+254724367338" class="social-icon phone">
+                    <i class="fas fa-phone"></i>
+                    <span>Call Us</span>
+                </a>
+            </li>
+            <li class="social-icon-item">
+                <a href="mailto:info@kilifiproperties.co.ke" class="social-icon email">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email</span>
+                </a>
+            </li>
+            <li class="social-icon-item">
+                <a href="#" target="_blank" class="social-icon facebook">
+                    <i class="fab fa-facebook"></i>
+                    <span>Facebook</span>
+                </a>
+            </li>
+            <li class="social-icon-item">
+                <a href="#" target="_blank" class="social-icon instagram">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Booking Modal -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeBookingModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="modal-header">
+                <h2>Book a Site Visit</h2>
+                <p>Schedule your free property viewing today</p>
+            </div>
+            
+            <form id="bookingForm" class="modal-form">
+                <div class="form-group">
+                    <label><i class="fas fa-user"></i> Full Name</label>
+                    <input type="text" required placeholder="Enter your full name">
+                </div>
+                
+                <div class="form-group">
+                    <label><i class="fas fa-envelope"></i> Email Address</label>
+                    <input type="email" required placeholder="your.email@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label><i class="fas fa-phone"></i> Phone Number</label>
+                    <input type="tel" required placeholder="+254 7XX XXX XXX">
+                </div>
+                
+                <div class="form-group">
+                    <label><i class="fas fa-map-marker-alt"></i> Select Property</label>
+                    <select required>
+                        <option value="">Choose a property...</option>
+                        <option value="msabaha">Msabaha Phase 6 - Kilifi</option>
+                        <option value="mtondia">Mtondia Highway</option>
+                        <option value="malindi">Malindi Airport View Gardens</option>
+                        <option value="bofa20">Bofa Phase 20</option>
+                        <option value="bofa21">Bofa Phase 21</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label><i class="fas fa-calendar"></i> Preferred Date</label>
+                    <input type="date" required>
+                </div>
+                
+                <div class="form-group">
+                    <label><i class="fas fa-comment"></i> Additional Notes (Optional)</label>
+                    <textarea rows="3" placeholder="Any specific requirements or questions?"></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fas fa-paper-plane"></i> Send Booking Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span id="notificationMessage"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

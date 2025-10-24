@@ -24,7 +24,7 @@ if (hamburger && navMenu) {
     });
 
     // Close menu when clicking on a link
-    document.querySelectorAll('.nav-menu a').forEach(link => {
+    document.querySelectorAll('.nav-menu a:not(.dropdown-toggle)').forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
             hamburger.classList.remove('active');
@@ -39,6 +39,18 @@ if (hamburger && navMenu) {
         }
     });
 }
+
+// DROPDOWN MENU TOGGLE FOR MOBILE
+document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+        // Only prevent default and toggle on mobile
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            const dropdown = toggle.closest('.dropdown');
+            dropdown.classList.toggle('active');
+        }
+    });
+});
 
 // SCROLL TO TOP BUTTON
 window.addEventListener('scroll', () => {
