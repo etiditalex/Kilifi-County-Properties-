@@ -965,6 +965,25 @@ const chatbot = {
                 balance: "12 months",
                 size: "50x100 ft", 
                 features: "Near airport, premium location, ideal for commercial use" 
+            },
+            { 
+                name: "Bofa Phase 20", 
+                location: "Bofa, Kilifi", 
+                price: "KSh 1,950,000", 
+                originalPrice: "KSh 2,150,000",
+                deposit: "KSh 700,000",
+                balance: "12 months",
+                size: "1/8th acre", 
+                features: "Special offer! Newly tarmacked Bofa Road (B69), electricity & water on site" 
+            },
+            { 
+                name: "Bofa Phase 21", 
+                location: "Bofa, Kilifi", 
+                price: "KSh 1,850,000", 
+                deposit: "KSh 700,000",
+                balance: "12 months",
+                size: "1/8th acre", 
+                features: "Off Bofa Road (B69), perimeter fence, well-demarcated, water & electricity" 
             }
         ],
         contact: {
@@ -1022,20 +1041,26 @@ const chatbot = {
             return "💰 <strong>Current Property Prices:</strong><br><br>" +
                    "• <strong>Msabaha Phase 6:</strong> KSh 450,000<br>" +
                    "  📍 Deposit: KSh 150,000 | Balance: 12 months<br><br>" +
-                   "• <strong>Mtondia Highway:</strong> <span style='text-decoration: line-through;'>KSh 1,250,000</span> <strong style='color: #d4af37;'>KSh 995,000</strong> <span style='background: #d4af37; color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.75em;'>SPECIAL OFFER!</span><br>" +
+                   "• <strong>Mtondia Highway:</strong> <span style='text-decoration: line-through;'>KSh 1,250,000</span> <strong style='color: #d4af37;'>KSh 995,000</strong> <span style='background: #d4af37; color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.75em;'>OFFER!</span><br>" +
                    "  📍 Deposit: KSh 500,000 | Balance: 12 months<br><br>" +
                    "• <strong>Malindi Airport:</strong> KSh 950,000<br>" +
                    "  📍 Deposit: KSh 400,000 | Balance: 12 months<br><br>" +
+                   "• <strong>Bofa Phase 20:</strong> <span style='text-decoration: line-through;'>KSh 2,150,000</span> <strong style='color: #d4af37;'>KSh 1,950,000</strong> <span style='background: #d4af37; color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.75em;'>OFFER!</span><br>" +
+                   "  📍 Deposit: KSh 700,000 | Balance: 12 months<br><br>" +
+                   "• <strong>Bofa Phase 21:</strong> KSh 1,850,000<br>" +
+                   "  📍 Deposit: KSh 700,000 | Balance: 12 months<br><br>" +
                    "We offer <strong>flexible 12-month payment plans</strong> to suit your budget! 💳<br>" +
                    "Would you like to discuss these options?";
         }
         
         // Location inquiries
-        if (/location|where|kilifi|malindi|watamu|nyali|mtwapa|mtondia|highway|area/i.test(message)) {
+        if (/location|where|kilifi|malindi|watamu|nyali|mtwapa|mtondia|highway|bofa|area/i.test(message)) {
             return "📍 <strong>We have properties in prime coastal locations:</strong><br><br>" +
                    "• <strong>Msabaha Phase 6, Kilifi</strong> - Near Mombasa-Malindi Road (KSh 450,000)<br>" +
                    "• <strong>Mtondia Highway, Kilifi</strong> - Strategic highway location <span style='background: #d4af37; color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.75em;'>OFFER!</span> (KSh 995,000)<br>" +
-                   "• <strong>Malindi Airport View Gardens</strong> - Near airport, premium location (KSh 950,000)<br><br>" +
+                   "• <strong>Malindi Airport View Gardens</strong> - Near airport, premium location (KSh 950,000)<br>" +
+                   "• <strong>Bofa Phase 20</strong> - Newly tarmacked Bofa Road (B69) <span style='background: #d4af37; color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.75em;'>OFFER!</span> (KSh 1,950,000)<br>" +
+                   "• <strong>Bofa Phase 21</strong> - Off Bofa Road (B69), premium 1/8th acre (KSh 1,850,000)<br><br>" +
                    "All locations come with <strong>genuine title deeds</strong> and flexible 12-month payment plans! 📄";
         }
         
@@ -1064,7 +1089,9 @@ const chatbot = {
                    "📋 <strong>Payment Structure:</strong><br>" +
                    "• <strong>Msabaha Phase 6:</strong> Deposit KSh 150,000 + 12 monthly installments<br>" +
                    "• <strong>Mtondia Highway:</strong> Deposit KSh 500,000 + 12 monthly installments<br>" +
-                   "• <strong>Malindi Airport:</strong> Deposit KSh 400,000 + 12 monthly installments<br><br>" +
+                   "• <strong>Malindi Airport:</strong> Deposit KSh 400,000 + 12 monthly installments<br>" +
+                   "• <strong>Bofa Phase 20:</strong> Deposit KSh 700,000 + 12 monthly installments<br>" +
+                   "• <strong>Bofa Phase 21:</strong> Deposit KSh 700,000 + 12 monthly installments<br><br>" +
                    "✅ No hidden charges<br>" +
                    "✅ Clear payment terms<br>" +
                    "✅ Title deed upon completion<br><br>" +
