@@ -1320,12 +1320,70 @@ const chatbot = {
     getCurrentTime() {
         const now = new Date();
         return now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+    },
+    
+    // Show notification bubble
+    showNotificationBubble() {
+        const chatbotBtn = document.getElementById('chatbotBtn');
+        if (!chatbotBtn) return;
+        
+        // Create notification bubble
+        const notification = document.createElement('div');
+        notification.className = 'chatbot-notification';
+        notification.innerHTML = `
+            <div class="chatbot-notification-content">
+                <div class="chatbot-notification-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="chatbot-notification-text">
+                    <strong>Hi! I'm Nelius Bot 👋</strong>
+                    <p>Need help finding land? Click to chat!</p>
+                </div>
+                <button class="chatbot-notification-close" onclick="this.parentElement.parentElement.remove()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        `;
+        
+        // Add to chatbot container
+        const container = document.querySelector('.chatbot-container');
+        if (container) {
+            container.appendChild(notification);
+            
+            // Animate in
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 100);
+            
+            // Auto-hide after 10 seconds
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.classList.remove('show');
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 300);
+                }
+            }, 10000);
+            
+            // Click notification to open chat
+            notification.addEventListener('click', (e) => {
+                if (!e.target.closest('.chatbot-notification-close')) {
+                    notification.remove();
+                    chatbotBtn.click();
+                }
+            });
+        }
     }
 };
 
 // Initialize Nelius Bot
 document.addEventListener('DOMContentLoaded', () => {
     chatbot.init();
+    
+    // Show notification when website loads
+    setTimeout(() => {
+        chatbot.showNotificationBubble();
+    }, 2000); // Show after 2 seconds
 });
 
 // INITIALIZE
