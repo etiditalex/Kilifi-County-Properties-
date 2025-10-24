@@ -927,5 +927,406 @@ if (reviewForm) {
     });
 }
 
+/* ==========================================
+   NELIUS BOT - AI CHATBOT
+   ========================================== */
+
+const chatbot = {
+    isOpen: false,
+    conversationStarted: false,
+    
+    // Knowledge base about Kilifi Properties
+    knowledge: {
+        properties: [
+            { name: "Msabaha Phase 6", location: "Kilifi", price: "KSh 650,000", size: "50x100 ft", features: "Near Mombasa-Malindi Road, ready title deeds" },
+            { name: "Malindi Airport View Gardens", location: "Malindi", price: "KSh 850,000", size: "50x100 ft", features: "Near airport, premium location" },
+            { name: "Watamu Beach Plots", location: "Watamu", price: "KSh 1,200,000", size: "50x100 ft", features: "Near beach, tourism hub" },
+            { name: "Nyali Premium Plots", location: "Nyali", price: "KSh 1,500,000", size: "50x100 ft", features: "Prime Mombasa location" }
+        ],
+        contact: {
+            phone: "+254 724 367338",
+            email: "info@kilifiproperties.co.ke",
+            location: "Coast Road, Kilifi County",
+            hours: "Mon-Fri: 8AM-5PM, Sat: 9AM-2PM"
+        },
+        services: [
+            "Genuine titled land for sale",
+            "Free site visits",
+            "Flexible payment plans",
+            "Title processing assistance",
+            "Property consultancy"
+        ]
+    },
+    
+    // AI Response Engine
+    generateResponse(userMessage) {
+        const message = userMessage.toLowerCase().trim();
+        
+        // Greetings
+        if (/^(hi|hello|hey|good morning|good afternoon|good evening|hola|jambo)/i.test(message)) {
+            const greetings = [
+                "Hello! 👋 I'm Nelius Bot, your AI property assistant. How can I help you find your dream plot today?",
+                "Hi there! 🌟 Welcome to Kilifi Properties! I'm Nelius Bot, ready to help you with land investments.",
+                "Hey! 😊 I'm Nelius Bot. Looking for the perfect piece of land? I'm here to guide you!",
+                "Jambo! 🏡 I'm Nelius Bot, your smart property guide. What can I help you discover today?"
+            ];
+            return greetings[Math.floor(Math.random() * greetings.length)];
+        }
+        
+        // Property inquiries
+        if (/properties|land|plot|available|buy|purchase|sell/i.test(message)) {
+            let response = "🏡 <strong>Available Properties:</strong><br><br>";
+            this.knowledge.properties.forEach((prop, index) => {
+                response += `<strong>${index + 1}. ${prop.name}</strong><br>`;
+                response += `📍 Location: ${prop.location}<br>`;
+                response += `💰 Price: ${prop.price}<br>`;
+                response += `📏 Size: ${prop.size}<br>`;
+                response += `✨ Features: ${prop.features}<br><br>`;
+            });
+            response += "Would you like to book a site visit or need more details? 📞";
+            return response;
+        }
+        
+        // Price inquiries
+        if (/price|cost|how much|expensive|cheap|afford/i.test(message)) {
+            return "💰 <strong>Our land prices range from:</strong><br><br>" +
+                   "• Kilifi area: From KSh 650,000<br>" +
+                   "• Malindi area: From KSh 850,000<br>" +
+                   "• Watamu area: From KSh 1,200,000<br>" +
+                   "• Nyali area: From KSh 1,500,000<br><br>" +
+                   "We offer <strong>flexible payment plans</strong> to suit your budget! 💳<br>" +
+                   "Would you like to discuss payment options?";
+        }
+        
+        // Location inquiries
+        if (/location|where|kilifi|malindi|watamu|nyali|mtwapa|area/i.test(message)) {
+            return "📍 <strong>We have properties in prime coastal locations:</strong><br><br>" +
+                   "• <strong>Kilifi</strong> - Near Mombasa-Malindi Road<br>" +
+                   "• <strong>Malindi</strong> - Airport View Gardens<br>" +
+                   "• <strong>Watamu</strong> - Beach proximity, tourism hub<br>" +
+                   "• <strong>Nyali</strong> - Premium Mombasa location<br>" +
+                   "• <strong>Mtwapa</strong> - Strategic investment area<br><br>" +
+                   "All locations come with genuine title deeds! 📄";
+        }
+        
+        // Site visit inquiries
+        if (/visit|see|view|tour|inspect|check/i.test(message)) {
+            return "👁️ <strong>Free Site Visits Available!</strong><br><br>" +
+                   "We offer complimentary site visits to all our properties. Our team will guide you through the plots and answer all your questions.<br><br>" +
+                   "📅 Book your site visit now! Click the 'Book Site Visit' button at the top of the page, or I can connect you directly with our team.<br><br>" +
+                   "Would you like to schedule a visit?";
+        }
+        
+        // Contact inquiries
+        if (/contact|call|phone|email|reach|talk|speak|whatsapp/i.test(message)) {
+            return "📞 <strong>Contact Kilifi Properties:</strong><br><br>" +
+                   `• <strong>Phone/WhatsApp:</strong> ${this.knowledge.contact.phone}<br>` +
+                   `• <strong>Email:</strong> ${this.knowledge.contact.email}<br>` +
+                   `• <strong>Office:</strong> ${this.knowledge.contact.location}<br>` +
+                   `• <strong>Hours:</strong> ${this.knowledge.contact.hours}<br><br>` +
+                   "Click the WhatsApp icon to chat directly with our team! 💬";
+        }
+        
+        // Payment plan inquiries
+        if (/payment|install|plan|down payment|deposit/i.test(message)) {
+            return "💳 <strong>Flexible Payment Plans:</strong><br><br>" +
+                   "We understand everyone's financial situation is unique! We offer:<br><br>" +
+                   "• Installment payment options<br>" +
+                   "• Negotiable down payments<br>" +
+                   "• Customized payment schedules<br>" +
+                   "• No hidden charges<br><br>" +
+                   "Contact us to discuss a plan that works for you! 📞 " + this.knowledge.contact.phone;
+        }
+        
+        // Title deed inquiries
+        if (/title|deed|ownership|genuine|legal|document/i.test(message)) {
+            return "📄 <strong>100% Genuine Title Deeds!</strong><br><br>" +
+                   "All our properties come with:<br><br>" +
+                   "✅ Verified and genuine title deeds<br>" +
+                   "✅ Clean ownership history<br>" +
+                   "✅ Legal documentation support<br>" +
+                   "✅ Title processing assistance<br><br>" +
+                   "Your investment is secure with us! 🔒";
+        }
+        
+        // About Nelius Nelly
+        if (/nelius|nelly|ceo|founder|owner|who owns/i.test(message)) {
+            return "👩‍💼 <strong>Meet Nelius Nelly - CEO & Founder</strong><br><br>" +
+                   "Nelius Nelly is our visionary founder with over 10+ years of experience in Kenya's real estate industry.<br><br>" +
+                   "• Sales Representative at Inuka Afrika Properties<br>" +
+                   "• Prominent role in coastal region real estate<br>" +
+                   "• Mission: Connect buyers with sellers & change lives<br><br>" +
+                   "Her dedication has helped 500+ clients find their dream plots! 🌟<br><br>" +
+                   "Learn more on our About page!";
+        }
+        
+        // Investment advice
+        if (/invest|investment|good|worth|benefit|advantage/i.test(message)) {
+            return "💎 <strong>Why Invest in Kilifi Properties?</strong><br><br>" +
+                   "✅ Prime coastal locations with high appreciation<br>" +
+                   "✅ 100% genuine title deeds<br>" +
+                   "✅ Strategic locations near major roads & beaches<br>" +
+                   "✅ Growing tourism & infrastructure development<br>" +
+                   "✅ Flexible payment plans<br>" +
+                   "✅ Expert guidance from experienced team<br><br>" +
+                   "Land is the best investment you can make! 🏡";
+        }
+        
+        // Thank you
+        if (/thank|thanks|appreciate|grateful/i.test(message)) {
+            return "You're very welcome! 😊 I'm always here to help. Is there anything else you'd like to know about our properties or services?";
+        }
+        
+        // Goodbye
+        if (/bye|goodbye|see you|later|exit|close/i.test(message)) {
+            return "Thank you for chatting with me! 👋 Feel free to return anytime. Don't forget to book a site visit or contact us at " + this.knowledge.contact.phone + ". Have a wonderful day! 🌟";
+        }
+        
+        // Help
+        if (/help|assist|support|what can you do/i.test(message)) {
+            return "🤖 <strong>I'm Nelius Bot, your AI property assistant!</strong><br><br>" +
+                   "I can help you with:<br><br>" +
+                   "• Available properties & pricing<br>" +
+                   "• Location information<br>" +
+                   "• Booking site visits<br>" +
+                   "• Payment plans<br>" +
+                   "• Title deed information<br>" +
+                   "• Contact details<br>" +
+                   "• Investment advice<br><br>" +
+                   "Just ask me anything about Kilifi Properties! 💬";
+        }
+        
+        // Default response for unrecognized queries
+        return "🤔 I'm here to help! I can assist with:<br><br>" +
+               "• <strong>Properties:</strong> Ask about available land<br>" +
+               "• <strong>Prices:</strong> Get pricing information<br>" +
+               "• <strong>Locations:</strong> Learn about our areas<br>" +
+               "• <strong>Site Visits:</strong> Schedule a tour<br>" +
+               "• <strong>Contact:</strong> Get in touch with our team<br><br>" +
+               "Or chat directly with our team via WhatsApp: " + this.knowledge.contact.phone + " 📱";
+    },
+    
+    // Initialize chatbot
+    init() {
+        const chatbotBtn = document.getElementById('chatbotBtn');
+        const chatbotWindow = document.getElementById('chatbotWindow');
+        const closeChatbot = document.getElementById('closeChatbot');
+        const minimizeChatbot = document.getElementById('minimizeChatbot');
+        const chatMessages = document.getElementById('chatMessages');
+        const userInput = document.getElementById('userInput');
+        const sendMessage = document.getElementById('sendMessage');
+        
+        // Toggle chatbot
+        if (chatbotBtn) {
+            chatbotBtn.addEventListener('click', () => {
+                this.isOpen = !this.isOpen;
+                chatbotWindow.classList.toggle('open');
+                chatbotBtn.style.display = this.isOpen ? 'none' : 'flex';
+                
+                // Send welcome message on first open
+                if (this.isOpen && !this.conversationStarted) {
+                    setTimeout(() => {
+                        this.addMessage(
+                            "👋 Hello! I'm <strong>Nelius Bot</strong>, your AI property assistant!<br><br>" +
+                            "I'm here to help you find the perfect plot of land in Kilifi County. " +
+                            "Ask me about properties, prices, locations, or anything else!<br><br>" +
+                            "How can I assist you today? 😊",
+                            'bot'
+                        );
+                        this.conversationStarted = true;
+                    }, 500);
+                }
+                
+                // Focus input when opened
+                if (this.isOpen) {
+                    userInput.focus();
+                }
+            });
+        }
+        
+        // Close chatbot
+        if (closeChatbot) {
+            closeChatbot.addEventListener('click', () => {
+                this.isOpen = false;
+                chatbotWindow.classList.remove('open');
+                chatbotBtn.style.display = 'flex';
+            });
+        }
+        
+        // Minimize chatbot
+        if (minimizeChatbot) {
+            minimizeChatbot.addEventListener('click', () => {
+                this.isOpen = false;
+                chatbotWindow.classList.remove('open');
+                chatbotBtn.style.display = 'flex';
+            });
+        }
+        
+        // Send message on button click
+        if (sendMessage) {
+            sendMessage.addEventListener('click', () => {
+                this.handleUserMessage();
+            });
+        }
+        
+        // Send message on Enter key
+        if (userInput) {
+            userInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    this.handleUserMessage();
+                }
+            });
+        }
+        
+        // Quick action buttons
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('chatbot-quick-btn')) {
+                const action = e.target.dataset.action;
+                this.handleQuickAction(action);
+            }
+        });
+    },
+    
+    // Handle user message
+    handleUserMessage() {
+        const userInput = document.getElementById('userInput');
+        const message = userInput.value.trim();
+        
+        if (message) {
+            // Add user message
+            this.addMessage(message, 'user');
+            userInput.value = '';
+            
+            // Show typing indicator
+            this.showTypingIndicator();
+            
+            // Generate bot response after delay
+            setTimeout(() => {
+                this.hideTypingIndicator();
+                const response = this.generateResponse(message);
+                this.addMessage(response, 'bot');
+            }, 1000 + Math.random() * 1000); // Random delay for realism
+        }
+    },
+    
+    // Handle quick actions
+    handleQuickAction(action) {
+        const actions = {
+            'properties': 'Show me available properties',
+            'prices': 'What are your prices?',
+            'contact': 'How can I contact you?',
+            'visit': 'I want to book a site visit'
+        };
+        
+        const message = actions[action];
+        if (message) {
+            document.getElementById('userInput').value = message;
+            this.handleUserMessage();
+        }
+    },
+    
+    // Add message to chat
+    addMessage(text, sender) {
+        const chatMessages = document.getElementById('chatMessages');
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `chatbot-message ${sender}-message`;
+        
+        if (sender === 'bot') {
+            messageDiv.innerHTML = `
+                <div class="message-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="message-content">
+                    <div class="message-text">${text}</div>
+                    <div class="message-time">${this.getCurrentTime()}</div>
+                </div>
+            `;
+        } else {
+            messageDiv.innerHTML = `
+                <div class="message-content">
+                    <div class="message-text">${text}</div>
+                    <div class="message-time">${this.getCurrentTime()}</div>
+                </div>
+                <div class="message-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+            `;
+        }
+        
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        
+        // Add quick action buttons after first bot message
+        if (sender === 'bot' && chatMessages.children.length === 1) {
+            this.addQuickActions();
+        }
+    },
+    
+    // Add quick action buttons
+    addQuickActions() {
+        const chatMessages = document.getElementById('chatMessages');
+        const quickActionsDiv = document.createElement('div');
+        quickActionsDiv.className = 'chatbot-quick-actions';
+        quickActionsDiv.innerHTML = `
+            <p class="quick-actions-title">Quick Actions:</p>
+            <button class="chatbot-quick-btn" data-action="properties">
+                <i class="fas fa-home"></i> View Properties
+            </button>
+            <button class="chatbot-quick-btn" data-action="prices">
+                <i class="fas fa-tag"></i> Check Prices
+            </button>
+            <button class="chatbot-quick-btn" data-action="contact">
+                <i class="fas fa-phone"></i> Contact Us
+            </button>
+            <button class="chatbot-quick-btn" data-action="visit">
+                <i class="fas fa-calendar"></i> Book Visit
+            </button>
+        `;
+        chatMessages.appendChild(quickActionsDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    },
+    
+    // Show typing indicator
+    showTypingIndicator() {
+        const chatMessages = document.getElementById('chatMessages');
+        const typingDiv = document.createElement('div');
+        typingDiv.id = 'typingIndicator';
+        typingDiv.className = 'chatbot-message bot-message';
+        typingDiv.innerHTML = `
+            <div class="message-avatar">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="message-content">
+                <div class="typing-indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        `;
+        chatMessages.appendChild(typingDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    },
+    
+    // Hide typing indicator
+    hideTypingIndicator() {
+        const typingIndicator = document.getElementById('typingIndicator');
+        if (typingIndicator) {
+            typingIndicator.remove();
+        }
+    },
+    
+    // Get current time
+    getCurrentTime() {
+        const now = new Date();
+        return now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+    }
+};
+
+// Initialize Nelius Bot
+document.addEventListener('DOMContentLoaded', () => {
+    chatbot.init();
+});
+
 // INITIALIZE
 console.log('Kilifi Properties - All systems initialized!');

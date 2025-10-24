@@ -552,6 +552,63 @@
         </div>
     </div>
 
+    <!-- Nelius Bot - AI Chatbot -->
+    <div class="chatbot-container">
+        <!-- Chatbot Button -->
+        <button class="chatbot-btn" id="chatbotBtn">
+            <i class="fas fa-robot"></i>
+            <span class="chatbot-pulse"></span>
+            <div class="chatbot-tooltip">Chat with Nelius Bot!</div>
+        </button>
+        
+        <!-- Chatbot Window -->
+        <div class="chatbot-window" id="chatbotWindow">
+            <!-- Chatbot Header -->
+            <div class="chatbot-header">
+                <div class="chatbot-header-info">
+                    <div class="chatbot-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="chatbot-header-text">
+                        <h4>Nelius Bot</h4>
+                        <p><span class="online-dot"></span> Online - AI Assistant</p>
+                    </div>
+                </div>
+                <div class="chatbot-header-actions">
+                    <button class="chatbot-header-btn" id="minimizeChatbot" title="Minimize">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button class="chatbot-header-btn" id="closeChatbot" title="Close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Chatbot Messages -->
+            <div class="chatbot-messages" id="chatMessages">
+                <!-- Messages will be added dynamically -->
+            </div>
+            
+            <!-- Chatbot Input -->
+            <div class="chatbot-input-area">
+                <input 
+                    type="text" 
+                    id="userInput" 
+                    placeholder="Ask me about properties, prices, locations..."
+                    autocomplete="off"
+                >
+                <button id="sendMessage" class="chatbot-send-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            
+            <!-- Powered By -->
+            <div class="chatbot-footer">
+                <p>Powered by Kilifi Properties AI</p>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
