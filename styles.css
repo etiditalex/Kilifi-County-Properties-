@@ -39,6 +39,8 @@ body {
     color: var(--gray);
     background: var(--white);
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 img {
@@ -164,13 +166,14 @@ a {
 /* HERO CAROUSEL SECTION */
 .hero-carousel {
     position: relative;
-    margin-top: 80px;
+    margin-top: 0;
 }
 
 .carousel-container {
     position: relative;
     height: 100vh;
     overflow: hidden;
+    margin-top: 0;
 }
 
 .carousel-slide {
