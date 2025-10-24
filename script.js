@@ -938,10 +938,34 @@ const chatbot = {
     // Knowledge base about Kilifi Properties
     knowledge: {
         properties: [
-            { name: "Msabaha Phase 6", location: "Kilifi", price: "KSh 650,000", size: "50x100 ft", features: "Near Mombasa-Malindi Road, ready title deeds" },
-            { name: "Malindi Airport View Gardens", location: "Malindi", price: "KSh 850,000", size: "50x100 ft", features: "Near airport, premium location" },
-            { name: "Watamu Beach Plots", location: "Watamu", price: "KSh 1,200,000", size: "50x100 ft", features: "Near beach, tourism hub" },
-            { name: "Nyali Premium Plots", location: "Nyali", price: "KSh 1,500,000", size: "50x100 ft", features: "Prime Mombasa location" }
+            { 
+                name: "Msabaha Phase 6", 
+                location: "Kilifi", 
+                price: "KSh 450,000", 
+                deposit: "KSh 150,000",
+                balance: "12 months",
+                size: "50x100 ft", 
+                features: "Near Mombasa-Malindi Road, ready title deeds" 
+            },
+            { 
+                name: "Mtondia Highway", 
+                location: "Kilifi", 
+                price: "KSh 995,000", 
+                originalPrice: "KSh 1,250,000",
+                deposit: "KSh 500,000",
+                balance: "12 months",
+                size: "50x100 ft", 
+                features: "Special offer! Strategic highway location, high ROI potential" 
+            },
+            { 
+                name: "Malindi Airport View Gardens", 
+                location: "Malindi", 
+                price: "KSh 950,000", 
+                deposit: "KSh 400,000",
+                balance: "12 months",
+                size: "50x100 ft", 
+                features: "Near airport, premium location, ideal for commercial use" 
+            }
         ],
         contact: {
             phone: "+254 724 367338",
@@ -979,9 +1003,15 @@ const chatbot = {
             this.knowledge.properties.forEach((prop, index) => {
                 response += `<strong>${index + 1}. ${prop.name}</strong><br>`;
                 response += `📍 Location: ${prop.location}<br>`;
-                response += `💰 Price: ${prop.price}<br>`;
+                if (prop.originalPrice) {
+                    response += `💰 Price: <span style="text-decoration: line-through; color: #999;">${prop.originalPrice}</span> <strong style="color: #d4af37;">${prop.price}</strong> <span style="background: #d4af37; color: white; padding: 2px 8px; border-radius: 5px; font-size: 0.8em;">OFFER!</span><br>`;
+                } else {
+                    response += `💰 Price: ${prop.price}<br>`;
+                }
+                response += `💳 Deposit: ${prop.deposit}<br>`;
+                response += `📅 Balance: ${prop.balance}<br>`;
                 response += `📏 Size: ${prop.size}<br>`;
-                response += `✨ Features: ${prop.features}<br><br>`;
+                response += `✨ ${prop.features}<br><br>`;
             });
             response += "Would you like to book a site visit or need more details? 📞";
             return response;
@@ -989,24 +1019,24 @@ const chatbot = {
         
         // Price inquiries
         if (/price|cost|how much|expensive|cheap|afford/i.test(message)) {
-            return "💰 <strong>Our land prices range from:</strong><br><br>" +
-                   "• Kilifi area: From KSh 650,000<br>" +
-                   "• Malindi area: From KSh 850,000<br>" +
-                   "• Watamu area: From KSh 1,200,000<br>" +
-                   "• Nyali area: From KSh 1,500,000<br><br>" +
-                   "We offer <strong>flexible payment plans</strong> to suit your budget! 💳<br>" +
-                   "Would you like to discuss payment options?";
+            return "💰 <strong>Current Property Prices:</strong><br><br>" +
+                   "• <strong>Msabaha Phase 6:</strong> KSh 450,000<br>" +
+                   "  📍 Deposit: KSh 150,000 | Balance: 12 months<br><br>" +
+                   "• <strong>Mtondia Highway:</strong> <span style='text-decoration: line-through;'>KSh 1,250,000</span> <strong style='color: #d4af37;'>KSh 995,000</strong> <span style='background: #d4af37; color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.75em;'>SPECIAL OFFER!</span><br>" +
+                   "  📍 Deposit: KSh 500,000 | Balance: 12 months<br><br>" +
+                   "• <strong>Malindi Airport:</strong> KSh 950,000<br>" +
+                   "  📍 Deposit: KSh 400,000 | Balance: 12 months<br><br>" +
+                   "We offer <strong>flexible 12-month payment plans</strong> to suit your budget! 💳<br>" +
+                   "Would you like to discuss these options?";
         }
         
         // Location inquiries
-        if (/location|where|kilifi|malindi|watamu|nyali|mtwapa|area/i.test(message)) {
+        if (/location|where|kilifi|malindi|watamu|nyali|mtwapa|mtondia|highway|area/i.test(message)) {
             return "📍 <strong>We have properties in prime coastal locations:</strong><br><br>" +
-                   "• <strong>Kilifi</strong> - Near Mombasa-Malindi Road<br>" +
-                   "• <strong>Malindi</strong> - Airport View Gardens<br>" +
-                   "• <strong>Watamu</strong> - Beach proximity, tourism hub<br>" +
-                   "• <strong>Nyali</strong> - Premium Mombasa location<br>" +
-                   "• <strong>Mtwapa</strong> - Strategic investment area<br><br>" +
-                   "All locations come with genuine title deeds! 📄";
+                   "• <strong>Msabaha Phase 6, Kilifi</strong> - Near Mombasa-Malindi Road (KSh 450,000)<br>" +
+                   "• <strong>Mtondia Highway, Kilifi</strong> - Strategic highway location <span style='background: #d4af37; color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.75em;'>OFFER!</span> (KSh 995,000)<br>" +
+                   "• <strong>Malindi Airport View Gardens</strong> - Near airport, premium location (KSh 950,000)<br><br>" +
+                   "All locations come with <strong>genuine title deeds</strong> and flexible 12-month payment plans! 📄";
         }
         
         // Site visit inquiries
@@ -1028,13 +1058,16 @@ const chatbot = {
         }
         
         // Payment plan inquiries
-        if (/payment|install|plan|down payment|deposit/i.test(message)) {
-            return "💳 <strong>Flexible Payment Plans:</strong><br><br>" +
-                   "We understand everyone's financial situation is unique! We offer:<br><br>" +
-                   "• Installment payment options<br>" +
-                   "• Negotiable down payments<br>" +
-                   "• Customized payment schedules<br>" +
-                   "• No hidden charges<br><br>" +
+        if (/payment|install|plan|down payment|deposit|balance/i.test(message)) {
+            return "💳 <strong>Flexible 12-Month Payment Plans:</strong><br><br>" +
+                   "All our properties come with affordable payment options:<br><br>" +
+                   "📋 <strong>Payment Structure:</strong><br>" +
+                   "• <strong>Msabaha Phase 6:</strong> Deposit KSh 150,000 + 12 monthly installments<br>" +
+                   "• <strong>Mtondia Highway:</strong> Deposit KSh 500,000 + 12 monthly installments<br>" +
+                   "• <strong>Malindi Airport:</strong> Deposit KSh 400,000 + 12 monthly installments<br><br>" +
+                   "✅ No hidden charges<br>" +
+                   "✅ Clear payment terms<br>" +
+                   "✅ Title deed upon completion<br><br>" +
                    "Contact us to discuss a plan that works for you! 📞 " + this.knowledge.contact.phone;
         }
         
