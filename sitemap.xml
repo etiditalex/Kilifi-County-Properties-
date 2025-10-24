@@ -70,5 +70,13 @@
         <priority>0.8</priority>
     </url>
     
+    <!-- Cookie Policy -->
+    <url>
+        <loc>https://kilificountyproperties.co.ke/cookies.html</loc>
+        <lastmod>2025-10-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
 </urlset>
 
