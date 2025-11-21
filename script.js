@@ -10,11 +10,6 @@ const bookingModal = document.getElementById('bookingModal');
 const bookingForm = document.getElementById('bookingForm');
 const contactForm = document.getElementById('contactForm');
 
-// CAROUSEL VARIABLES
-    let currentSlide = 0;
-let slides = [];
-let dots = [];
-let autoSlideInterval;
 
 // MOBILE NAVIGATION TOGGLE
 if (hamburger && navMenu) {
@@ -445,120 +440,6 @@ document.addEventListener('visibilitychange', () => {
     }
 });
 
-// CAROUSEL FUNCTIONALITY
-function initCarousel() {
-    slides = document.querySelectorAll('.carousel-slide');
-    dots = document.querySelectorAll('.dot');
-    
-    if (slides.length === 0) return;
-    
-    // Start auto slide
-    startAutoSlide();
-    
-    // Pause on hover
-    const carouselContainer = document.querySelector('.carousel-container');
-    if (carouselContainer) {
-        carouselContainer.addEventListener('mouseenter', stopAutoSlide);
-        carouselContainer.addEventListener('mouseleave', startAutoSlide);
-    }
-}
-
-function changeSlide(direction) {
-    // Remove active class from current slide and dot
-    slides[currentSlide].classList.remove('active');
-    dots[currentSlide].classList.remove('active');
-    
-    // Calculate new slide index
-    currentSlide += direction;
-    
-    // Loop around if needed
-    if (currentSlide >= slides.length) {
-        currentSlide = 0;
-    } else if (currentSlide < 0) {
-        currentSlide = slides.length - 1;
-    }
-    
-    // Add active class to new slide and dot
-    slides[currentSlide].classList.add('active');
-    dots[currentSlide].classList.add('active');
-    
-    // Reset auto slide timer
-    stopAutoSlide();
-    startAutoSlide();
-}
-
-function goToSlide(index) {
-    // Remove active class from current slide and dot
-    slides[currentSlide].classList.remove('active');
-    dots[currentSlide].classList.remove('active');
-    
-    // Set new slide index
-    currentSlide = index;
-    
-    // Add active class to new slide and dot
-    slides[currentSlide].classList.add('active');
-    dots[currentSlide].classList.add('active');
-    
-    // Reset auto slide timer
-    stopAutoSlide();
-    startAutoSlide();
-}
-
-function startAutoSlide() {
-    autoSlideInterval = setInterval(() => {
-        changeSlide(1);
-    }, 5000); // Change slide every 5 seconds
-}
-
-function stopAutoSlide() {
-    clearInterval(autoSlideInterval);
-}
-
-// Keyboard navigation for carousel
-document.addEventListener('keydown', (e) => {
-    if (slides.length === 0) return;
-    
-    if (e.key === 'ArrowLeft') {
-        changeSlide(-1);
-    } else if (e.key === 'ArrowRight') {
-        changeSlide(1);
-    }
-});
-
-// Touch/Swipe support for mobile
-let touchStartX = 0;
-let touchEndX = 0;
-
-document.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-}, false);
-
-document.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-}, false);
-
-function handleSwipe() {
-    if (slides.length === 0) return;
-    
-    const swipeThreshold = 50;
-    const diff = touchStartX - touchEndX;
-    
-    if (Math.abs(diff) > swipeThreshold) {
-        if (diff > 0) {
-            // Swipe left - next slide
-            changeSlide(1);
-        } else {
-            // Swipe right - previous slide
-            changeSlide(-1);
-        }
-    }
-}
-
-// Initialize carousel on page load
-window.addEventListener('load', () => {
-    initCarousel();
-});
 
 // FLOATING SOCIAL MEDIA WIDGET
 const socialToggleBtn = document.getElementById('socialToggleBtn');
