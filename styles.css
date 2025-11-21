@@ -269,9 +269,9 @@ a {
     text-align: center;
     color: var(--white);
     padding: 120px 20px 80px;
-    max-width: 480px;
+    max-width: 400px;
     margin: 0 auto;
-    width: 90%;
+    width: 85%;
 }
 
 .hero-content h1 {
