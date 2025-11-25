@@ -233,9 +233,9 @@ a {
 .hero-section {
     position: relative;
     margin-top: 0;
-    height: 400px !important;
-    min-height: 400px !important;
-    max-height: 400px !important;
+    height: 580px !important;
+    min-height: 580px !important;
+    max-height: 580px !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -270,44 +270,46 @@ a {
     z-index: 2;
     text-align: center;
     color: var(--white);
-    padding: 40px 20px;
+    padding: 60px 20px;
     max-width: 400px;
     margin: 0 auto;
     width: 90%;
 }
 
 .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 800;
-    margin-bottom: 15px;
-    line-height: 1.2;
+    margin-bottom: 20px;
+    line-height: 1.3;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
     animation: fadeInUp 1s ease;
 }
 
 .hero-content p {
-    font-size: 1.1rem;
-    margin-bottom: 25px;
+    font-size: 1.2rem;
+    margin-bottom: 35px;
     color: rgba(255, 255, 255, 0.95);
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    line-height: 1.6;
     animation: fadeInUp 1s ease 0.2s both;
 }
 
 .hero-actions {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     justify-content: center;
     flex-wrap: wrap;
     animation: fadeInUp 1s ease 0.4s both;
 }
 
 .hero-actions .btn {
-    padding: 12px 30px;
-    font-size: 1rem;
+    padding: 14px 35px;
+    font-size: 1.05rem;
     font-weight: 600;
     border-radius: 50px;
     transition: all 0.3s ease;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    min-width: 180px;
 }
 
 .hero-actions .btn:hover {
@@ -3782,34 +3784,37 @@ section {
 @media (max-width: 768px) {
     /* Hero Section Mobile */
     .hero-section {
-        height: 350px !important;
-        min-height: 350px !important;
-        max-height: 350px !important;
+        height: 450px !important;
+        min-height: 450px !important;
+        max-height: 450px !important;
     }
     
     .hero-content {
-        padding: 30px 20px;
+        padding: 40px 20px;
     }
     
     .hero-content h1 {
-        font-size: 2rem;
-        margin-bottom: 10px;
+        font-size: 2.2rem;
+        margin-bottom: 15px;
     }
     
     .hero-content p {
-        font-size: 1rem;
-        margin-bottom: 20px;
+        font-size: 1.05rem;
+        margin-bottom: 25px;
+        line-height: 1.5;
     }
     
     .hero-actions {
         flex-direction: column;
         align-items: stretch;
+        gap: 12px;
     }
     
     .hero-actions .btn {
         width: 100%;
         padding: 14px 30px;
         font-size: 1rem;
+        min-width: auto;
     }
     
     .hero-property-card {
@@ -3880,28 +3885,30 @@ section {
 @media (max-width: 480px) {
     /* Hero Section Small Mobile */
     .hero-section {
-        height: 300px !important;
-        min-height: 300px !important;
-        max-height: 300px !important;
+        height: 400px !important;
+        min-height: 400px !important;
+        max-height: 400px !important;
     }
     
     .hero-content {
-        padding: 25px 15px;
+        padding: 35px 15px;
     }
     
     .hero-content h1 {
-        font-size: 1.75rem;
-        margin-bottom: 10px;
+        font-size: 1.9rem;
+        margin-bottom: 12px;
     }
     
     .hero-content p {
-        font-size: 0.9rem;
-        margin-bottom: 15px;
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+        line-height: 1.5;
     }
     
     .hero-actions .btn {
         padding: 12px 25px;
         font-size: 0.95rem;
+        min-width: auto;
     }
     
     .hero-property-card {
