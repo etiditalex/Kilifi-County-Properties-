@@ -233,7 +233,9 @@ a {
 .hero-section {
     position: relative;
     margin-top: 0;
-    height: 400px;
+    height: 400px !important;
+    min-height: 400px !important;
+    max-height: 400px !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -3780,7 +3782,9 @@ section {
 @media (max-width: 768px) {
     /* Hero Section Mobile */
     .hero-section {
-        height: 350px;
+        height: 350px !important;
+        min-height: 350px !important;
+        max-height: 350px !important;
     }
     
     .hero-content {
@@ -3876,7 +3880,9 @@ section {
 @media (max-width: 480px) {
     /* Hero Section Small Mobile */
     .hero-section {
-        height: 300px;
+        height: 300px !important;
+        min-height: 300px !important;
+        max-height: 300px !important;
     }
     
     .hero-content {
