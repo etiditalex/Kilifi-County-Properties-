@@ -271,7 +271,8 @@ a {
     padding: 120px 20px 80px;
     max-width: 400px;
     margin: 0 auto;
-    width: 85%;
+    width: 90%;
+    box-sizing: border-box;
 }
 
 .hero-content h1 {
