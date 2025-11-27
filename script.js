@@ -886,6 +886,15 @@ const chatbot = {
                 balance: "12 months (Interest FREE)",
                 size: "50×100 ft", 
                 features: "Just 1.5KM to the beach, 1KM off the road near Neptune Hotel. Ideal for holiday homes, retirement getaways, apartments, residential development or smart investment. Freehold title deed included." 
+            },
+            { 
+                name: "Mwanda Phase 3 Mariakani", 
+                location: "Mariakani, Kilifi County", 
+                price: "KSh 325,000", 
+                deposit: "KSh 100,000",
+                balance: "12 months (Interest FREE)",
+                size: "50×100 ft", 
+                features: "Just 1KM from Kibao Kiche Town & Mariakani–Mavueni Bypass. Prime yet affordable investment. Ideal for residential homes or investment. Water & electricity available. Freehold title deed - transfer fee inclusive." 
             }
         ],
         contact: {
@@ -954,6 +963,9 @@ const chatbot = {
                    "• <strong>Diani Plots – Galu Area:</strong> KSh 1,950,000<br>" +
                    "  📍 Deposit: KSh 500,000 or 50% | Balance: 12 months Interest FREE<br>" +
                    "  🏖️ Just 1.5KM to the beach!<br><br>" +
+                   "• <strong>Mwanda Phase 3 Mariakani:</strong> KSh 325,000<br>" +
+                   "  📍 Deposit: KSh 100,000 | Balance: 12 months Interest FREE<br>" +
+                   "  💰 Most affordable option!<br><br>" +
                    "We offer <strong>flexible 12-month payment plans</strong> to suit your budget! 💳<br>" +
                    "Would you like to discuss these options?";
         }
@@ -966,7 +978,8 @@ const chatbot = {
                    "• <strong>Malindi Airport View Gardens</strong> - Near airport, premium location (KSh 950,000)<br>" +
                    "• <strong>Bofa Phase 20</strong> - Newly tarmacked Bofa Road (B69) <span style='background: #d4af37; color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.75em;'>OFFER!</span> (KSh 1,950,000)<br>" +
                    "• <strong>Bofa Phase 21</strong> - Off Bofa Road (B69), premium 1/8th acre (KSh 1,850,000)<br>" +
-                   "• <strong>Diani Plots – Galu Area</strong> - Just 1.5KM to the beach, perfect coastal investment (KSh 1,950,000)<br><br>" +
+                   "• <strong>Diani Plots – Galu Area</strong> - Just 1.5KM to the beach, perfect coastal investment (KSh 1,950,000)<br>" +
+                   "• <strong>Mwanda Phase 3 Mariakani</strong> - Prime yet affordable, just 1KM from Kibao Kiche Town (KSh 325,000)<br><br>" +
                    "All locations come with <strong>genuine title deeds</strong> and flexible 12-month payment plans! 📄";
         }
         
@@ -998,7 +1011,8 @@ const chatbot = {
                    "• <strong>Malindi Airport:</strong> Deposit KSh 400,000 + 12 monthly installments<br>" +
                    "• <strong>Bofa Phase 20:</strong> Deposit KSh 700,000 + 12 monthly installments<br>" +
                    "• <strong>Bofa Phase 21:</strong> Deposit KSh 700,000 + 12 monthly installments<br>" +
-                   "• <strong>Diani Plots – Galu Area:</strong> Deposit KSh 500,000 or 50% + 12 monthly installments (Interest FREE!)<br><br>" +
+                   "• <strong>Diani Plots – Galu Area:</strong> Deposit KSh 500,000 or 50% + 12 monthly installments (Interest FREE!)<br>" +
+                   "• <strong>Mwanda Phase 3 Mariakani:</strong> Deposit KSh 100,000 + 12 monthly installments (Interest FREE!)<br><br>" +
                    "✅ No hidden charges<br>" +
                    "✅ Clear payment terms<br>" +
                    "✅ Title deed upon completion<br>" +
