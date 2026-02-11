@@ -10,6 +10,534 @@ const bookingModal = document.getElementById('bookingModal');
 const bookingForm = document.getElementById('bookingForm');
 const contactForm = document.getElementById('contactForm');
 
+// PROPERTY CATALOG (used for property.html details page)
+const PROPERTY_CATALOG = {
+    "vipingo-residential-50x100": {
+        name: "Residential Plots for Sale – Vipingo",
+        subtitle: "Controlled gated estate • 300m off Mombasa–Malindi Highway",
+        location: "Vipingo, Kilifi County",
+        size: "50 × 100",
+        priceLabel: "KSh 3,400,000",
+        paymentLabel: "Contact us to discuss payment options",
+        description: "Secure a prime 50×100 plot located just 300 meters off the Mombasa–Malindi Highway within a controlled gated estate—ideal for residential development and smart investment in the fast-growing Vipingo area.",
+        perfectFor: ["Holiday Homes", "Retirement Homes", "Residential Development", "Smart Investment"],
+        images: [
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1770814719/Residential_plots_for_sale-Vipingo_2_gh0ntj.jpg",
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1770814719/Residential_plots_for_sale-Vipingo_3_oxvq27.jpg",
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1770814719/Residential_plots_for_sale-Vipingo_5_pizcw8.jpg",
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1770814720/Residential_plots_for_sale-Vipingo_4_s9fovo.jpg",
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1770814720/Residential_plots_for_sale-Vipingo_6_cp9fls.jpg"
+        ]
+    },
+    "vipingo-commercial-1acre": {
+        name: "Vipingo Commercial Property for Sale",
+        subtitle: "Prime commercial land • High growth potential",
+        location: "Vipingo, Kilifi County",
+        size: "1 Acre",
+        priceLabel: "KSh 20,000,000",
+        paymentLabel: "Contact us for terms",
+        description: "Prime commercial land located in the fast-growing Vipingo area, suitable for high-value development with excellent accessibility and strong investment potential.",
+        perfectFor: ["Apartments", "Factories & Warehouses", "Petrol Station", "Any Commercial Development"],
+        images: [
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1770814507/Viping_commercial_plots_for_sale_1_fk9f6e.jpg",
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1770814507/Viping_commercial_plots_for_sale_2_jpkshn.jpg",
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1770814507/Viping_commercial_plots_for_sale_3_exbdxy.jpg",
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1770814507/Viping_commercial_plots_for_sale_4_kwxnsb.jpg"
+        ]
+    },
+    "kilifi-bofa-half-acre": {
+        name: "1/2 Acre Plot for Sale – Kilifi Bofa",
+        subtitle: "Prime B69 Road investment opportunity",
+        location: "Kilifi Bofa, Kilifi County",
+        size: "1/2 Acre",
+        priceLabel: "KSh 4,500,000",
+        paymentLabel: "Contact us for terms",
+        description: "Prime investment opportunity located along B69 Road in the fast-growing and highly sought-after Kilifi Bofa area—ideal for development and commercial use.",
+        perfectFor: ["Apartments", "Holiday Homes", "Residential Development", "Commercial Use", "Smart Investment"],
+        images: [
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1770814276/Plot_for_sale_Kilifi_Bofa_1_awdhfs.jpg",
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1770814277/Plot_for_sale_Kilifi_Bofa_2_wjyi92.jpg",
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1770814276/Plot_for_sale_Kilifi_Bofa_3_lmceq7.jpg",
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1770814276/Plot_for_sale_Kilifi_Bofa_4_fvyxyc.jpg"
+        ]
+    },
+    "kilifi-bofa-2nd-row": {
+        name: "2nd Row Beach Plots – Kilifi Bofa",
+        subtitle: "Along B69 Road • About 500m from the beach",
+        location: "Kilifi Bofa, Kilifi County",
+        size: "50 × 100",
+        priceLabel: "KSh 1,950,000",
+        paymentLabel: "50% deposit • Balance in 3 months",
+        description: "Prime 50×100 plots located about 500 meters from the beach along B69 Road in the fast-growing Kilifi Bofa area—ideal for lifestyle and investment.",
+        perfectFor: ["Holiday Homes", "Apartments", "Retirement Homes", "Residential Development", "Investment"],
+        images: [
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1770812395/2nd_Row_Beach_Road_1_eo4y0j.jpg",
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1770812396/2nd_Row_Beach_Road_2_ujukca.jpg",
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1770812395/2nd_Row_Beach_Road_3_ghdyep.jpg",
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1770812395/2nd_Row_Beach_Road_4_ulghwp.jpg"
+        ]
+    },
+    "kilifi-bofa-3rd-row": {
+        name: "Kilifi Bofa Gated Estate Plots (3rd Row)",
+        subtitle: "Controlled gated estate • 3rd row from the beach",
+        location: "Kilifi Bofa, Kilifi County",
+        size: "50 × 100",
+        priceLabel: "KSh 1,700,000",
+        paymentLabel: "Contact us for terms",
+        description: "Controlled gated estate plots in a peaceful, secure, and well-planned neighborhood—fresh water and electricity available on site and ideal for immediate development.",
+        perfectFor: ["Holiday Homes", "Retirement Homes", "Apartment Development", "Residential Homes", "Smart Investment"],
+        images: [
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1770812214/Kilifi_Bofa_3rd_Row_1_nj3zs3.jpg",
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1770812215/Kilifi_Bofa_3rd_Row_2_igsupu.jpg",
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1770812213/Kilifi_Bofa_3rd_Row_3_f9vipi.jpg",
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1770812214/Kilifi_Bofa_3rd_Row_4_pvqt4q.jpg"
+        ]
+    },
+    "bofa-road-2acres": {
+        name: "2 Acres Touching Bofa Road",
+        subtitle: "Prime roadside parcel for large developments",
+        location: "Bofa Road (B69), Kilifi County",
+        size: "2 Acres",
+        priceLabel: "KSh 28,000,000 per acre",
+        paymentLabel: "Total: KSh 56,000,000 for 2 acres",
+        description: "Prime 2-acre parcel touching Bofa Road—excellent for high-value development and investment.",
+        perfectFor: ["Holiday Homes", "Apartments", "Hotels", "Retirement Homes"],
+        images: [
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1770811725/Bofa_Road_Project_1_usgdrv.jpg",
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1770811725/Bofa_Road_Project_2_wry749.jpg",
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1770811725/Bofa_Road_Project_3_sv2lff.jpg",
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1770811724/Bofa_Road_Project_4_lwizof.jpg",
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1770811725/Bofa_Road_Project_5_f8iovr.jpg",
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1770811725/Bofa_Road_Project_6_yy8uzu.jpg",
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1770811725/Bofa_Road_Project_7_teokmi.jpg"
+        ]
+    },
+    "msabaha-phase7": {
+        name: "Msabaha Phase 7",
+        subtitle: "Affordable 50×100 plots in Msabaha",
+        location: "Msabaha, Kilifi County",
+        size: "50 × 100",
+        priceLabel: "KSh 430,000",
+        paymentLabel: "50% deposit • Monthly installments",
+        description: "Msabaha Phase 7 plots: affordable 50×100 parcels with flexible monthly installments after a 50% deposit.",
+        perfectFor: ["Residential Homes", "Investment"],
+        images: [
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1770811320/Msabaha_Phase_7_1_vihnap.jpg",
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1770811320/Msabaha_Phase_7_2_zcei6b.jpg",
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1770811320/Msabaha_Phase_7_3_ai90bf.jpg"
+        ]
+    },
+    // Original properties
+    "msabaha": {
+        name: "Msabaha Phase 6",
+        subtitle: "Premium residential plots",
+        location: "Msabaha, Kilifi County",
+        size: "50 × 100",
+        priceLabel: "KSh 450,000",
+        paymentLabel: "Deposit: KSh 150,000 • 12 months",
+        description: "Premium residential plots with excellent infrastructure and accessibility. Perfect for development.",
+        perfectFor: ["Residential Homes", "Investment"],
+        images: [
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207123/Msabaha_Phase_6_hifwdu.jpg"
+        ]
+    },
+    "malindi": {
+        name: "Malindi Airport View Gardens",
+        subtitle: "Strategic location near Malindi Airport",
+        location: "Malindi, Kilifi County",
+        size: "50 × 100",
+        priceLabel: "KSh 950,000",
+        paymentLabel: "Deposit: KSh 400,000 • 12 months",
+        description: "Strategic location near Malindi Airport, perfect for residential or commercial development.",
+        perfectFor: ["Residential Development", "Commercial Development", "Investment"],
+        images: [
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207041/Malindi_Airport_View_Gardens_dsbvqb.jpg"
+        ]
+    },
+    "mtondia": {
+        name: "Mtondia Highway Gardens",
+        subtitle: "Highway access • Limited time offer",
+        location: "Mtondia, Kilifi County",
+        size: "50 × 100",
+        priceLabel: "KSh 995,000",
+        paymentLabel: "Deposit: KSh 500,000 • 12 months",
+        description: "Excellent highway access with flexible payment plans—ideal for long-term investment.",
+        perfectFor: ["Investment", "Residential Development"],
+        images: [
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1761206926/Mtondia_Higway_Gardens_kxrkqr.jpg"
+        ]
+    },
+    "bofa20": {
+        name: "Bofa Phase 20",
+        subtitle: "Premium plots along Bofa Road (B69)",
+        location: "Bofa Road (B69), Kilifi County",
+        size: "1/8th Acre",
+        priceLabel: "KSh 1,950,000",
+        paymentLabel: "Deposit: KSh 700,000 • 12 months",
+        description: "Premium plots along newly tarmacked Bofa Road with electricity and water on site.",
+        perfectFor: ["Residential Homes", "Holiday Homes", "Investment"],
+        images: [
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1761304951/Bofa_Phase_20_jmfiu2.jpg"
+        ]
+    },
+    "bofa21": {
+        name: "Bofa Phase 21",
+        subtitle: "Premium plots with complete infrastructure",
+        location: "Off Bofa Road (B69), Kilifi County",
+        size: "1/8th Acre",
+        priceLabel: "KSh 1,850,000",
+        paymentLabel: "Deposit: KSh 700,000 • 12 months",
+        description: "Premium plots with perimeter fence, access roads, water & electricity.",
+        perfectFor: ["Residential Homes", "Holiday Homes", "Investment"],
+        images: [
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1761305271/Bofa_Phase_21_mp2rrh.jpg"
+        ]
+    },
+    "diani-galu": {
+        name: "Diani Plots for Sale – Galu Area",
+        subtitle: "Beach proximity • Coastal investment",
+        location: "Galu, Diani",
+        size: "50 × 100",
+        priceLabel: "KSh 1,950,000",
+        paymentLabel: "Deposit: KSh 500,000 or 50% • 12 months (Interest FREE)",
+        description: "Perfect coastal investment near the beach—ideal for holiday homes, apartments, or residential development.",
+        perfectFor: ["Holiday Homes", "Retirement Homes", "Apartments", "Investment"],
+        images: [
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1763715620/Diani_Plots_for_Sale_4_sidi6m.jpg"
+        ]
+    },
+    "mwanda-phase3": {
+        name: "Mwanda Phase 3 Mariakani",
+        subtitle: "Most affordable option",
+        location: "Mariakani, Kilifi County",
+        size: "50 × 100",
+        priceLabel: "KSh 325,000",
+        paymentLabel: "Deposit: KSh 100,000 • 12 months (Interest FREE)",
+        description: "Prime yet affordable investment with water & electricity available.",
+        perfectFor: ["Residential Homes", "Investment"],
+        images: [
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1764264285/MWANDA_GARDENS_PHASE_3_MARIAKANI_2_e1kx2t.jpg"
+        ]
+    },
+    "prime-bofa": {
+        name: "Prime Bofa Plots for Sale Kilifi",
+        subtitle: "Near the beach • Prime Bofa location",
+        location: "Bofa, Kilifi County",
+        size: "50 × 100",
+        priceLabel: "KSh 1,800,000",
+        paymentLabel: "Deposit: KSh 500,000 or 50% • 12 months (Interest FREE)",
+        description: "Prime Bofa plots near the beach—ideal for holiday homes and smart coastal investment.",
+        perfectFor: ["Holiday Homes", "Retirement Homes", "Residential Development", "Investment"],
+        images: [
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1764310107/Prime_Bofa_Plots_for_Sale_Kilifi_6_hwvenx.jpg"
+        ]
+    }
+};
+
+function getQueryParam(name) {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(name);
+}
+
+function initPropertyPage() {
+    const titleEl = document.getElementById('propertyTitle');
+    if (!titleEl) return; // not on property.html
+
+    const id = getQueryParam('id');
+    const prop = id ? PROPERTY_CATALOG[id] : null;
+
+    if (!id || !prop) {
+        titleEl.textContent = "Property not found";
+        const subtitle = document.getElementById('propertySubtitle');
+        if (subtitle) subtitle.textContent = "Please go back to the properties list and choose a property.";
+        return;
+    }
+
+    // Update page metadata
+    document.title = `${prop.name} | Kilifi County Properties`;
+    const descMeta = document.querySelector('meta[name="description"]');
+    if (descMeta) descMeta.setAttribute('content', `${prop.name} - ${prop.subtitle}. Book a site visit with Kilifi County Properties.`);
+
+    // Fill content
+    titleEl.textContent = prop.name;
+    const subtitleEl = document.getElementById('propertySubtitle');
+    if (subtitleEl) subtitleEl.textContent = prop.subtitle || prop.location;
+
+    const priceEl = document.getElementById('propertyPrice');
+    if (priceEl) priceEl.textContent = prop.priceLabel || '—';
+
+    const paymentEl = document.getElementById('propertyPayment');
+    if (paymentEl) paymentEl.textContent = prop.paymentLabel || '—';
+
+    const sizeEl = document.getElementById('propertySize');
+    if (sizeEl) sizeEl.textContent = prop.size || '—';
+
+    const locEl = document.getElementById('propertyLocation');
+    if (locEl) locEl.textContent = prop.location || '—';
+
+    const descEl = document.getElementById('propertyDescription');
+    if (descEl) descEl.textContent = prop.description || '';
+
+    // WhatsApp link (generic inquiry)
+    const whatsappLink = document.getElementById('propertyWhatsApp');
+    if (whatsappLink) {
+        const whatsappNumber = '254724367338';
+        const msg = `Hello, I am interested in: ${prop.name}. Please share more details and help me book a site visit.`;
+        whatsappLink.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`;
+    }
+
+    // Perfect for list
+    const perfectForEl = document.getElementById('propertyPerfectFor');
+    if (perfectForEl) {
+        perfectForEl.innerHTML = '';
+        (prop.perfectFor || []).forEach(item => {
+            const li = document.createElement('li');
+            li.innerHTML = `<i class="fas fa-check-circle" aria-hidden="true"></i><span>${item}</span>`;
+            perfectForEl.appendChild(li);
+        });
+    }
+
+    // Gallery
+    const mainImg = document.getElementById('propertyMainImage');
+    const thumbs = document.getElementById('propertyThumbs');
+    const images = (prop.images && prop.images.length) ? prop.images : [];
+    if (mainImg && images.length) {
+        mainImg.src = images[0];
+        mainImg.alt = prop.name;
+    }
+    if (thumbs) {
+        thumbs.innerHTML = '';
+        images.forEach((src, idx) => {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = `property-thumb${idx === 0 ? ' active' : ''}`;
+            btn.setAttribute('aria-label', `View image ${idx + 1}`);
+            btn.innerHTML = `<img src="${src}" alt="${prop.name} image ${idx + 1}" loading="lazy">`;
+            btn.addEventListener('click', () => {
+                if (mainImg) mainImg.src = src;
+                thumbs.querySelectorAll('.property-thumb').forEach(t => t.classList.remove('active'));
+                btn.classList.add('active');
+            });
+            thumbs.appendChild(btn);
+        });
+    }
+
+    // Preselect booking dropdown on this page
+    const bookingSelect = document.getElementById('bookingPropertySelect') || document.querySelector('#bookingForm select');
+    if (bookingSelect) bookingSelect.value = id;
+}
+
+function prioritizeNewPropertiesOnLandsPage() {
+    const grid = document.getElementById('propertiesGrid');
+    if (!grid) return;
+
+    // If this isn't the lands listing grid, skip
+    if (!document.querySelector('.properties-listing')) return;
+
+    // Newer properties to show first (top of list)
+    const priorityIds = [
+        'vipingo-residential-50x100',
+        'vipingo-commercial-1acre',
+        'kilifi-bofa-half-acre',
+        'kilifi-bofa-2nd-row',
+        'kilifi-bofa-3rd-row',
+        'bofa-road-2acres',
+        'msabaha-phase7'
+    ];
+
+    // Move them to the top in the order above
+    // Insert in reverse so final DOM order matches priorityIds
+    [...priorityIds].reverse().forEach((id) => {
+        const el = document.getElementById(id);
+        if (el && el.parentElement === grid) {
+            grid.insertBefore(el, grid.firstChild);
+        }
+    });
+}
+
+function makePropertyCardsClickable() {
+    const cards = document.querySelectorAll('.properties-grid .property-card, .featured-properties .property-card');
+    cards.forEach((card) => {
+        const btnView = card.querySelector('.btn-view');
+        if (!btnView) return;
+
+        let targetUrl = null;
+        if (btnView.tagName === 'A') {
+            targetUrl = btnView.getAttribute('href');
+        } else {
+            const onclick = btnView.getAttribute('onclick') || '';
+            const match = onclick.match(/viewPropertyDetails\('([^']+)'\)/);
+            if (match) {
+                targetUrl = `property.html?id=${encodeURIComponent(match[1])}`;
+            }
+        }
+
+        if (!targetUrl) return;
+
+        card.classList.add('is-clickable');
+        card.addEventListener('click', (e) => {
+            // Ignore clicks on interactive elements
+            if (e.target.closest('a, button, input, select, textarea, label')) return;
+            window.location.href = targetUrl;
+        });
+    });
+}
+
+// HERO CAROUSEL (Home Page)
+function initHeroCarousel() {
+    const carousel = document.getElementById('heroCarousel');
+    if (!carousel) return;
+
+    const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+    if (slides.length < 2) return;
+
+    const dotsContainer = document.getElementById('carouselDots');
+    const prevBtn = carousel.querySelector('[data-carousel-prev]');
+    const nextBtn = carousel.querySelector('[data-carousel-next]');
+
+    let currentIndex = slides.findIndex(s => s.classList.contains('active'));
+    if (currentIndex < 0) currentIndex = 0;
+
+    const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
+    const intervalMs = 7000;
+    let timer = null;
+    let dots = [];
+    let firstSlideReady = false;
+
+    function setActive(index) {
+        slides.forEach((slide, i) => {
+            const isActive = i === index;
+            slide.classList.toggle('active', isActive);
+            slide.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+        });
+
+        dots.forEach((dot, i) => {
+            const isActive = i === index;
+            dot.classList.toggle('active', isActive);
+            dot.setAttribute('aria-current', isActive ? 'true' : 'false');
+        });
+    }
+
+    function normalize(index) {
+        if (index < 0) return slides.length - 1;
+        if (index >= slides.length) return 0;
+        return index;
+    }
+
+    function stopAuto() {
+        if (timer) {
+            clearInterval(timer);
+            timer = null;
+        }
+    }
+
+    function startAuto() {
+        if (prefersReducedMotion) return;
+        if (!firstSlideReady) return;
+        stopAuto();
+        timer = setInterval(() => {
+            goTo(currentIndex + 1);
+        }, intervalMs);
+    }
+
+    function goTo(index, userInitiated = false) {
+        currentIndex = normalize(index);
+        setActive(currentIndex);
+        if (userInitiated) startAuto();
+    }
+
+    // Build dots
+    if (dotsContainer) {
+        dotsContainer.innerHTML = '';
+        dots = slides.map((_, i) => {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = `dot${i === currentIndex ? ' active' : ''}`;
+            btn.setAttribute('aria-label', `Go to slide ${i + 1}`);
+            btn.setAttribute('aria-current', i === currentIndex ? 'true' : 'false');
+            btn.addEventListener('click', () => goTo(i, true));
+            dotsContainer.appendChild(btn);
+            return btn;
+        });
+    }
+
+    // Controls
+    prevBtn?.addEventListener('click', () => goTo(currentIndex - 1, true));
+    nextBtn?.addEventListener('click', () => goTo(currentIndex + 1, true));
+
+    // Pause on interaction
+    carousel.addEventListener('mouseenter', stopAuto);
+    carousel.addEventListener('mouseleave', startAuto);
+    carousel.addEventListener('focusin', stopAuto);
+    carousel.addEventListener('focusout', startAuto);
+
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) stopAuto();
+        else startAuto();
+    });
+
+    // Keyboard navigation
+    carousel.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') goTo(currentIndex - 1, true);
+        if (e.key === 'ArrowRight') goTo(currentIndex + 1, true);
+    });
+
+    // Touch swipe
+    let startX = null;
+    carousel.addEventListener('touchstart', (e) => {
+        startX = e.touches?.[0]?.clientX ?? null;
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', (e) => {
+        if (startX === null) return;
+        const endX = e.changedTouches?.[0]?.clientX ?? startX;
+        const dx = endX - startX;
+        const threshold = 50;
+        if (Math.abs(dx) > threshold) {
+            goTo(currentIndex + (dx < 0 ? 1 : -1), true);
+        }
+        startX = null;
+    }, { passive: true });
+
+    // Init
+    setActive(currentIndex);
+
+    // Preload slide background images so the hero appears crisp
+    const bgUrls = slides
+        .map(s => s.querySelector('.slide-background')?.getAttribute('data-bg'))
+        .filter(Boolean);
+
+    const firstUrl = bgUrls[0];
+    const fallbackUnhideMs = 2500;
+
+    function unhideHero() {
+        if (firstSlideReady) return;
+        firstSlideReady = true;
+        carousel.classList.remove('is-loading');
+        startAuto();
+    }
+
+    // Ensure we never get stuck hidden
+    setTimeout(unhideHero, fallbackUnhideMs);
+
+    // Load the first image, then reveal
+    if (firstUrl) {
+        const firstImg = new Image();
+        firstImg.onload = unhideHero;
+        firstImg.onerror = unhideHero;
+        firstImg.src = firstUrl;
+    } else {
+        unhideHero();
+    }
+
+    // Preload the rest in the background
+    bgUrls.slice(1).forEach((url) => {
+        const img = new Image();
+        img.decoding = 'async';
+        img.src = url;
+    });
+}
+
 
 // MOBILE NAVIGATION TOGGLE
 if (hamburger && navMenu) {
@@ -563,18 +1091,8 @@ function resetAllFilters() {
 
 // VIEW PROPERTY DETAILS FUNCTION
 function viewPropertyDetails(propertyId) {
-    // Create a modal or redirect to a detail page
-    // For now, we'll open the booking modal with the property pre-selected
-    openBookingModal();
-    
-    // Pre-select the property in the booking form
-    const bookingForm = document.getElementById('bookingForm');
-    if (bookingForm) {
-        const selectElement = bookingForm.querySelector('select');
-        if (selectElement) {
-            selectElement.value = propertyId;
-        }
-    }
+    // Redirect to the individual property page
+    window.location.href = `property.html?id=${encodeURIComponent(propertyId)}`;
 }
 
 // GALLERY FILTER FUNCTIONALITY
@@ -1465,6 +1983,10 @@ const cookieConsent = {
 
 // Initialize Nelius Bot and Cookie Consent
 document.addEventListener('DOMContentLoaded', () => {
+    initPropertyPage();
+    prioritizeNewPropertiesOnLandsPage();
+    makePropertyCardsClickable();
+    initHeroCarousel();
     chatbot.init();
     cookieConsent.init();
     

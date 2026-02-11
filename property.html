@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://kilificountyproperties.co.ke/property.html" />
+
+  <title>Property Details | KILIFI COUNTY PROPERTIES</title>
+  <meta name="description" content="View property details and book a site visit with KILIFI COUNTY PROPERTIES." />
+
+  <link rel="icon" href="https://res.cloudinary.com/dyfnobo9r/image/upload/v1760165424/Kilifi_county_properties_logo_eklmnb.jpg">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1760165424/Kilifi_county_properties_logo_eklmnb.jpg" alt="Kilifi Properties">
+      </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="lands.html">Land for Sale</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li class="dropdown">
+          <a href="blogs.html" class="dropdown-toggle">
+            Blog <i class="fas fa-chevron-down"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="blogs.html">All Articles</a></li>
+            <li><a href="market-research.html">Market Research</a></li>
+          </ul>
+        </li>
+        <li><a href="updates.html">Project Updates</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li>
+          <button class="btn-book" onclick="openBookingModal()">
+            <i class="fas fa-calendar-check"></i> Book Site Visit
+          </button>
+        </li>
+      </ul>
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Property Header -->
+  <header class="property-header">
+    <div class="container">
+      <a class="property-backlink" href="lands.html">
+        <i class="fas fa-arrow-left"></i> Back to all properties
+      </a>
+      <h1 id="propertyTitle">Property Details</h1>
+      <p class="property-subtitle" id="propertySubtitle">Loading...</p>
+    </div>
+  </header>
+
+  <!-- Property Details -->
+  <main class="property-page">
+    <section class="property-detail-section">
+      <div class="container">
+        <div class="property-detail-grid">
+          <div class="property-gallery">
+            <div class="property-main-image">
+              <img id="propertyMainImage" src="" alt="" />
+            </div>
+            <div class="property-thumbs" id="propertyThumbs" aria-label="Property images"></div>
+          </div>
+
+          <aside class="property-sidebar">
+            <div class="property-price-box">
+              <div class="property-price" id="propertyPrice">—</div>
+              <div class="property-payment" id="propertyPayment">—</div>
+              <div class="property-meta">
+                <div class="property-meta-item">
+                  <i class="fas fa-ruler-combined"></i>
+                  <span id="propertySize">—</span>
+                </div>
+                <div class="property-meta-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span id="propertyLocation">—</span>
+                </div>
+              </div>
+              <div class="property-ctas">
+                <button class="btn btn-primary" onclick="openBookingModal()">
+                  <i class="fas fa-calendar-check"></i> Book Site Visit
+                </button>
+                <a class="btn btn-white" id="propertyWhatsApp" target="_blank" rel="noopener">
+                  <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+              </div>
+            </div>
+
+            <div class="property-highlights">
+              <h3>Perfect For</h3>
+              <ul id="propertyPerfectFor"></ul>
+            </div>
+          </aside>
+        </div>
+
+        <div class="property-description-card">
+          <h2>Overview</h2>
+          <p id="propertyDescription"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Book Site Visit Modal -->
+  <div class="modal" id="bookingModal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeBookingModal()">&times;</span>
+      <h2><i class="fas fa-calendar-check"></i> Book a Site Visit</h2>
+      <p>Fill out the form below and we'll get back to you shortly</p>
+
+      <form class="booking-form" id="bookingForm">
+        <div class="form-group">
+          <input type="text" placeholder="Full Name *" required>
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Email Address *" required>
+        </div>
+        <div class="form-group">
+          <input type="tel" placeholder="Phone Number *" required>
+        </div>
+        <div class="form-group">
+          <select required id="bookingPropertySelect">
+            <option value="">Select Property *</option>
+            <option value="vipingo-residential-50x100">Residential Plots – Vipingo (50×100)</option>
+            <option value="vipingo-commercial-1acre">Vipingo Commercial Property (1 Acre)</option>
+            <option value="kilifi-bofa-half-acre">1/2 Acre Plot – Kilifi Bofa</option>
+            <option value="kilifi-bofa-2nd-row">2nd Row Beach Plots – Kilifi Bofa</option>
+            <option value="kilifi-bofa-3rd-row">Kilifi Bofa Gated Estate Plots (3rd Row)</option>
+            <option value="bofa-road-2acres">2 Acres Touching Bofa Road</option>
+            <option value="msabaha-phase7">Msabaha Phase 7</option>
+            <option value="msabaha">Msabaha Phase 6</option>
+            <option value="malindi">Malindi Airport View Gardens</option>
+            <option value="mtondia">Mtondia Highway Gardens</option>
+            <option value="bofa20">Bofa Phase 20</option>
+            <option value="bofa21">Bofa Phase 21</option>
+            <option value="diani-galu">Diani Plots for Sale – Galu Area</option>
+            <option value="mwanda-phase3">Mwanda Phase 3 Mariakani</option>
+            <option value="prime-bofa">Prime Bofa Plots for Sale Kilifi</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="date" placeholder="Preferred Date *" required>
+        </div>
+        <div class="form-group">
+          <textarea rows="4" placeholder="Additional Notes"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">
+          <i class="fas fa-paper-plane"></i> Submit Request
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scroll to Top -->
+  <button class="scroll-top" id="scrollTop">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

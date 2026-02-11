@@ -272,43 +272,73 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="hero-background" style="background-image: url('https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207123/Msabaha_Phase_6_hifwdu.jpg');"></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>Land for Sale in Kilifi County, Kenya | KILIFI COUNTY PROPERTIES</h1>
-            <p>Buy genuine titled land for sale in Malindi, Watamu, Mtwapa, Diani, Mariakani & Bofa. Prime 50×100 plots from KSh 325,000. Flexible 12-month payment plans. Freehold title deeds included.</p>
-            <div class="hero-actions">
-                <a href="lands.html" class="btn btn-primary">
-                    <i class="fas fa-search"></i> View Properties
-                </a>
-                <button class="btn btn-white" onclick="openBookingModal()">
-                    <i class="fas fa-calendar-check"></i> Book Site Visit
-                </button>
+    <!-- Hero Carousel -->
+    <section class="hero-carousel" aria-label="Featured properties">
+        <div class="carousel-container is-loading" id="heroCarousel" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Featured property images">
+            <div class="carousel-slide active" aria-hidden="false">
+                <div class="slide-background" data-bg="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207123/Msabaha_Phase_6_hifwdu.jpg" style="background-image: url('https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207123/Msabaha_Phase_6_hifwdu.jpg');"></div>
+                <div class="slide-overlay"></div>
             </div>
-        </div>
+            <div class="carousel-slide" aria-hidden="true">
+                <div class="slide-background" data-bg="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207041/Malindi_Airport_View_Gardens_dsbvqb.jpg" style="background-image: url('https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207041/Malindi_Airport_View_Gardens_dsbvqb.jpg');"></div>
+                <div class="slide-overlay"></div>
+            </div>
+            <div class="carousel-slide" aria-hidden="true">
+                <div class="slide-background" data-bg="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761206926/Mtondia_Higway_Gardens_kxrkqr.jpg" style="background-image: url('https://res.cloudinary.com/dyfnobo9r/image/upload/v1761206926/Mtondia_Higway_Gardens_kxrkqr.jpg');"></div>
+                <div class="slide-overlay"></div>
+            </div>
+            <div class="carousel-slide" aria-hidden="true">
+                <div class="slide-background" data-bg="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761304951/Bofa_Phase_20_jmfiu2.jpg" style="background-image: url('https://res.cloudinary.com/dyfnobo9r/image/upload/v1761304951/Bofa_Phase_20_jmfiu2.jpg');"></div>
+                <div class="slide-overlay"></div>
+            </div>
+            <div class="carousel-slide" aria-hidden="true">
+                <div class="slide-background" data-bg="https://res.cloudinary.com/dyfnobo9r/image/upload/v1763715620/Diani_Plots_for_Sale_4_sidi6m.jpg" style="background-image: url('https://res.cloudinary.com/dyfnobo9r/image/upload/v1763715620/Diani_Plots_for_Sale_4_sidi6m.jpg');"></div>
+                <div class="slide-overlay"></div>
+            </div>
 
-        <!-- Hero Stats Section -->
-        <div class="hero-stats-section">
-            <div class="container">
-                <div class="stats-wrapper">
-                    <div class="stat-item">
-                        <h3>3+</h3>
-                        <p>Prime Locations</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>100%</h3>
-                        <p>Genuine Titles</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>50+</h3>
-                        <p>Plots Available</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>100+</h3>
-                        <p>Happy Clients</p>
-                    </div>
+            <div class="carousel-center-content">
+                <h1 class="visually-hidden">Land for Sale in Kilifi County, Kenya | KILIFI COUNTY PROPERTIES</h1>
+                <p class="carousel-tagline">Genuine titles • Flexible payment plans • Prime coastal locations</p>
+                <div class="hero-actions">
+                    <a href="lands.html" class="btn btn-primary">
+                        <i class="fas fa-search"></i> View Properties
+                    </a>
+                    <button class="btn btn-white" onclick="openBookingModal()">
+                        <i class="fas fa-calendar-check"></i> Book Site Visit
+                    </button>
+                </div>
+            </div>
+
+            <button class="carousel-control prev" type="button" aria-label="Previous slide" data-carousel-prev>
+                <i class="fas fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <button class="carousel-control next" type="button" aria-label="Next slide" data-carousel-next>
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </button>
+
+            <div class="carousel-dots" id="carouselDots" aria-label="Carousel navigation"></div>
+        </div>
+    </section>
+
+    <!-- Hero Stats Section -->
+    <section class="hero-stats-section">
+        <div class="container">
+            <div class="stats-wrapper">
+                <div class="stat-item">
+                    <h3>3+</h3>
+                    <p>Prime Locations</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Genuine Titles</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Plots Available</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100+</h3>
+                    <p>Happy Clients</p>
                 </div>
             </div>
         </div>
@@ -324,86 +354,65 @@
             </div>
 
             <div class="properties-grid">
-                <!-- Property 1 -->
+                <!-- Property 1 (New) -->
                 <div class="property-card">
                     <div class="property-image">
-                        <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207123/Msabaha_Phase_6_hifwdu.jpg" alt="Land for sale Msabaha Phase 6 Kilifi County - 50x100 plots with genuine title deeds" loading="lazy">
-                        <div class="property-badge">Featured</div>
+                        <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1770814719/Residential_plots_for_sale-Vipingo_2_gh0ntj.jpg" alt="Residential plots for sale in Vipingo, Kilifi - 50x100 gated estate plots near Mombasa-Malindi Highway" loading="lazy">
+                        <div class="property-badge">New</div>
                     </div>
                     <div class="property-info">
-                        <h3>Msabaha Phase 6</h3>
-                        <p class="location"><i class="fas fa-map-marker-alt"></i> Msabaha, Kilifi County</p>
-                        <p class="description">Premium residential plots in a rapidly developing area with excellent infrastructure and accessibility.</p>
+                        <h3>Residential Plots – Vipingo (50×100)</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Vipingo, Kilifi County</p>
+                        <p class="description">Secure 50×100 plots in a controlled gated estate, just 300m off the Mombasa–Malindi Highway.</p>
                         <div class="features">
-                            <span><i class="fas fa-ruler-combined"></i> 50x100</span>
-                            <span><i class="fas fa-certificate"></i> Title Ready</span>
+                            <span><i class="fas fa-ruler-combined"></i> 50×100</span>
+                            <span><i class="fas fa-shield-alt"></i> Gated</span>
                         </div>
                         <div class="property-footer">
-                            <div class="price">Contact for Price</div>
-                            <a href="lands.html" class="btn-view">View Details <i class="fas fa-arrow-right"></i></a>
+                            <div class="price">KSh 3,400,000</div>
+                            <a href="property.html?id=vipingo-residential-50x100" class="btn-view">View Details <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Property 2 -->
+                <!-- Property 2 (New) -->
                 <div class="property-card">
                     <div class="property-image">
-                        <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761207041/Malindi_Airport_View_Gardens_dsbvqb.jpg" alt="Malindi Airport View Gardens plots for sale - Prime land near Malindi Airport Kenya" loading="lazy">
-                        <div class="property-badge">Hot Deal</div>
+                        <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1770812395/2nd_Row_Beach_Road_1_eo4y0j.jpg" alt="2nd row beach plots for sale in Kilifi Bofa - 50x100 plots along B69 road near the beach" loading="lazy">
+                        <div class="property-badge hot">Beach</div>
                     </div>
                     <div class="property-info">
-                        <h3>Malindi Airport View Gardens</h3>
-                        <p class="location"><i class="fas fa-map-marker-alt"></i> Malindi, Kilifi County</p>
-                        <p class="description">Strategic location near Malindi Airport, perfect for residential or commercial development.</p>
+                        <h3>2nd Row Beach Plots – Kilifi Bofa</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> B69 Road, Kilifi Bofa</p>
+                        <p class="description">Prime plots about 500m from the beach along B69 Road. Great for holiday homes or apartments.</p>
                         <div class="features">
-                            <span><i class="fas fa-plane"></i> Near Airport</span>
-                            <span><i class="fas fa-chart-line"></i> High ROI</span>
-                        </div>
-                        <div class="property-footer">
-                            <div class="price">Contact for Price</div>
-                            <a href="lands.html" class="btn-view">View Details <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Property 3 -->
-                <div class="property-card">
-                    <div class="property-image">
-                        <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1761206926/Mtondia_Higway_Gardens_kxrkqr.jpg" alt="Mtondia Highway Gardens land for sale - Highway access plots Kilifi County with flexible payment" loading="lazy">
-                        <div class="property-badge">Best Value</div>
-                    </div>
-                    <div class="property-info">
-                        <h3>Mtondia Highway Gardens</h3>
-                        <p class="location"><i class="fas fa-map-marker-alt"></i> Mtondia, Kilifi County</p>
-                        <p class="description">Excellent highway access with flexible payment plans, ideal for long-term investment.</p>
-                        <div class="features">
-                            <span><i class="fas fa-road"></i> Highway</span>
-                            <span><i class="fas fa-hand-holding-usd"></i> Flexible Pay</span>
-                        </div>
-                        <div class="property-footer">
-                            <div class="price">Contact for Price</div>
-                            <a href="lands.html" class="btn-view">View Details <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Property 4 - Diani Plots -->
-                <div class="property-card">
-                    <div class="property-image">
-                        <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1763715620/Diani_Plots_for_Sale_4_sidi6m.jpg" alt="Diani Plots for Sale Galu Area - Beach proximity plots Diani Kenya" loading="lazy">
-                        <div class="property-badge hot">Beach Proximity</div>
-                    </div>
-                    <div class="property-info">
-                        <h3>Diani Plots for Sale – Galu Area</h3>
-                        <p class="location"><i class="fas fa-map-marker-alt"></i> Galu, Diani</p>
-                        <p class="description">Perfect coastal investment! Just 1.5KM to the beach, ideal for holiday homes, retirement getaways, or smart investment.</p>
-                        <div class="features">
-                            <span><i class="fas fa-umbrella-beach"></i> 1.5KM to Beach</span>
+                            <span><i class="fas fa-umbrella-beach"></i> 500m to Beach</span>
                             <span><i class="fas fa-ruler-combined"></i> 50×100</span>
                         </div>
                         <div class="property-footer">
                             <div class="price">KSh 1,950,000</div>
-                            <a href="lands.html" class="btn-view">View Details <i class="fas fa-arrow-right"></i></a>
+                            <a href="property.html?id=kilifi-bofa-2nd-row" class="btn-view">View Details <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property 3 (New) -->
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1770814507/Viping_commercial_plots_for_sale_1_fk9f6e.jpg" alt="Vipingo commercial property for sale - 1 acre commercial land for high value development" loading="lazy">
+                        <div class="property-badge">Commercial</div>
+                    </div>
+                    <div class="property-info">
+                        <h3>Vipingo Commercial (1 Acre)</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Vipingo, Kilifi County</p>
+                        <p class="description">Prime commercial land with great accessibility—ideal for warehouses, apartments, or petrol station.</p>
+                        <div class="features">
+                            <span><i class="fas fa-vector-square"></i> 1 Acre</span>
+                            <span><i class="fas fa-industry"></i> Commercial</span>
+                        </div>
+                        <div class="property-footer">
+                            <div class="price">KSh 20,000,000</div>
+                            <a href="property.html?id=vipingo-commercial-1acre" class="btn-view">View Details <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -539,6 +548,13 @@
                     <select required>
                         <option value="">Select Property *</option>
                         <option value="msabaha">Msabaha Phase 6</option>
+                        <option value="msabaha-phase7">Msabaha Phase 7</option>
+                        <option value="bofa-road-2acres">2 Acres Touching Bofa Road</option>
+                        <option value="kilifi-bofa-3rd-row">Kilifi Bofa Gated Estate Plots (3rd Row)</option>
+                        <option value="kilifi-bofa-2nd-row">2nd Row Beach Plots – Kilifi Bofa</option>
+                        <option value="kilifi-bofa-half-acre">1/2 Acre Plot – Kilifi Bofa</option>
+                        <option value="vipingo-commercial-1acre">Vipingo Commercial Property (1 Acre)</option>
+                        <option value="vipingo-residential-50x100">Residential Plots – Vipingo (50×100)</option>
                         <option value="malindi">Malindi Airport View Gardens</option>
                         <option value="mtondia">Mtondia Highway Gardens</option>
                         <option value="bofa20">Bofa Phase 20</option>
