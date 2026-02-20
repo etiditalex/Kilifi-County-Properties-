@@ -231,6 +231,20 @@ const PROPERTY_CATALOG = {
         images: [
             "https://res.cloudinary.com/dyfnobo9r/image/upload/v1764310107/Prime_Bofa_Plots_for_Sale_Kilifi_6_hwvenx.jpg"
         ]
+    },
+    "rafiki10-tezo": {
+        name: "Rafiki@10 Plots for Sale",
+        subtitle: "Kilifi Tezo • Close to the beach • Affordable investment",
+        location: "Kilifi Tezo, Kilifi County",
+        size: "50 × 100 (1/8 Acre)",
+        priceLabel: "KSh 650,000",
+        paymentLabel: "Deposit KSh 200,000 or 50% • Balance in 12 monthly installments (Interest FREE)",
+        description: "Looking for a smart and secure investment? Kilifi Tezo is the place to be! Affordable land at only KSh 650,000 with clean freehold titles, close proximity to the beach, and easy accessibility. Inclusive of Freehold Title Deed Transfer, Stamp Duty & ALL Legal Fees. Visits available every day!",
+        perfectFor: ["Holiday Homes", "Residential Living", "Smart Investment"],
+        images: [
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1771594742/WhatsApp_Image_2026-02-20_at_16.35.26_1_zrjdwg.jpg",
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1771594743/WhatsApp_Image_2026-02-20_at_16.35.27_iqutkr.jpg"
+        ]
     }
 };
 
@@ -336,6 +350,7 @@ function prioritizeNewPropertiesOnLandsPage() {
 
     // Newer properties to show first (top of list)
     const priorityIds = [
+        'rafiki10-tezo',
         'vipingo-residential-50x100',
         'vipingo-commercial-1acre',
         'kilifi-bofa-half-acre',
