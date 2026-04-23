@@ -186,7 +186,7 @@ const PROPERTY_CATALOG = {
         location: "Galu, Diani Beach, Kwale County",
         size: "1/8th acre (approx.)",
         priceLabel: "KSh 2,250,000",
-        paymentLabel: "Deposit: KSh 800,000 • 12 months",
+        paymentLabel: "Deposit: KSh 700,000 • 12 months",
         description: "Prime titled plots in Galu, Diani—quiet residential access, established neighborhood development nearby, and strong appeal for holiday homes or rental income.",
         perfectFor: ["Holiday Homes", "Retirement Homes", "Apartments", "Investment"],
         images: [
@@ -1386,7 +1386,7 @@ const chatbot = {
                 location: "Galu, Diani Beach, Kwale County", 
                 price: "KSh 2,250,000", 
                 previousPrice: "KSh 1,950,000",
-                deposit: "KSh 800,000",
+                deposit: "KSh 700,000",
                 balance: "12 months",
                 size: "1/8th acre (approx.)", 
                 features: "Just 1.5KM to the beach near Neptune Hotel—strong rental demand, good access roads, titled land. Ideal for holiday homes, apartments, or investment." 
@@ -1481,7 +1481,7 @@ const chatbot = {
                    "• <strong>Malindi Airport:</strong> KSh 950,000<br>" +
                    "  📍 Deposit: KSh 400,000 | Balance: 12 months<br><br>" +
                    "• <strong>Diani Plots – Galu Area:</strong> <strong style='color: #d4af37;'>KSh 2,250,000</strong> <span style='color: #999;'>(was KSh 1,950,000)</span><br>" +
-                   "  📍 Deposit: KSh 800,000 | Balance: 12 months<br><br>" +
+                   "  📍 Deposit: KSh 700,000 | Balance: 12 months<br><br>" +
                    "• <strong>Bofa Phase 21:</strong> KSh 1,850,000<br>" +
                    "  📍 Deposit: KSh 700,000 | Balance: 12 months<br><br>" +
                    "• <strong>Mwanda Phase 3 Mariakani:</strong> KSh 325,000<br>" +
@@ -1533,7 +1533,7 @@ const chatbot = {
                    "• <strong>Msabaha Phase 6:</strong> Deposit KSh 150,000 + 12 monthly installments<br>" +
                    "• <strong>Mtondia Highway:</strong> Deposit KSh 500,000 + 12 monthly installments<br>" +
                    "• <strong>Malindi Airport:</strong> Deposit KSh 400,000 + 12 monthly installments<br>" +
-                   "• <strong>Diani Plots – Galu Area:</strong> Deposit KSh 800,000 + 12 monthly installments<br>" +
+                   "• <strong>Diani Plots – Galu Area:</strong> Deposit KSh 700,000 + 12 monthly installments<br>" +
                    "• <strong>Bofa Phase 21:</strong> Deposit KSh 700,000 + 12 monthly installments<br>" +
                    "• <strong>Mwanda Phase 3 Mariakani:</strong> Deposit KSh 100,000 + 12 monthly installments (Interest FREE!)<br>" +
                    "• <strong>Prime Bofa Plots:</strong> Deposit KSh 500,000 or 50% + 12 monthly installments (Interest FREE!)<br><br>" +
