@@ -167,19 +167,6 @@ const PROPERTY_CATALOG = {
             "https://res.cloudinary.com/dyfnobo9r/image/upload/v1761206926/Mtondia_Higway_Gardens_kxrkqr.jpg"
         ]
     },
-    "bofa20": {
-        name: "Bofa Phase 20",
-        subtitle: "Premium plots along Bofa Road (B69)",
-        location: "Bofa Road (B69), Kilifi County",
-        size: "1/8th Acre",
-        priceLabel: "KSh 1,950,000",
-        paymentLabel: "Deposit: KSh 700,000 • 12 months",
-        description: "Premium plots along newly tarmacked Bofa Road with electricity and water on site.",
-        perfectFor: ["Residential Homes", "Holiday Homes", "Investment"],
-        images: [
-            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1761304951/Bofa_Phase_20_jmfiu2.jpg"
-        ]
-    },
     "bofa21": {
         name: "Bofa Phase 21",
         subtitle: "Premium plots with complete infrastructure",
@@ -195,15 +182,18 @@ const PROPERTY_CATALOG = {
     },
     "diani-galu": {
         name: "Diani Plots for Sale – Galu Area",
-        subtitle: "Beach proximity • Coastal investment",
-        location: "Galu, Diani",
-        size: "50 × 100",
-        priceLabel: "KSh 1,950,000",
-        paymentLabel: "Deposit: KSh 500,000 or 50% • 12 months (Interest FREE)",
-        description: "Perfect coastal investment near the beach—ideal for holiday homes, apartments, or residential development.",
+        subtitle: "Galu, Diani Beach • Coastal residential investment",
+        location: "Galu, Diani Beach, Kwale County",
+        size: "1/8th acre (approx.)",
+        priceLabel: "KSh 2,250,000",
+        paymentLabel: "Deposit: KSh 800,000 • 12 months",
+        description: "Prime titled plots in Galu, Diani—quiet residential access, established neighborhood development nearby, and strong appeal for holiday homes or rental income.",
         perfectFor: ["Holiday Homes", "Retirement Homes", "Apartments", "Investment"],
         images: [
-            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1763715620/Diani_Plots_for_Sale_4_sidi6m.jpg"
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1776919302/WhatsApp_Image_2026-04-22_at_20.59.25_2_mexyzf.jpg",
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1776919303/WhatsApp_Image_2026-04-22_at_20.59.25_1_yn0ltk.jpg",
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1776919302/WhatsApp_Image_2026-04-22_at_20.59.25_fdqamt.jpg",
+            "https://res.cloudinary.com/dyfnobo9r/image/upload/v1776919302/WhatsApp_Image_2026-04-22_at_20.59.26_ssts4m.jpg"
         ]
     },
     "mwanda-phase3": {
@@ -644,7 +634,7 @@ if (bookingModal) {
 
 // Close modal with Escape key
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && bookingModal.classList.contains('active')) {
+    if (e.key === 'Escape' && bookingModal && bookingModal.classList.contains('active')) {
         closeBookingModal();
     }
 });
@@ -1106,7 +1096,6 @@ function resetAllFilters() {
 
 // VIEW PROPERTY DETAILS FUNCTION
 function viewPropertyDetails(propertyId) {
-    // Redirect to the individual property page
     window.location.href = `property.html?id=${encodeURIComponent(propertyId)}`;
 }
 
@@ -1393,14 +1382,14 @@ const chatbot = {
                 features: "Near airport, premium location, ideal for commercial use" 
             },
             { 
-                name: "Bofa Phase 20", 
-                location: "Bofa, Kilifi", 
-                price: "KSh 1,950,000", 
-                originalPrice: "KSh 2,150,000",
-                deposit: "KSh 700,000",
+                name: "Diani Plots for Sale – Galu Area", 
+                location: "Galu, Diani Beach, Kwale County", 
+                price: "KSh 2,250,000", 
+                previousPrice: "KSh 1,950,000",
+                deposit: "KSh 800,000",
                 balance: "12 months",
-                size: "1/8th acre", 
-                features: "Special offer! Newly tarmacked Bofa Road (B69), electricity & water on site" 
+                size: "1/8th acre (approx.)", 
+                features: "Just 1.5KM to the beach near Neptune Hotel—strong rental demand, good access roads, titled land. Ideal for holiday homes, apartments, or investment." 
             },
             { 
                 name: "Bofa Phase 21", 
@@ -1410,15 +1399,6 @@ const chatbot = {
                 balance: "12 months",
                 size: "1/8th acre", 
                 features: "Off Bofa Road (B69), perimeter fence, well-demarcated, water & electricity" 
-            },
-            { 
-                name: "Diani Plots for Sale – Galu Area", 
-                location: "Galu, Diani", 
-                price: "KSh 1,950,000", 
-                deposit: "KSh 500,000 or 50%",
-                balance: "12 months (Interest FREE)",
-                size: "50×100 ft", 
-                features: "Just 1.5KM to the beach, 1KM off the road near Neptune Hotel. Ideal for holiday homes, retirement getaways, apartments, residential development or smart investment. Freehold title deed included." 
             },
             { 
                 name: "Mwanda Phase 3 Mariakani", 
@@ -1477,6 +1457,8 @@ const chatbot = {
                 response += `📍 Location: ${prop.location}<br>`;
                 if (prop.originalPrice) {
                     response += `💰 Price: <span style="text-decoration: line-through; color: #999;">${prop.originalPrice}</span> <strong style="color: #d4af37;">${prop.price}</strong> <span style="background: #d4af37; color: white; padding: 2px 8px; border-radius: 5px; font-size: 0.8em;">OFFER!</span><br>`;
+                } else if (prop.previousPrice) {
+                    response += `💰 Price: <strong style="color: #d4af37;">${prop.price}</strong> <span style="color: #999;">(previously ${prop.previousPrice})</span><br>`;
                 } else {
                     response += `💰 Price: ${prop.price}<br>`;
                 }
@@ -1498,13 +1480,10 @@ const chatbot = {
                    "  📍 Deposit: KSh 500,000 | Balance: 12 months<br><br>" +
                    "• <strong>Malindi Airport:</strong> KSh 950,000<br>" +
                    "  📍 Deposit: KSh 400,000 | Balance: 12 months<br><br>" +
-                   "• <strong>Bofa Phase 20:</strong> <span style='text-decoration: line-through;'>KSh 2,150,000</span> <strong style='color: #d4af37;'>KSh 1,950,000</strong> <span style='background: #d4af37; color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.75em;'>OFFER!</span><br>" +
-                   "  📍 Deposit: KSh 700,000 | Balance: 12 months<br><br>" +
+                   "• <strong>Diani Plots – Galu Area:</strong> <strong style='color: #d4af37;'>KSh 2,250,000</strong> <span style='color: #999;'>(was KSh 1,950,000)</span><br>" +
+                   "  📍 Deposit: KSh 800,000 | Balance: 12 months<br><br>" +
                    "• <strong>Bofa Phase 21:</strong> KSh 1,850,000<br>" +
                    "  📍 Deposit: KSh 700,000 | Balance: 12 months<br><br>" +
-                   "• <strong>Diani Plots – Galu Area:</strong> KSh 1,950,000<br>" +
-                   "  📍 Deposit: KSh 500,000 or 50% | Balance: 12 months Interest FREE<br>" +
-                   "  🏖️ Just 1.5KM to the beach!<br><br>" +
                    "• <strong>Mwanda Phase 3 Mariakani:</strong> KSh 325,000<br>" +
                    "  📍 Deposit: KSh 100,000 | Balance: 12 months Interest FREE<br>" +
                    "  💰 Most affordable option!<br><br>" +
@@ -1516,14 +1495,13 @@ const chatbot = {
         }
         
         // Location inquiries
-        if (/location|where|kilifi|malindi|watamu|nyali|mtwapa|mtondia|highway|bofa|area/i.test(message)) {
+        if (/location|where|kilifi|malindi|watamu|nyali|mtwapa|mtondia|highway|bofa|diani|galu|kwale|area/i.test(message)) {
             return "📍 <strong>We have properties in prime coastal locations:</strong><br><br>" +
                    "• <strong>Msabaha Phase 6, Kilifi</strong> - Near Mombasa-Malindi Road (KSh 450,000)<br>" +
                    "• <strong>Mtondia Highway, Kilifi</strong> - Strategic highway location <span style='background: #d4af37; color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.75em;'>OFFER!</span> (KSh 995,000)<br>" +
                    "• <strong>Malindi Airport View Gardens</strong> - Near airport, premium location (KSh 950,000)<br>" +
-                   "• <strong>Bofa Phase 20</strong> - Newly tarmacked Bofa Road (B69) <span style='background: #d4af37; color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.75em;'>OFFER!</span> (KSh 1,950,000)<br>" +
+                   "• <strong>Diani Plots – Galu Area</strong> - Galu, Diani Beach (KSh 2,250,000)<br>" +
                    "• <strong>Bofa Phase 21</strong> - Off Bofa Road (B69), premium 1/8th acre (KSh 1,850,000)<br>" +
-                   "• <strong>Diani Plots – Galu Area</strong> - Just 1.5KM to the beach, perfect coastal investment (KSh 1,950,000)<br>" +
                    "• <strong>Mwanda Phase 3 Mariakani</strong> - Prime yet affordable, just 1KM from Kibao Kiche Town (KSh 325,000)<br>" +
                    "• <strong>Prime Bofa Plots</strong> - Just 1KM from Bofa Beach Hotel, 50 meters off tarmacked road (KSh 1,800,000)<br><br>" +
                    "All locations come with <strong>genuine title deeds</strong> and flexible 12-month payment plans! 📄";
@@ -1555,9 +1533,8 @@ const chatbot = {
                    "• <strong>Msabaha Phase 6:</strong> Deposit KSh 150,000 + 12 monthly installments<br>" +
                    "• <strong>Mtondia Highway:</strong> Deposit KSh 500,000 + 12 monthly installments<br>" +
                    "• <strong>Malindi Airport:</strong> Deposit KSh 400,000 + 12 monthly installments<br>" +
-                   "• <strong>Bofa Phase 20:</strong> Deposit KSh 700,000 + 12 monthly installments<br>" +
+                   "• <strong>Diani Plots – Galu Area:</strong> Deposit KSh 800,000 + 12 monthly installments<br>" +
                    "• <strong>Bofa Phase 21:</strong> Deposit KSh 700,000 + 12 monthly installments<br>" +
-                   "• <strong>Diani Plots – Galu Area:</strong> Deposit KSh 500,000 or 50% + 12 monthly installments (Interest FREE!)<br>" +
                    "• <strong>Mwanda Phase 3 Mariakani:</strong> Deposit KSh 100,000 + 12 monthly installments (Interest FREE!)<br>" +
                    "• <strong>Prime Bofa Plots:</strong> Deposit KSh 500,000 or 50% + 12 monthly installments (Interest FREE!)<br><br>" +
                    "✅ No hidden charges<br>" +
