@@ -243,6 +243,16 @@ function getQueryParam(name) {
     return params.get(name);
 }
 
+function setOrCreateMeta(selector, attrName, attrValue, content) {
+    let meta = document.querySelector(selector);
+    if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute(attrName, attrValue);
+        document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', content);
+}
+
 function initPropertyPage() {
     const titleEl = document.getElementById('propertyTitle');
     if (!titleEl) return; // not on property.html
@@ -258,9 +268,44 @@ function initPropertyPage() {
     }
 
     // Update page metadata
-    document.title = `${prop.name} | Kilifi County Properties`;
-    const descMeta = document.querySelector('meta[name="description"]');
-    if (descMeta) descMeta.setAttribute('content', `${prop.name} - ${prop.subtitle}. Book a site visit with Kilifi County Properties.`);
+    const pageTitle = `${prop.name} | Kilifi County Properties`;
+    const pageDescription = `${prop.name} in ${prop.location}. ${prop.subtitle || 'Prime land listing'}. Book a site visit with Kilifi County Properties.`;
+    const pageUrl = `https://kilificountyproperties.co.ke/property.html?id=${encodeURIComponent(id)}`;
+    const pageImage = (prop.images && prop.images.length)
+        ? prop.images[0]
+        : 'https://res.cloudinary.com/dyfnobo9r/image/upload/f_auto,q_auto,w_1200/v1761207123/Msabaha_Phase_6_hifwdu.jpg';
+
+    document.title = pageTitle;
+    setOrCreateMeta('meta[name="description"]', 'name', 'description', pageDescription);
+    setOrCreateMeta('meta[property="og:title"]', 'property', 'og:title', pageTitle);
+    setOrCreateMeta('meta[property="og:description"]', 'property', 'og:description', pageDescription);
+    setOrCreateMeta('meta[property="og:url"]', 'property', 'og:url', pageUrl);
+    setOrCreateMeta('meta[property="og:image"]', 'property', 'og:image', pageImage);
+    setOrCreateMeta('meta[name="twitter:title"]', 'name', 'twitter:title', pageTitle);
+    setOrCreateMeta('meta[name="twitter:description"]', 'name', 'twitter:description', pageDescription);
+    setOrCreateMeta('meta[name="twitter:image"]', 'name', 'twitter:image', pageImage);
+
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute('href', pageUrl);
+
+    const schema = document.getElementById('propertySchemaJson');
+    if (schema) {
+        const listingSchema = {
+            '@context': 'https://schema.org',
+            '@type': 'RealEstateListing',
+            name: prop.name,
+            description: prop.description,
+            url: pageUrl,
+            image: prop.images || [],
+            offers: {
+                '@type': 'Offer',
+                priceCurrency: 'KES',
+                price: (prop.priceLabel || '').replace(/[^\d]/g, '') || undefined,
+                availability: 'https://schema.org/InStock'
+            }
+        };
+        schema.textContent = JSON.stringify(listingSchema);
+    }
 
     // Fill content
     titleEl.textContent = prop.name;
@@ -308,6 +353,9 @@ function initPropertyPage() {
     if (mainImg && images.length) {
         mainImg.src = images[0];
         mainImg.alt = prop.name;
+        mainImg.decoding = 'async';
+        mainImg.fetchPriority = 'high';
+        mainImg.loading = 'eager';
     }
     if (thumbs) {
         thumbs.innerHTML = '';
@@ -316,7 +364,7 @@ function initPropertyPage() {
             btn.type = 'button';
             btn.className = `property-thumb${idx === 0 ? ' active' : ''}`;
             btn.setAttribute('aria-label', `View image ${idx + 1}`);
-            btn.innerHTML = `<img src="${src}" alt="${prop.name} image ${idx + 1}" loading="lazy">`;
+            btn.innerHTML = `<img src="${src}" alt="${prop.name} image ${idx + 1}" loading="lazy" decoding="async">`;
             btn.addEventListener('click', () => {
                 if (mainImg) mainImg.src = src;
                 thumbs.querySelectorAll('.property-thumb').forEach(t => t.classList.remove('active'));
