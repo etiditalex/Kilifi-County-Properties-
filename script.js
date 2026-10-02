@@ -270,7 +270,7 @@ function initPropertyPage() {
     // Update page metadata
     const pageTitle = `${prop.name} | Kilifi County Properties`;
     const pageDescription = `${prop.name} in ${prop.location}. ${prop.subtitle || 'Prime land listing'}. Book a site visit with Kilifi County Properties.`;
-    const pageUrl = `https://kilificountyproperties.co.ke/property.html?id=${encodeURIComponent(id)}`;
+    const pageUrl = `https://kilifiproperties.co.ke/property.html?id=${encodeURIComponent(id)}`;
     const pageImage = (prop.images && prop.images.length)
         ? prop.images[0]
         : 'https://res.cloudinary.com/dyfnobo9r/image/upload/f_auto,q_auto,w_1200/v1761207123/Msabaha_Phase_6_hifwdu.jpg';

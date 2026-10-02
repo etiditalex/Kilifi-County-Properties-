@@ -4,5 +4,5 @@ Disallow: /admin/
 Disallow: /private/
 
 # Sitemap
-Sitemap: https://kilificountyproperties.co.ke/sitemap.xml
+Sitemap: https://kilifiproperties.co.ke/sitemap.xml
 

@@ -87,10 +87,26 @@ nyumbani-developers/
 
 ## 🌐 Domain Configuration
 
-After deployment, you can:
-1. **Use the provided subdomain** (e.g., `your-site.vercel.app`)
-2. **Connect a custom domain** through your hosting provider
-3. **Configure DNS** if using a custom domain
+The live site is GitHub Pages at `https://kilifiproperties.co.ke`. The `CNAME` file in this project sets that name. Do not point the site at `kilificountyproperties.co.ke`. That name is not registered.
+
+`www.kilifiproperties.co.ke` currently uses the same address records as the main name, so browsers show a certificate warning. At the company that manages DNS for `kilifiproperties.co.ke`, make these records:
+
+**Main name (`@`)** — keep these four A records:
+
+| Type | Host | Value |
+| --- | --- | --- |
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+
+**www** — delete any A or AAAA records on `www`, then add one CNAME:
+
+| Type | Host | Value |
+| --- | --- | --- |
+| CNAME | `www` | `etiditalex.github.io` |
+
+GitHub Pages will then issue a certificate that covers `www` and send `www` visitors to `https://kilifiproperties.co.ke`. In the GitHub repository, open Settings, then Pages, and leave **Enforce HTTPS** turned on. DNS can take a few hours to update.
 
 ## 📱 Testing Your Deployment
 

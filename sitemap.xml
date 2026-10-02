@@ -3,14 +3,14 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     
     <url>
-        <loc>https://kilificountyproperties.co.ke/</loc>
+        <loc>https://kilifiproperties.co.ke/</loc>
         <lastmod>2026-04-23</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     
     <url>
-        <loc>https://kilificountyproperties.co.ke/lands.html</loc>
+        <loc>https://kilifiproperties.co.ke/lands.html</loc>
         <lastmod>2026-04-23</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.95</priority>
@@ -21,63 +21,63 @@
     </url>
 
     <url>
-        <loc>https://kilificountyproperties.co.ke/property.html</loc>
+        <loc>https://kilifiproperties.co.ke/property.html</loc>
         <lastmod>2026-04-23</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     
     <url>
-        <loc>https://kilificountyproperties.co.ke/about.html</loc>
+        <loc>https://kilifiproperties.co.ke/about.html</loc>
         <lastmod>2026-04-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://kilificountyproperties.co.ke/gallery.html</loc>
+        <loc>https://kilifiproperties.co.ke/gallery.html</loc>
         <lastmod>2026-04-23</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.75</priority>
     </url>
     
     <url>
-        <loc>https://kilificountyproperties.co.ke/reviews.html</loc>
+        <loc>https://kilifiproperties.co.ke/reviews.html</loc>
         <lastmod>2026-04-23</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     
     <url>
-        <loc>https://kilificountyproperties.co.ke/blogs.html</loc>
+        <loc>https://kilifiproperties.co.ke/blogs.html</loc>
         <lastmod>2026-04-23</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://kilificountyproperties.co.ke/market-research.html</loc>
+        <loc>https://kilifiproperties.co.ke/market-research.html</loc>
         <lastmod>2026-04-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.75</priority>
     </url>
     
     <url>
-        <loc>https://kilificountyproperties.co.ke/updates.html</loc>
+        <loc>https://kilifiproperties.co.ke/updates.html</loc>
         <lastmod>2026-04-23</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://kilificountyproperties.co.ke/contact.html</loc>
+        <loc>https://kilifiproperties.co.ke/contact.html</loc>
         <lastmod>2026-04-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
     </url>
     
     <url>
-        <loc>https://kilificountyproperties.co.ke/cookies.html</loc>
+        <loc>https://kilifiproperties.co.ke/cookies.html</loc>
         <lastmod>2026-04-23</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>

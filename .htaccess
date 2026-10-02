@@ -84,6 +84,6 @@ ErrorDocument 500 /500.html
 <IfModule mod_rewrite.c>
     RewriteEngine on
     RewriteCond %{HTTP_REFERER} !^$
-    RewriteCond %{HTTP_REFERER} !^https?://(www\.)?kilificountyproperties\.co\.ke [NC]
+    RewriteCond %{HTTP_REFERER} !^https?://(www\.)?kilifiproperties\.co\.ke [NC]
     RewriteRule \.(jpg|jpeg|png|gif)$ - [NC,F,L]
 </IfModule>
